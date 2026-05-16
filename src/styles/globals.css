@@ -1,0 +1,97 @@
+/* src/styles/globals.css */
+@import "tailwindcss";
+@import "./mamboorche.css";
+@import "./mambooutback.css";
+
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-surface: var(--bg_surface);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg_muted);
+  --color-comment: var(--comment);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand_hover);
+  --color-interactive: var(--interactive);
+  --color-interactive-hover: var(--interactive_hover);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Earth, Ash & Foundations */
+  --color-abyssal-bark: var(--abyssal_bark);
+  --color-burnt-charcoal: var(--burnt_charcoal);
+  --color-canyon-floor: var(--canyon_floor);
+  --color-crushed-clay: var(--crushed_clay);
+  --color-dusty-parchment: var(--dusty_parchment);
+  --color-river-silt: var(--river_silt);
+
+  /* Magma, Crimson & Fire */
+  --color-magma-dust: var(--magma_dust);
+  --color-wildfire: var(--wildfire);
+  --color-rusty-canyon: var(--rusty_canyon);
+  --color-baked-brick: var(--baked_brick);
+  --color-crimson-creek: var(--crimson_creek);
+
+  /* Mauve, Plum & Dusk Shadows */
+  --color-desert-rose: var(--desert_rose);
+  --color-dusty-mauve: var(--dusty_mauve);
+  --color-wild-plum: var(--wild_plum);
+  --color-berry-bramble: var(--berry_bramble);
+  --color-dusk-shadow: var(--dusk_shadow);
+
+  /* Ochre, Oxide & Apricot Embers */
+  --color-apricot-dust: var(--apricot_dust);
+  --color-canyon-flash: var(--canyon_flash);
+  --color-burnt-ochre: var(--burnt_ochre);
+  --color-iron-oxide: var(--iron_oxide);
+  --color-ember-glow: var(--ember_glow);
+
+  /* Spinifex Gold & Savannah Cumin */
+  --color-tumbleweed: var(--tumbleweed);
+  --color-spinifex-gold: var(--spinifex_gold);
+  --color-dry-straw: var(--dry_straw);
+  --color-roasted-cumin: var(--roasted_cumin);
+  --color-savannah-dusk: var(--savannah_dusk);
+
+  /* Sage, Olive & Forest Shadows */
+  --color-desert-sage: var(--desert_sage);
+  --color-pale-spinifex: var(--pale_spinifex);
+  --color-dusty-olive: var(--dusty_olive);
+  --color-lichen-crust: var(--lichen_crust);
+  --color-dry-moss: var(--dry_moss);
+  --color-eucalyptus-leaf: var(--eucalyptus_leaf);
+  --color-overgrown-fern: var(--overgrown_fern);
+  --color-swamp-murk: var(--swamp_murk);
+  --color-ancient-pine: var(--ancient_pine);
+  --color-midnight-forest: var(--midnight_forest);
+
+  /* Teal, Creek & Shale Green */
+  --color-shale-green: var(--shale_green);
+  --color-river-ooze: var(--river_ooze);
+  --color-deep-teal: var(--deep_teal);
+  --color-sunken-timber: var(--sunken_timber);
+  --color-flooded-creek: var(--flooded_creek);
+
+  /* Outback Skies & Storm Monsoons */
+  --color-outback-sky: var(--outback_sky);
+  --color-eucalyptus-smoke: var(--eucalyptus_smoke);
+  --color-bluestone: var(--bluestone);
+  --color-storm-canopy: var(--storm_canopy);
+  --color-night-monsoon: var(--night_monsoon);
+
+  /* Fossil Bone & Weathered Wood Mounds */
+  --color-fossil-bone: var(--fossil_bone);
+  --color-weathered-wood: var(--weathered_wood);
+  --color-termite-mound: var(--termite_mound);
+  --color-dried-bark: var(--dried_bark);
+  --color-charred-root: var(--charred_root);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}

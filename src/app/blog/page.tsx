@@ -5,11 +5,11 @@ export default function Home() {
     const personalFleet = [
         {
             project: {
-                label: "MamboFolio",
-                link: "https://github.com/ProjectMambo/MamboFolio",
-                description: "Owner's portfolio",
+                label: "Project Mambo",
+                link: "https://projectmambo.org",
+                description: "A series of stuff.",
             },
-            colour: "var(--color-charred-root)",
+            colour: "var(--color-shale-green)",
         },
     ];
 

@@ -1,0 +1,20 @@
+:root {
+  --bg: #241616;
+  --bg_dark: #1c1111;
+  --deep_oak: #3b2a2a;
+  --surface: #5e2c31;
+  --comment: #765d3f;
+  --fg: #e9c5aa;
+  --sandstone: #f1d4b9;
+  --red: #a93622;
+  --rose_wood: #984a42;
+  --purple: #822727;
+  --orange: #d3a774;
+  --copper: #b56952;
+  --muted_gold: #c0955e;
+  --yellow: #e5cb7c;
+  --green: #5c705a;
+  --forest_shadow: #3d524a;
+  --blue: #283e4f;
+  --cyan: #8e9e9b;
+}
