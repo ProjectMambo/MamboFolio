@@ -12,25 +12,9 @@ interface WaybarProps {
     brand: LabelLink;
 }
 
-/**
- * Application-wide structural header bar. Uses a fluid flex-wrap mechanism
- * to handle variable navigation lengths gracefully, integrated with a passive
- * scroll listener hook to maximize vertical viewport space during active scrolling.
- */
 export default function Waybar({ pages, brand }: WaybarProps) {
-    /**
-     * Scroll State Lifecycle:
-     * Leverages a passive scroll vector hook. Evaluates direction delta vectors
-     * against a 40px threshold to prevent hyper-sensitive toggling when users tap or wiggle.
-     */
     const isVisible = useScrollDirection(40);
 
-    /**
-     * Header Structural Container:
-     * Applies CSS hardware acceleration classes (`translate-y`). By offloading the position shift
-     * to the browser's transform layer rather than manipulating layout-heavy parameters like `top`,
-     * the animation executes at a smooth 60fps without causing costly browser reflows.
-     */
     const headerClasses = [
         "sticky top-0 z-50",
         "w-full px-4 pt-3",
@@ -41,57 +25,55 @@ export default function Waybar({ pages, brand }: WaybarProps) {
 
     /**
      * Layout Canvas Container:
-     * Swaps standard CSS grid distributions for a flex-wrap engine. Removing rigid heights
-     * allows the structural navbar wrapper to expand vertically when long asset arrays push down.
+     * The row height constraints now hold steady until the screen gets considerably narrower.
      */
     const innerBarClasses = [
-        "max-w-6xl mx-auto py-2 md:py-0 md:h-10",
+        "max-w-6xl mx-auto pt-2.5 pb-3.5 md:py-0 md:h-10",
         "bg-bg border border-border",
-        "flex flex-wrap items-stretch justify-between",
-        "px-4 shadow-xl gap-y-3",
+        "flex flex-col md:flex-row items-center justify-between",
+        "px-4 shadow-xl gap-y-3 md:gap-y-0",
     ].join(" ");
 
     /**
      * Left Zone Link Layout:
-     * Maps out navigation arrays. Utilizes wrapped flex strings to absorb ultra-narrow screen limits,
-     * automatically stacking raw link parameters vertically before scaling side-by-side on larger screens.
      */
     const leftNavClasses = [
         "flex flex-wrap items-center gap-y-1",
         "text-[12px] uppercase tracking-wider",
-        "py-1 justify-start",
-        "w-full sm:w-auto md:flex-1",
+        "justify-center md:justify-start",
+        "w-full md:w-auto md:flex-1",
         "order-1",
     ].join(" ");
 
     /**
      * Center Zone Brand Frame:
-     * Manages layout tracking rules based on device breakpoints. It occupies 50% width on
-     * mobile screens to share space with active headers, then scales down to an equal, centered slot
-     * once tablet dimensions match standard desktop rows.
+     *
+     * - Under 768px (Mobile): Centers completely (`justify-center w-full`).
+     * - 768px to 1024px (Mid/Tablet): The clock is hidden, so the brand snaps beautifully to the right side (`md:justify-end md:w-auto`).
+     * - Above 1024px (Desktop): The clock returns, and the brand moves to the exact middle center (`lg:justify-center lg:flex-1`).
      */
     const brandContainerClasses = [
-        "flex items-center justify-center md:justify-center gap-2 text-xs font-bold",
-        "w-1/2 sm:w-auto md:flex-1",
+        "flex items-center gap-2 text-xs font-bold",
+        "justify-center w-full",
+        "md:justify-end md:w-auto",
+        "lg:justify-center lg:flex-1",
         "order-2 md:order-2",
     ].join(" ");
 
     /**
      * Right Zone Chrono Element:
-     * Strips rigid absolute hidden values to maintain real-time tracking access across all platforms.
-     * It takes a full single row space on mid-break screens to cleanly drop below the header layers,
-     * then locks safely into the right-side alignment on large screens.
+     * Now, the second the screen drops below 1024px, the clock disappears cleanly *long before* the text can run out of space and stack.
      */
     const rightNavClasses = [
-        "flex justify-end items-center",
-        "w-1/2 sm:w-full md:w-auto md:flex-1",
-        "order-3 md:order-3",
+        "hidden lg:flex justify-end items-center",
+        "lg:w-auto lg:flex-1",
+        "order-3 lg:order-3",
     ].join(" ");
 
     return (
         <header className={headerClasses}>
             <div className={innerBarClasses}>
-                {/* LEFT ZONE: Dynamically loops menu objects and places layout dividers */}
+                {/* LEFT ZONE: Navigation menu options */}
                 <nav className={leftNavClasses}>
                     {pages.map((item, index) => (
                         <div
@@ -104,12 +86,12 @@ export default function Waybar({ pages, brand }: WaybarProps) {
                     ))}
                 </nav>
 
-                {/* CENTER ZONE: Brand focal element position anchor */}
+                {/* CENTER ZONE: Brand tracking node */}
                 <div className={brandContainerClasses}>
                     <Brand brand={brand} />
                 </div>
 
-                {/* RIGHT ZONE: Desktop clock readout position anchor */}
+                {/* RIGHT ZONE: Desktop clock readout (Hidden early on mid/small screens) */}
                 <div className={rightNavClasses}>
                     <Clock />
                 </div>

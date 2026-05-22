@@ -14,3 +14,10 @@ export interface LabelLinkDes {
     link: string;
     description: string;
 }
+
+export interface LabelLinkDesDate {
+    label: string;
+    link: string;
+    description: string;
+    date: string;
+}
