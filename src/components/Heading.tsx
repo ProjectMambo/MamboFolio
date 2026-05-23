@@ -1,23 +1,23 @@
-import { ReactNode } from "react";
-
 interface HeadingProps {
     title: string;
-    subtitle?: string; // Optional subtitle tracker
-    level?: "h1" | "h2" | "h3"; // Allows you to choose the HTML tag size
+    subtitle?: string;
+    level?: "h1" | "h2" | "h3";
 }
 
 /**
  * Reusable layout heading block following a unified modular typography system.
  */
-export default function Heading({ title, subtitle, level = "h2" }: HeadingProps) {
-    // Determine responsive sizing tokens based on heading level choice
+export default function Heading({
+    title,
+    subtitle,
+    level = "h2",
+}: HeadingProps) {
     const sizeClasses = {
         h1: "text-2xl md:text-3xl font-black tracking-wider uppercase",
         h2: "text-xl md:text-2xl font-bold tracking-wide",
         h3: "text-base md:text-lg font-bold tracking-normal text-fg-muted",
     }[level];
 
-    // Dynamically assign the semantic HTML element type at runtime
     const Tag = level;
 
     return (
@@ -27,9 +27,10 @@ export default function Heading({ title, subtitle, level = "h2" }: HeadingProps)
                     {subtitle}
                 </span>
             )}
-            <Tag className={`${sizeClasses} text-fg`}>
-                {title}
-            </Tag>
+            <Tag
+                className={`${sizeClasses} text-fg`}
+                dangerouslySetInnerHTML={{ __html: title }}
+            />
         </div>
     );
 }

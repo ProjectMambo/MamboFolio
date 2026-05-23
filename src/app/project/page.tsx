@@ -1,20 +1,19 @@
 import ProjectGrid from "@/modules/ProjectGrid";
 
 export default function Home() {
-    // Keep data structures easy to expand, modify, or fetch from endpoints later
     const projectList = [
         {
             project: {
                 label: "Project Mambo",
-                link: "https://projectmambo.org",
-                description: "A series of stuff.",
+                link: "/project/project-mambo?from=home",
+                description: "A design-driven ecosystem of optimized Unix configurations, unified palettes, and automated dotfile deployment architectures.",
             },
             colour: "var(--color-shale-green)",
         },
         {
             project: {
                 label: "MamboDot",
-                link: "https://github.com/ProjectMambo/MamboDot",
+                link: "/project/mambodot?from=home",
                 description:
                     "A GNU Stow-managed dotfiles repository optimised for speed and consistent styling.",
             },
@@ -22,35 +21,43 @@ export default function Home() {
         },
         {
             project: {
+                label: "MamboFolio",
+                link: "/project/mambofolio?from=home",
+                description: "A responsive portfolio website built with Next.js and Tailwind CSS.",
+            },
+            colour: "var(--color-charred-root)",
+        },
+        {
+            project: {
                 label: "MamboColour",
-                link: "https://github.com/ProjectMambo/MamboColour",
-                description: "Colour palette for Project Mambo designs",
+                link: "/project/mambocolour?from=home",
+                description: "A modern and premium colour palette collection with parsers for different use case.",
             },
             colour: "var(--color-deep-teal)",
         },
         {
             project: {
                 label: "MamboSite",
-                link: "https://github.com/ProjectMambo/MamboSite",
-                description: "Wiki for Project Mambo",
+                link: "/project/mambosite?from=home",
+                description: "A responsive project wiki built with Next.js and Tailwind CSS.",
             },
             colour: "var(--color-baked-brick)",
         },
         {
             project: {
-                label: "MamboFolio",
-                link: "https://github.com/ProjectMambo/MamboFolio",
-                description: "Owner's portfolio",
+                label: "MamboFont",
+                link: "/project/mambofont?from=home",
+                description: "A modern font designed for consistent layout.",
             },
-            colour: "var(--color-charred-root)",
+            colour: "var(--color-dusk-shadow)",
         },
         {
             project: {
-                label: "MamboFont",
-                link: "https://github.com/ProjectMambo/MamboFont",
-                description: "Font & Icons for Project Mambo designs",
+                label: "Pitcher",
+                link: "/project/pitcher?from=home",
+                description: "A simple voice-controlled platformer game.",
             },
-            colour: "var(--color-dusk-shadow)",
+            colour: "var(--color-ember-glow)",
         },
     ];
 

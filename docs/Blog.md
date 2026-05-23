@@ -49,7 +49,7 @@ date: ${date}
 TABLE 
     choice(length(description) > 50, substring(description, 0, 50) + "...", description) AS Description,
     file.tags AS Tags,
-    date AS Date
+    dateformat(date, "dd MMMM yyyy") AS Date
 FROM ""
 WHERE file.folder = this.file.folder + "/blog"
 SORT file.name ASC

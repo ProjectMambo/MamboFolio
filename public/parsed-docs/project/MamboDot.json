@@ -1,0 +1,14 @@
+{
+  "title": "MamboDot",
+  "html": "<h1>The Genesis</h1>\n<h2>What Was Missing?</h2>\n<p>Why hyprland why gnustow</p>\n<h2>The Core Goal</h2>\n<h2>Final Impact</h2>\n<h1>Technical Choices</h1>\n<h2>The Trade-offs</h2>\n<h2>Self-Imposed Limits</h2>\n<h1>Blueprint &amp; Design</h1>\n<h2>Behind the Architecture</h2>\n<h2>Interaction Details</h2>\n<h1>Technical Challenges</h1>\n<h2>Where It Broke</h2>\n<h2>The Investigation</h2>\n<h2>The Pivot</h2>\n<h1>Looking Back</h1>\n<h2>The Clean Rebuild</h2>\n<h2>Next Iteration</h2>\n",
+  "meta": {
+    "description": "A GNU Stow-managed dotfiles repository optimised for speed and consistent styling.",
+    "tags": [
+      "ArchLinux",
+      "Hyprland",
+      "GNUstow"
+    ],
+    "date": "2026-05-12",
+    "url": "https://github.com/ProjectMambo/MamboDot"
+  }
+}

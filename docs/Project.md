@@ -51,7 +51,7 @@ url: ${url}
 TABLE 
     choice(length(description) > 50, substring(description, 0, 50) + "...", description) AS Description,
     file.tags AS Tags,
-    date AS Date,
+    dateformat(date, "MMMM yyyy") AS Date,
     url AS URL
 FROM ""
 WHERE file.folder = this.file.folder + "/project"

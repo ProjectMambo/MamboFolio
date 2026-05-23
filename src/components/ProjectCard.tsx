@@ -14,7 +14,6 @@ interface ProjectCardProps {
  * and links. It automatically evaluates dark or light backgrounds to guarantee text accessibility.
  */
 export default function ProjectCard({ project, colour }: ProjectCardProps) {
-    // Initialize text as transparent to prevent sudden color flashes during early Next.js server generation cycles
     const [localTextColor, setLocalTextColor] = useState<string>("transparent");
 
     const containerClasses = [
@@ -22,11 +21,11 @@ export default function ProjectCard({ project, colour }: ProjectCardProps) {
         "border border-border bg-bg-surface",
         "transition-all duration-200",
         "hover:border-comment hover:scale-[1.01]",
-        "flex flex-col h-full", // Stretch elements to equal heights across uniform matrix rows
+        "flex flex-col h-full",
     ].join(" ");
 
     const canvasClasses = [
-        "relative w-full aspect-square", // Keep canvas blocks at a perfectly locked 1:1 landscape profile
+        "relative w-full aspect-square",
         "flex items-center justify-center",
         "overflow-hidden transition-colors",
     ].join(" ");
@@ -40,7 +39,7 @@ export default function ProjectCard({ project, colour }: ProjectCardProps) {
     const infoBarClasses = [
         "p-4 border-t border-border",
         "group-hover:bg-fg/5 transition-colors duration-200",
-        "flex-grow", // Tell lower description fields to expand and push shorter text panels flat against the baseline
+        "flex-grow",
     ].join(" ");
 
     const arrowClasses = [
@@ -49,19 +48,13 @@ export default function ProjectCard({ project, colour }: ProjectCardProps) {
         "transition-opacity duration-200 tracking-wider",
     ].join(" ");
 
-    // Wait for the browser mount lifecycle to trigger before calculating color values
     useEffect(() => {
         const adaptiveColor = getContrastTextColor(colour);
         setLocalTextColor(adaptiveColor);
     }, [colour]);
 
     return (
-        <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={containerClasses}
-        >
+        <a href={project.link} className={containerClasses}>
             {/* Visual Canvas Block: Displays project names against color tokens */}
             <div className={canvasClasses} style={{ backgroundColor: colour }}>
                 <span
