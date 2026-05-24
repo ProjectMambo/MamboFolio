@@ -62,7 +62,7 @@ export default function Home() {
     ];
 
     return (
-        <main className="min-h-screen bg-bg text-fg p-8 md:p-16 font-mono max-w-5xl mx-auto">
+        <main className="c-page-layout">
             {/* The single, declarative grid cluster module */}
             <ProjectGrid items={projectList} />
         </main>

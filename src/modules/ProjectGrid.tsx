@@ -1,4 +1,4 @@
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/entry/ProjectCard";
 import { LabelLinkDes } from "@/components/Interfaces";
 
 interface GridProjectItem {
@@ -14,9 +14,14 @@ interface ProjectGridProps {
  * Grid matrix that handles media breakpoints automatically to realign children across responsive platforms.
  */
 export default function ProjectGrid({ items }: ProjectGridProps) {
+    const base = ["grid grid-cols-1 gap-6"].join(" ");
+    const small = ["sm:grid-cols-2"].join("");
+    const medium = ["md:grid-cols-3"].join("");
+    const large = ["lg:grid-cols-3"].join("");
+
     return (
         /* Grid layout configurations: 1 col mobile, 2 col tablet, 3 col desktop panels */
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <section className={`${base} ${small} ${medium} ${large}`}>
             {items.map((item) => (
                 <ProjectCard
                     key={item.project.link}

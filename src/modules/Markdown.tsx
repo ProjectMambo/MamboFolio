@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import Heading from "@/components/Heading";
+import Heading from "@/components/markdown/Heading";
 
 interface DocumentMeta {
     description?: string;
@@ -108,7 +108,7 @@ export default function Markdown({
                                 {doc.meta.tags.map((tag) => (
                                     <span
                                         key={tag}
-                                        className="text-[10px] font-mono font-medium px-2 py-0.5 bg-bg-surface border border-border/60 text-fg rounded-sm select-none uppercase tracking-wider"
+                                        className="text-[10px] font-mono font-medium px-2 py-0.5 bg-bg-surface border border-border/60 text-fg select-none uppercase tracking-wider"
                                     >
                                         {tag}
                                     </span>

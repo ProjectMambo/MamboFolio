@@ -5,24 +5,8 @@ export default function Home() {
     const blogList = [
         {
             blog: {
-                label: "MamboFolio",
-                link: "https://github.com/ProjectMambo/MamboFolio",
-                description: "Owner's portfolio",
-                date: "20-05-2026",
-            },
-        },
-        {
-            blog: {
-                label: "test",
-                link: "https://github.com/ProjectMambo/test",
-                description: "Owner's portfolio",
-                date: "20-05-2026",
-            },
-        },
-        {
-            blog: {
-                label: "test2",
-                link: "https://github.com/ProjectMambo/test22",
+                label: "Test",
+                link: "/blog/test?from=home",
                 description: "tset",
                 date: "20May2026",
             },
@@ -30,7 +14,7 @@ export default function Home() {
     ];
 
     return (
-        <main className="min-h-screen bg-bg text-fg p-8 md:p-16 font-mono max-w-5xl mx-auto">
+        <main className="c-page-layout">
             {/* The single, declarative grid cluster module */}
             <BlogList items={blogList} />
         </main>

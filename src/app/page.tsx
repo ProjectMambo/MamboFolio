@@ -1,7 +1,7 @@
 import ProjectGrid from "@/modules/ProjectGrid";
 import BlogList from "@/modules/BlogList";
 import NavButton from "@/components/NavButton";
-import Heading from "@/components/Heading";
+import Heading from "@/components/markdown/Heading";
 import Markdown from "@/modules/Markdown";
 
 export default function Home() {
@@ -11,7 +11,8 @@ export default function Home() {
             project: {
                 label: "Project Mambo",
                 link: "/project/project-mambo?from=home",
-                description: "A design-driven ecosystem of optimized Unix configurations, unified palettes, and automated dotfile deployment architectures.",
+                description:
+                    "A design-driven ecosystem of optimized Unix configurations, unified palettes, and automated dotfile deployment architectures.",
             },
             colour: "var(--color-shale-green)",
         },
@@ -28,7 +29,8 @@ export default function Home() {
             project: {
                 label: "MamboFolio",
                 link: "/project/mambofolio?from=home",
-                description: "A responsive portfolio website built with Next.js and Tailwind CSS.",
+                description:
+                    "A responsive portfolio website built with Next.js and Tailwind CSS.",
             },
             colour: "var(--color-charred-root)",
         },
@@ -37,35 +39,27 @@ export default function Home() {
     const blogList = [
         {
             blog: {
-                label: "MamboFolio",
-                link: "https://github.com/ProjectMambo/MamboFolio",
-                description: "Owner's portfolio",
+                label: "Test",
+                link: "/blog/test?from=home",
+                description: "test",
                 date: "20-05-2026",
             },
         },
         {
             blog: {
-                label: "test",
-                link: "https://github.com/ProjectMambo/test",
-                description: "Owner's portfolio",
+                label: "Test",
+                link: "https",
+                description: "test",
                 date: "20-05-2026",
-            },
-        },
-        {
-            blog: {
-                label: "test2",
-                link: "https://github.com/ProjectMambo/test22",
-                description: "tset",
-                date: "20May2026",
             },
         },
     ];
 
     return (
-        <main className="min-h-screen bg-bg text-fg p-8 md:p-16 font-mono max-w-5xl mx-auto flex flex-col gap-y-5">
+        <main className="c-page-layout">
             <Heading title="About" level="h1" />
             <Markdown path="About" variant="main" showTitle={false} />
-            
+
             <Heading title="Project" level="h1" />
             <ProjectGrid items={projectList} />
             <div className="flex justify-center py-px">
@@ -80,6 +74,14 @@ export default function Home() {
             <div className="flex justify-center py-px">
                 <NavButton
                     button={{ label: "See More", link: "/blog" }}
+                    defaultBorder={true}
+                />
+            </div>
+
+            <Heading title="Contact" level="h1" />
+            <div className="flex justify-center py-px">
+                <NavButton
+                    button={{ label: "kohkohnut1202@gmail.com", link: "mailto:kohkohnut1202@gmail.com" }}
                     defaultBorder={true}
                 />
             </div>

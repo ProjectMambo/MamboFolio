@@ -13,23 +13,20 @@ export default function NavButton({
     button,
     defaultBorder = false,
 }: NavButtonProps) {
-    const baseClasses = [
-        "px-3 h-full min-h-[28px]",
-        "flex flex-shrink-0 items-center justify-center",
-        "pt-px font-bold",
-        "text-fg-muted hover:text-fg",
-        "outline hover:outline-border",
-        "hover:bg-bg-surface/40",
-        "transition-all duration-200",
+    const base = [
+        "text-xs pt-1",
+        "shrink-0 px-3 py-1",
+        "flex items-center justify-center",
+        "c-transition c-bg-hover c-label-muted",
+        defaultBorder ? "c-border-normal" : "c-outline-hover",
     ].join(" ");
 
-    // Dynamic conditional flags resolve toggle styles cleanly outside return statements
-    const borderClasses = defaultBorder
-        ? "outline-border"
-        : "outline-transparent";
+    const medium = ["md:text-sm"].join(" ");
+
+    const large = ["lg:text-sm"].join(" ");
 
     return (
-        <Link href={button.link} className={`${baseClasses} ${borderClasses}`}>
+        <Link href={button.link} className={`${base} ${medium} ${large}`}>
             {button.label}
         </Link>
     );

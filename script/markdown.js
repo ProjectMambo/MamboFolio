@@ -20,7 +20,8 @@ const ALLOWED_FILES = [
     "project/MamboDot.md",
     "project/MamboFolio.md",
     "project/MamboFont.md",
-    "project/MamboSite.md"
+    "project/MamboSite.md",
+    "blog/Test.md"
 ];
 
 const projectRoot = path.join(__dirname, "..");

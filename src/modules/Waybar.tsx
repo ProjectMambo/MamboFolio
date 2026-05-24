@@ -1,11 +1,16 @@
-"use client";
+"use client"
 
-import { LabelLink } from "@/components/Interfaces";
-import NavButton from "@/components/NavButton";
-import Divider from "@/components/Divider";
-import Brand from "@/components/Brand";
-import Clock from "@/components/Clock";
-import { useScrollDirection } from "@/hooks/useScrollDirection";
+import { Fragment } from "react";
+import NavButton from "@/components/NavButton"; // Adjust these paths based on your file tree
+import Brand from "@/components/bar/Brand";
+import Divider from "@/components/bar/Divider";
+import Clock from "@/components/bar/Clock";
+import { useScrollDirection } from "@/hooks/useScrollDirection"; // Adjust path as needed
+
+export interface LabelLink {
+    label: string;
+    link: string;
+}
 
 interface WaybarProps {
     pages: LabelLink[];
@@ -15,11 +20,11 @@ interface WaybarProps {
 export default function Waybar({ pages, brand }: WaybarProps) {
     const isVisible = useScrollDirection(40);
 
-    const headerClasses = [
+    const baseHeader = [
         "sticky top-0 z-50",
         "w-full px-4 pt-3",
         "select-none",
-        "transition-transform duration-300 ease-in-out",
+        "c-transition",
         isVisible ? "translate-y-0" : "-translate-y-full",
     ].join(" ");
 
@@ -27,72 +32,36 @@ export default function Waybar({ pages, brand }: WaybarProps) {
      * Layout Canvas Container:
      * The row height constraints now hold steady until the screen gets considerably narrower.
      */
-    const innerBarClasses = [
-        "max-w-6xl mx-auto pt-2.5 pb-3.5 md:py-0 md:h-10",
-        "bg-bg border border-border",
-        "flex flex-col md:flex-row items-center justify-between",
-        "px-4 shadow-xl gap-y-3 md:gap-y-0",
+    const baseContainer = [
+        "max-w-6xl mx-auto py-1.5 self-stretch",
+        "flex flex-col items-center justify-between gap-y-3",
+        "bg-bg shadow-xl",
+        "c-transition c-border-static",
     ].join(" ");
 
-    /**
-     * Left Zone Link Layout:
-     */
-    const leftNavClasses = [
-        "flex flex-wrap items-center gap-y-1",
-        "text-[12px] uppercase tracking-wider",
-        "justify-center md:justify-start",
-        "w-full md:w-auto md:flex-1",
-        "order-1",
-    ].join(" ");
-
-    /**
-     * Center Zone Brand Frame:
-     *
-     * - Under 768px (Mobile): Centers completely (`justify-center w-full`).
-     * - 768px to 1024px (Mid/Tablet): The clock is hidden, so the brand snaps beautifully to the right side (`md:justify-end md:w-auto`).
-     * - Above 1024px (Desktop): The clock returns, and the brand moves to the exact middle center (`lg:justify-center lg:flex-1`).
-     */
-    const brandContainerClasses = [
-        "flex items-center gap-2 text-xs font-bold",
-        "justify-center w-full",
-        "md:justify-end md:w-auto",
-        "lg:justify-center lg:flex-1",
-        "order-2 md:order-2",
-    ].join(" ");
-
-    /**
-     * Right Zone Chrono Element:
-     * Now, the second the screen drops below 1024px, the clock disappears cleanly *long before* the text can run out of space and stack.
-     */
-    const rightNavClasses = [
-        "hidden lg:flex justify-end items-center",
-        "lg:w-auto lg:flex-1",
-        "order-3 lg:order-3",
-    ].join(" ");
+    const mediumContainer = ["md:flex-row"].join(" ");
+    const largeContainer = ["lg:flex-row"].join(" ");
 
     return (
-        <header className={headerClasses}>
-            <div className={innerBarClasses}>
-                {/* LEFT ZONE: Navigation menu options */}
-                <nav className={leftNavClasses}>
+        <header className={baseHeader}>
+            <div className={`${baseContainer} ${mediumContainer} ${largeContainer}`}>
+                
+                {/* NAV ZONE: Now dynamically maps over your incoming pages prop */}
+                <nav className="flex flex-row items-center justify-between px-3">
                     {pages.map((item, index) => (
-                        <div
-                            key={item.link}
-                            className="flex items-center h-full"
-                        >
+                        <Fragment key={item.link}>
                             <NavButton button={item} />
+                            {/* Injects a separator line ONLY between sibling buttons */}
                             {index < pages.length - 1 && <Divider />}
-                        </div>
+                        </Fragment>
                     ))}
                 </nav>
 
-                {/* CENTER ZONE: Brand tracking node */}
-                <div className={brandContainerClasses}>
-                    <Brand brand={brand} />
-                </div>
-
-                {/* RIGHT ZONE: Desktop clock readout (Hidden early on mid/small screens) */}
-                <div className={rightNavClasses}>
+                {/* BRAND ZONE: Now uses your modular incoming brand input data */}
+                <Brand brand={brand} />
+                
+                {/* CLOCK ZONE: Keeps layout boundaries clean, hiding until lg viewports */}
+                <div className="hidden lg:block">
                     <Clock />
                 </div>
             </div>

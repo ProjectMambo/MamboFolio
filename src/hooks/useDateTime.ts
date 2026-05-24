@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
 
-interface DateTimeState {
-    timeStr: string;
-    dateStr: string;
-}
-
 /**
  * Custom React hook that initializes a centralized system clock heartbeat.
  * Leverages a standard 1-second interval loop to dispatch formatted string states
@@ -17,48 +12,26 @@ interface DateTimeState {
  *
  * @returns {DateTimeState} Synchronized data strings for rendering downstream.
  */
-export function useDateTime(): DateTimeState {
-    // Keep states empty at mount initialization to prevent hydration mismatch flashes in SSR environments
-    const [dateTime, setDateTime] = useState<DateTimeState>({
-        timeStr: "",
-        dateStr: "",
-    });
+export function useDateTime() {
+    // 🎯 Set baseline defaults that don't depend on browser engines during build
+    const [timeStr, setTimeStr] = useState("");
+    const [dateStr, setDateStr] = useState("");
 
     useEffect(() => {
-        /**
-         * Pulls active local system signatures and normalizes values across custom boundaries.
-         */
+        // Safe: This function block executes exclusively inside the user's browser
         const updateDateTime = () => {
             const now = new Date();
-
-            // Enforces military time string formats (24-hour cycle)
-            const time = now.toLocaleTimeString("en-US", { hour12: false });
-
-            // Build uppercase date tokens using strict English string configurations
-            const weekday = now
-                .toLocaleDateString("en-US", { weekday: "short" })
-                .toUpperCase();
-            const dateBody = now
-                .toLocaleDateString("en-GB", {
-                    day: "numeric",
-                    month: "short",
-                    year: "numeric",
-                })
-                .toUpperCase();
-
-            setDateTime({
-                timeStr: time,
-                dateStr: `${weekday}, ${dateBody}`,
-            });
+            setTimeStr(now.toLocaleTimeString());
+            setDateStr(now.toLocaleDateString());
         };
 
-        // Instantiate execution immediately upon browser mount to minimize blank frame delays
+        // Set the initial values immediately on mount
         updateDateTime();
-        const timer = setInterval(updateDateTime, 1000);
 
-        // Eject structural thread bindings to completely eliminate potential memory leaks during unmount actions
+        // Start the chronological clock cycle track loop
+        const timer = setInterval(updateDateTime, 1000);
         return () => clearInterval(timer);
     }, []);
 
-    return dateTime;
+    return { timeStr, dateStr };
 }

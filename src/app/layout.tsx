@@ -19,9 +19,9 @@ export default function RootLayout({
 }) {
     // Array maps centralizing application directories for easy route configuration updates
     const pagesConfig: LabelLink[] = [
-        { label: "Home", link: "/" },
-        { label: "Project", link: "/project" },
-        { label: "Blog", link: "/blog" },
+        { label: "HOME", link: "/" },
+        { label: "PROJECT", link: "/project" },
+        { label: "BLOG", link: "/blog" },
     ];
 
     const brandConfig: LabelLink = {
@@ -30,7 +30,7 @@ export default function RootLayout({
     };
 
     // Stacked token arrays isolate baseline global layout and typographic styles
-    const bodyClasses = [
+    const base = [
         "antialiased min-h-screen",
         "bg-bg text-fg",
         "font-mono",
@@ -38,7 +38,7 @@ export default function RootLayout({
 
     return (
         <html lang="en">
-            <body className={bodyClasses}>
+            <body className={base}>
                 <Waybar pages={pagesConfig} brand={brandConfig} />
                 {children}
             </body>
