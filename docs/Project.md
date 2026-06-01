@@ -12,30 +12,31 @@ addBtn.onclick = async () => {
     const qa = app.plugins.plugins.quickadd?.api;
     if (!qa) return new Notice("QuickAdd plugin not found!");
 
-	const name     = await qa.inputPrompt("Project Name");
+    const name     = await qa.inputPrompt("Project Name");
     if (!name) return;
     const description     = await qa.inputPrompt("Description ");   
     const tags      = await qa.inputPrompt("Tags"); 
-    const date  = await qa.inputPrompt("Date (YYYY-MM-DD)", moment().format("YYYY-MM-DD"));
+    
+    const date  = await qa.inputPrompt("Date (DD MMMM YYYY)", moment().format("DD MMMM YYYY"));
     const url     = await qa.inputPrompt("URL");
 
     const fileName  = `${name}`.trim();
 
-	let formattedTags = "";
-	if (tags && tags.trim().length > 0) {
-	    formattedTags = tags.split(",")    
-	        .map(t => t.trim())            
-	        .filter(t => t.length > 0)
-	        .map(t => `\n  - ${t}`)
-	        .join("");
-	} else {
-	    formattedTags = "\n  -";
-	}
+    let formattedTags = "";
+    if (tags && tags.trim().length > 0) {
+        formattedTags = tags.split(",")    
+            .map(t => t.trim())            
+            .filter(t => t.length > 0)
+            .map(t => `\n  - ${t}`)
+            .join("");
+    } else {
+        formattedTags = "\n  -";
+    }
     
     const content   = `---
 description: ${description}
 tags: ${formattedTags}
-date: ${date}
+date: "${date}"
 url: ${url}
 ---`;
 
@@ -51,7 +52,7 @@ url: ${url}
 TABLE 
     choice(length(description) > 50, substring(description, 0, 50) + "...", description) AS Description,
     file.tags AS Tags,
-    dateformat(date, "MMMM yyyy") AS Date,
+    date AS Date,
     url AS URL
 FROM ""
 WHERE file.folder = this.file.folder + "/project"

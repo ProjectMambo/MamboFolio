@@ -1,9 +1,9 @@
 ---
 description: A modern font designed for consistent layout.
-tags: 
+tags:
   - SVG
   - TTF
   - Inkscape
-date: 2026-05-12
+date: 12 May 2026
 url: https://github.com/ProjectMambo/MamboFont
 ---

@@ -31,6 +31,11 @@ Before running or building the project locally, ensure you have the following in
  - **[Git](https://git-scm.com/)** - Version control system used to clone and manage this repository.
  - **[ProjectMambo/MamboColour](https://github.com/ProjectMambo/MamboColour)** - The centralized color palette layout configuration dependency.
 
+### Quick Start
+Clone the repository
+```bash
+git clone https://github.com/ProjectMambo/MamboFolio
+```
 
 ### Install Prerequisites
 

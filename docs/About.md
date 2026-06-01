@@ -1,9 +1,36 @@
 ## Who is Solomon?
-Hi, maybe you've noticed, my name is **Solomon**, or maybe you haven't because the big banner at the start of the page isn't big enough for you. Nevertheless, my name is still Solomon, from King Solomon in the bible. I wasn't always Solomon, I'm from Malaysia and our Chinese community there mostly follow their fathers' surname, in my case Koh, in addition to that I was given the name Sheng Jun at birth, so my full name is **Koh Sheng Jun**, or 柯胜钧 in Mandirin. It's the only name that'd most probably followed me until the end of my life or so I thought. It was always a thing in my mind to have an English name, but there wasn't really any good opportunity to get one, until I started studying in Singapore. Singapore is a nation whose main language is English, while Mandarin is still viable here but English is the more widely used language. Now what does this fact has to do with me having an English name, it's because I think they are easier to remember, instead of Sheng Jun, it's easier to memorise the name Solomon *(at least to me)*. That's the origin of my name, Solomon.
-Why Solomon? What's the matter with this name. It represents the two traits I've been chasing for, **wisdom and peace**. It is a symbol that'll guide me towards the goals in my life.
+
+Hi, maybe you've noticed, my name is **Solomon**, or maybe you haven't because the big banner at the start of the page isn't big enough for you. Nevertheless, my name is still **Solomon**. Knowing my name is not sufficient to understand me *(hopefully)*, so it's rewind time.
+
+**Will Smith:** *"Ahh, that's hot."*
+
+*(Those rolling tape scene that movies use to roll back time)*
+
+It's **May 2025**, 7 months since I graduated high school. All my friends have already gotten their admission letter for their desired university, leaving me there alone with a single rejection letter *(why NTU, why)* and hoping for an acceptance from my other applications. It was a long wait, but I finally got it. Fortunately, it was an acceptance letter from **NUS** and not a rejection letter that I planned to reject *(UNO reverse)*. That's why as of the time I'm writing this (May 2026), I'm a year 1 student waiting for year 2 to start.
+
+*(Rolling back again)*
+
+Going back to **February 2023**, this is when me and books intersect, it's when I started my reading journey. As an avid reader, I must say reading is a great way to transform your life, it let you learn way more then you expected, from history to science, from culture to philosophy, and much much more, all within pages.
+
+Personally, I mainly read **nonfiction**, books about history like *Guns, Germs, and Steel*, or culture like *The Chrysanthemum and the Sword*, and also science books. I also like biographies, books about *Oppenheimer* or *Napoleon* for example. Occasionally, I dip into some **fiction** like *The Setting Sun*. Now, I love to read books on **philosophy and self-help**, for instance, *The Let Them Theory* and *The Courage to Be Disliked*. These are all great books that influenced my life and my view.
+
+*(Rolling back thrice)*
+
+The start of the year **2019**, was a whole new chapter to my life, I started my 6 year non-stop grind at **Foon Yew High School** *(It's named High School but in reality it's a middle school, why)*. Dreams sprouted, growth happened, changes occurred, this was a crucial period in my life, I met my friends, I picked up reading, I contributed to my classes and club, I learnt under the teachings of such great teachers. There were laughs, sorrows, friendships, memories, and youth. Great times, huh?
+
+*(Rolling back like how Sisyphus did)*
+
+**2014**, the year of ice buckets *(did they chopped up North Pole or smth)*, I was 8 years old. What happened was my dad installed **Minecraft** on our family computer, it may not be the legit version, but it's 100 times better than the real one, in my heart. I had been a Minecraft fan since I was like 5 or 6 *(maybe 6 or 7)*, watching Minecraft legends like *PopularMMOs* and *Ssundee* everyday after school, it had always been a dream to play the game myself, and my dad made it come true *(thanks dad)*. Now that I'm an adult, I have the legit version to support them, I still enjoy playing the game, but nothing can ever replace those time.
+
+*(Rolling in the deep~ again)*
+
+**2 December 2006**, a clinic in Johor Bahru, Malaysia, has a woman whose been carrying a baby for months, finally gave birth to her son *(thanks mom)*. The infant was given the name **柯胜钧** or **Koh Sheng Jun** in Malay and English. Yup, it's me *(obviously)*. This is the story of me, at least for now.
 
 ## Current Work
-Working on Project Mambo
 
-## Philosophy
-People are always seeking happiness, but happiness comes with sadness, there aren't waves without crests and troughs, there aren't straight lines with ups and downs *(unless you're in a non-Euclidean space)*. Maybe the answer all along is peace.
+- Currently working on **Project Mambo**, a series of stuff.
+    
+- And also **Cod**, my *Orbital 26* project with my friend, Jeremy.
+    
+
+*(See more in project page)*

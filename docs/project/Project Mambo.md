@@ -1,11 +1,11 @@
 ---
 description: A design-driven ecosystem of optimized Unix configurations, unified palettes, and automated dotfile deployment architectures.
-tags: 
+tags:
   - ArchLinux
   - Hyprland
   - Wayland
   - Zsh
-date: 2026-05-12
+date: 12 May 2026
 url: https://projectmambo.org/
 ---
 ## The Genesis

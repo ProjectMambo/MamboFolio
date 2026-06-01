@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { LabelLink } from "@/components/Interfaces";
-import Waybar from "@/modules/Waybar";
+import Waybar from "@/modules/Bar";
 import "@/styles/globals.css";
+
+import { Entry } from "@/components/Interfaces";
 
 export const metadata: Metadata = {
     title: "KohKohNut",
@@ -18,28 +19,17 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     // Array maps centralizing application directories for easy route configuration updates
-    const pagesConfig: LabelLink[] = [
+    const navConfig = [
+        { label: "KOHKOHNUT", link: "/" },
         { label: "HOME", link: "/" },
         { label: "PROJECT", link: "/project" },
         { label: "BLOG", link: "/blog" },
-    ];
-
-    const brandConfig: LabelLink = {
-        label: "KOHKOHNUT",
-        link: "/",
-    };
-
-    // Stacked token arrays isolate baseline global layout and typographic styles
-    const base = [
-        "antialiased min-h-screen",
-        "bg-bg text-fg",
-        "font-mono",
-    ].join(" ");
+    ] as const satisfies Entry[];
 
     return (
         <html lang="en">
-            <body className={base}>
-                <Waybar pages={pagesConfig} brand={brandConfig} />
+            <body className="antialiased min-h-screen bg-bg text-fg font-mono">
+                <Waybar navItems={navConfig} />
                 {children}
             </body>
         </html>

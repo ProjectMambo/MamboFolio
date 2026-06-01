@@ -1,90 +1,40 @@
-import ProjectGrid from "@/modules/ProjectGrid";
-import BlogList from "@/modules/BlogList";
-import NavButton from "@/components/NavButton";
-import Heading from "@/components/markdown/Heading";
-import Markdown from "@/modules/Markdown";
+import path from "path";
+
+import Page from "@/modules/Page";
+import Text from "@/components/Text";
+import Button from "@/components/Button";
+import CardView from "@/modules/CardView";
+import { parseMarkdownFile } from "@/components/markdown/MarkdownParser";
+
+import { projectConfig } from "@/constants/projects";
+import { blogConfig } from "@/constants/blogs";
 
 export default function Home() {
-    // Keep data structures easy to expand, modify, or fetch from endpoints later
-    const projectList = [
-        {
-            project: {
-                label: "Project Mambo",
-                link: "/project/project-mambo?from=home",
-                description:
-                    "A design-driven ecosystem of optimized Unix configurations, unified palettes, and automated dotfile deployment architectures.",
-            },
-            colour: "var(--color-shale-green)",
-        },
-        {
-            project: {
-                label: "MamboDot",
-                link: "/project/mambodot?from=home",
-                description:
-                    "A GNU Stow-managed dotfiles repository optimised for speed and consistent styling.",
-            },
-            colour: "var(--color-apricot-dust)",
-        },
-        {
-            project: {
-                label: "MamboFolio",
-                link: "/project/mambofolio?from=home",
-                description:
-                    "A responsive portfolio website built with Next.js and Tailwind CSS.",
-            },
-            colour: "var(--color-charred-root)",
-        },
-    ];
+    const content = [
+        parseMarkdownFile(path.join(process.cwd(), "docs", "About.md")),
 
-    const blogList = [
-        {
-            blog: {
-                label: "Test",
-                link: "/blog/test?from=home",
-                description: "test",
-                date: "20-05-2026",
-            },
-        },
-        {
-            blog: {
-                label: "Test",
-                link: "https",
-                description: "test",
-                date: "20-05-2026",
-            },
-        },
-    ];
+        <Text key="Project" label="Project" type="header" level={1} />,
+        <CardView
+            key="ProjectView"
+            cardItems={projectConfig.slice(0, 3)}
+            view="grid"
+        />,
+        <div key="ProjectSeeMore" className="flex justify-center py-px">
+            <Button label="See More" link="/project" bg="muted" text="light" />
+        </div>,
 
-    return (
-        <main className="c-page-layout">
-            <Heading title="About" level="h1" />
-            <Markdown path="About" variant="main" showTitle={false} />
+        <Text key="Blog" label="Blog" type="header" level={1} />,
+        <CardView
+            key="BlogView"
+            cardItems={blogConfig.slice(0, 3)}
+            view="list"
+        />,
+        <div key="BlogSeeMore" className="flex justify-center py-px">
+            <Button label="See More" link="/blog" bg="muted" text="light" />
+        </div>,
 
-            <Heading title="Project" level="h1" />
-            <ProjectGrid items={projectList} />
-            <div className="flex justify-center py-px">
-                <NavButton
-                    button={{ label: "See More", link: "/project" }}
-                    defaultBorder={true}
-                />
-            </div>
-
-            <Heading title="Blog" level="h1" />
-            <BlogList items={blogList} />
-            <div className="flex justify-center py-px">
-                <NavButton
-                    button={{ label: "See More", link: "/blog" }}
-                    defaultBorder={true}
-                />
-            </div>
-
-            <Heading title="Contact" level="h1" />
-            <div className="flex justify-center py-px">
-                <NavButton
-                    button={{ label: "kohkohnut1202@gmail.com", link: "mailto:kohkohnut1202@gmail.com" }}
-                    defaultBorder={true}
-                />
-            </div>
-        </main>
-    );
+        <Text key="Contact" label="Contact" type="header" level={1} />,
+        <div key="ContactContent" className="flex flex-col"></div>,
+    ].flat();
+    return <Page nodes={content} />;
 }

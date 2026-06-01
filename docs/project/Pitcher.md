@@ -4,6 +4,6 @@ tags:
   - Game
   - UE5
   - Platformer
-date: 2025-01-20
+date: 20 January 2025
 url: https://kokonattsustudio.itch.io/pitcher
 ---

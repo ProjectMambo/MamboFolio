@@ -4,6 +4,6 @@ import Page from "@/modules/Page";
 import { parseMarkdownFile } from "@/components/markdown/MarkdownParser";
 
 export default function GeneratedPage() {
-  const nodes = parseMarkdownFile(path.join(process.cwd(), "docs", "project/MamboSite.md"));
+  const nodes = parseMarkdownFile(path.join(process.cwd(), "docs", "project/Cod.md"));
   return <Page nodes={nodes} />;
 }

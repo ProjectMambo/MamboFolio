@@ -1,9 +1,9 @@
 ---
 description: A responsive portfolio website built with Next.js and Tailwind CSS.
-tags: 
+tags:
   - NextJs
   - TailwindCSS
   - GithubPage
-date: 2026-05-12
+date: 12 May 2026
 url: https://github.com/ProjectMambo/MamboFolio
 ---
