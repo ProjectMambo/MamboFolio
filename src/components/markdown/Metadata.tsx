@@ -16,7 +16,7 @@ import Divider from "@/components/Divider";
  */
 interface MetadataData {
     description?: string;
-    tag?: string | string[];
+    tags?: string | string[];
     date?: string;
     url?: string;
 }
@@ -41,29 +41,31 @@ interface MetadataProps {
  * @returns {JSX.Element} A layout block displaying the populated document properties, appended with a structural divider.
  */
 export default function Metadata({ data }: MetadataProps) {
-    const { description, tag, date, url } = data;
-    const tags = Array.isArray(tag) ? tag : tag ? [tag] : [];
+    const { description, tags, date, url } = data;
+    const tagsArr = Array.isArray(tags) ? tags : tags ? [tags] : [];
     const router = useRouter();
 
-    const hasMetadata = date || description || tags.length > 0 || url;
+    const hasMetadata = date || description || tagsArr.length > 0 || url;
 
     return (
         <div className="flex flex-col gap-3 w-full">
-            {date && <Text type="date" label={date} />}
-            {description && <Text type="description" label={description} />}
-            {tags.length > 0 && (
+            {date && <Text label={date} type="date" />}
+            {description && <Text label={description} type="description" />}
+            {tagsArr.length > 0 && (
                 <div className="flex flex-row flex-wrap gap-2">
-                    {tags.map((t) => (
-                        <span
+                    {tagsArr.map((t) => (
+                        <Text
                             key={t}
-                            className="font-mono text-xs uppercase px-2 py-0.5 border border-border text-fg-muted"
-                        >
-                            {t}
-                        </span>
+                            label={t}
+                            type="description"
+                            as="span"
+                            border="light"
+                            bg="light"
+                        />
                     ))}
                 </div>
             )}
-            {url && <Text type="url" label={url} link={url} />}
+            {url && <Text label={url} link={url} type="url" />}
 
             {hasMetadata && (
                 <>

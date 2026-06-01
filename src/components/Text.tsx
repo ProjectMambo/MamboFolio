@@ -40,12 +40,17 @@ const TextLayout = cva("", {
             bold: "font-bold",
             italics: "italic",
         },
+        border: {
+            none: "",
+            light: "py-1 px-2",
+        },
     },
     defaultVariants: {
         type: "paragraph",
         level: "none",
         size: "md",
         formatting: "none",
+        border: "none",
     },
 });
 
@@ -55,6 +60,14 @@ const TextLayout = cva("", {
  */
 const TextTheme = cva("c-transition", {
     variants: {
+        border: {
+            none: "",
+            light: "border border-border",
+        },
+        bg: {
+            none: "",
+            light: "bg-bg-surface",
+        },
         color: {
             none: "",
             important:
@@ -67,7 +80,7 @@ const TextTheme = cva("c-transition", {
             link: "text-brand hover:text-brand-hover selection:text-berry-bramble selection:bg-dusty-mauve",
         },
     },
-    defaultVariants: { color: "primary" },
+    defaultVariants: { border: "none", bg: "none", color: "primary" },
 });
 
 /**
@@ -164,7 +177,7 @@ interface TextProps
  * @public
  * @param {TextProps} props - Typography tokens, semantic overrides, interactive classes, and string structures.
  * @param {string} [props.label] - Inline layout string evaluated when explicit sub-elements are omitted.
- * @property {string} [href] - Anchor destination resolved when the structural type resolves to a url token.
+ * @param {string} [link] - Anchor destination resolved when the structural type resolves to a url token.
  * @param {React.ReactNode} [props.children] - Main document trees or rich formatting elements inside the container.
  * @param {keyof React.JSX.IntrinsicElements} [props.as] - Explicit semantic HTML tag override to handle custom layout needs.
  * @param {string} [props.className] - Dynamic class chains combined into the wrapper element via tailwind-merge.
@@ -186,6 +199,8 @@ export default function Text({
     size,
     formatting,
     color,
+    border,
+    bg,
 }: TextProps) {
     const lookupKey =
         type === "header" && level !== "none" ? `${type}_${level}` : type;
@@ -208,8 +223,9 @@ export default function Text({
             size: finalSize,
             level,
             formatting: finalFormatting,
+            border,
         }),
-        TextTheme({ color: finalColor }),
+        TextTheme({ border, bg, color: finalColor }),
         className,
     );
 

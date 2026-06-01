@@ -3,6 +3,6 @@ description: A modern and premium colour palette collection with parsers for dif
 tags:
   - CSV
   - ShellScript
-date: 12 May 2026
+date: May 2026 - Present
 url: https://github.com/ProjectMambo/MamboColour
 ---

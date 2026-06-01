@@ -4,7 +4,7 @@ tags:
   - ArchLinux
   - Hyprland
   - GNUstow
-date: 12 May 2026
+date: May 2026 - Present
 url: https://github.com/ProjectMambo/MamboDot
 ---
 # The Genesis

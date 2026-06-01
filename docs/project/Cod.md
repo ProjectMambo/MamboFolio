@@ -4,6 +4,6 @@ tags:
   - NextJS
   - TailwindCSS
   - Monaco
-date: 13 May 2026
+date: May 2026 - Present
 url:
 ---

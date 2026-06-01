@@ -7,9 +7,9 @@ import { Entry } from "@/components/Interfaces";
  */
 export const blogConfig = [
     {
-        label: "Test",
-        link: "/blog/test?from=home",
-        description: "tset",
-        date: "22 May 2026",
+        label: "The Beningging",
+        link: "/blog/the-beningging?from=home",
+        description: "In the beningging... In the... In the bening... In the beningging",
+        date: "01 June 2026",
     },
 ] as const satisfies Entry[];

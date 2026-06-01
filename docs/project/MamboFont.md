@@ -4,6 +4,6 @@ tags:
   - SVG
   - TTF
   - Inkscape
-date: 12 May 2026
+date: May 2026 - Present
 url: https://github.com/ProjectMambo/MamboFont
 ---
