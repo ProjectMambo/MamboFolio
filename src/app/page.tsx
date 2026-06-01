@@ -4,13 +4,24 @@ import Page from "@/modules/Page";
 import Text from "@/components/Text";
 import Button from "@/components/Button";
 import CardView from "@/modules/CardView";
+import Banner from "@/modules/Banner";
 import { parseMarkdownFile } from "@/components/markdown/MarkdownParser";
 
 import { projectConfig } from "@/constants/projects";
 import { blogConfig } from "@/constants/blogs";
+import { contactConfig } from "@/constants/contacts";
 
 export default function Home() {
     const content = [
+        <Banner
+            key="Banner"
+            src="/profile-square.jpg"
+            alt="Profile Cover"
+            header="Solomon"
+            paragraph='"But how could you live and have no story to tell?"'
+            footer="- Fyodor Dostoevsky"
+        />,
+
         parseMarkdownFile(path.join(process.cwd(), "docs", "About.md")),
 
         <Text key="Project" label="Project" type="header" level={1} />,
@@ -34,7 +45,13 @@ export default function Home() {
         </div>,
 
         <Text key="Contact" label="Contact" type="header" level={1} />,
-        <div key="ContactContent" className="flex flex-col"></div>,
+        <CardView
+            key="ContactView"
+            cardItems={contactConfig}
+            view="grid"
+            meta="hide"
+            entry="compact"
+        />,
     ].flat();
     return <Page nodes={content} />;
 }

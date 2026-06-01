@@ -4,6 +4,6 @@ tags:
   - NextJs
   - TailwindCSS
   - GithubPage
-date: May 2026 - Present
+date: 12 May 2026
 url: https://github.com/ProjectMambo/MamboFolio
 ---

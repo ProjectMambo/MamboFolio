@@ -7,6 +7,16 @@ import { Entry } from "@/components/Interfaces";
 export const metadata: Metadata = {
     title: "KohKohNut",
     description: "KohKohNut's website",
+
+    icons: {
+        icon: [
+            { url: "/icon.svg?v=2", type: "image/svg+xml" },
+            { url: "/icon.png?v=2", type: "image/png", sizes: "512x512" },
+        ],
+        apple: [
+            { url: "/apple-icon.png?v=2", sizes: "180x180", type: "image/png" },
+        ],
+    },
 };
 
 /**

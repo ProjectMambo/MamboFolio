@@ -48,8 +48,8 @@ const BarLayout = cva(
             },
             stack: {
                 always: "",
-                sm: "md:flex-row",
-                md: "lg:flex-row",
+                sm: "sm:flex-row",
+                md: "md:flex-row",
                 lg: "lg:flex-row",
                 xl: "xl:flex-row",
             },

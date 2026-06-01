@@ -22,31 +22,3 @@ Despite having my own setup, it's **not enough**, I wanted to step up my game, t
 What's the point with **Project Mambo**? Why do I need this project, can't I put all of them in one huge repository? Or why not just have some repositories for dedicated stuff and call it a day? This is what I called **the potential of branding**. Take Apple as an example, they could have named their phones 'applephone', then their laptop 'bananabooks', then instead of airpods, it's 'papayapods' and also 'watermelon watch' or 'coconutpad'. They're all based on fruits, so they all fit the theme right? No, they sound ridiculous. Or they could gave their items generic names like 'phone 17 pro max' or 'earpods' or 'watch 2 ultra' or even 'laptop', these are easy to understand names, do they sound good, NO! Here comes **the potential of branding**, they either slap an 'i' or 'apple' in front or they come up with some sort of name to a pre-existing technology or product, which makes no sense but people are buying it. Take iphone 17 pro max, strip the logo and the name, will people still buy it, probably yes, it's a great phone, but to what extend. What most people are buying is that one little bitten apple, that's called **branding**.
 
 That's what i want to do, it's not just a custom dotfiles setup, it's not just some simple websites, they are all **'Mambo'** projects. It's a whole ecosystem of tools and setups that all serve their own purposes. I also provided space to grow, in the future, I can migrate **MamboDot** to Komorebi and make a Windows version, or I can make a media player, or a finance tracker, or useful tools that you don't recognise but play crucial roles in your day-to-day computer experience. Then slap a **'Mambo'** in front and they all become parts of the system. That's the **philosophy** behind this project.
-
-### Final Impact
-
-## Technical Choices
-
-### The Trade-offs
-
-### Self-Imposed Limits
-
-## Blueprint & Design
-
-### Behind the Architecture
-
-### Interaction Details
-
-## Technical Challenges
-
-### Where It Broke
-
-### The Investigation
-
-### The Pivot
-
-## Looking Back
-
-### The Clean Rebuild
-
-### Next Iteration

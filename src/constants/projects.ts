@@ -28,6 +28,18 @@ export const projectConfig = [
         color: "var(--color-charred-root)",
     },
     {
+        label: "Cod",
+        link: "/project/cod?from=home",
+        description: "Orbital 26 project",
+        color: "var(--color-outback-sky)",
+    },
+    {
+        label: "Pitcher",
+        link: "/project/pitcher?from=home",
+        description: "A simple voice-controlled platformer game.",
+        color: "var(--color-ember-glow)",
+    },
+    {
         label: "MamboColour",
         link: "/project/mambocolour?from=home",
         description:
@@ -46,17 +58,5 @@ export const projectConfig = [
         link: "/project/mambofont?from=home",
         description: "A modern font designed for consistent layout.",
         color: "var(--color-dusk-shadow)",
-    },
-    {
-        label: "Pitcher",
-        link: "/project/pitcher?from=home",
-        description: "A simple voice-controlled platformer game.",
-        color: "var(--color-ember-glow)",
-    },
-    {
-        label: "Cod",
-        link: "/project/cod?from=home",
-        description: "Orbital 26 project",
-        color: "var(--color-outback-sky)",
     },
 ] as const satisfies Entry[];

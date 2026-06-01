@@ -7,8 +7,19 @@ import Divider from "@/components/Divider";
 import Canvas from "@/components/Canvas";
 
 /**
+ * Resolves whether a given path string targets an external network resource
+ * or an internal application routing destination.
+ */
+const isExternalLink = (href: string) =>
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("//");
+
+/**
  * Manages foundational structural dimensions, flex alignments, and distinct layout
  * behaviors mapping to grid boxes or vertical list layout sequences.
+ * The meta variant is grid-exclusive and controls canvas header visibility;
+ * it carries no structural effect in list display orientations.
  */
 const CardLayout = cva(
     [
@@ -23,8 +34,12 @@ const CardLayout = cva(
                 grid: "border-2",
                 list: "border-t-2 border-l-2 border-r-2",
             },
+            meta: {
+                show: "",
+                hide: "",
+            },
         },
-        defaultVariants: { view: "grid" },
+        defaultVariants: { view: "grid", meta: "show" },
     },
 );
 
@@ -60,7 +75,7 @@ const CardTheme = cva("", {
  * @extends {VariantProps<typeof CardLayout>} Inherits layout variant options ('view').
  * @extends {VariantProps<typeof CardTheme>} Inherits aesthetic theme choices ('border', 'bg', 'text').
  * @property {string} label - The main structural headline text displayed on the component.
- * @property {string} link - Navigation route string processed by the root Link routing container.
+ * @property {string} link - Navigation route string or external URL. Internal paths use Next.js Link; external URLs render as anchor tags with safe rel attributes.
  * @property {string} [description] - Extended summary or body text snippet.
  * @property {string} [date] - Chronological context display string.
  * @property {string} [color] - Custom backing paint code provided to the internal decoration Canvas.
@@ -70,6 +85,7 @@ interface CardProps
     extends VariantProps<typeof CardLayout>, VariantProps<typeof CardTheme> {
     label: string;
     link: string;
+    canvas?: string;
     description?: string;
     date?: string;
     color?: string;
@@ -83,12 +99,13 @@ interface CardProps
  * @public
  * @param {CardProps} props - Layout controls, navigational targets, and descriptive text fields for the Card element.
  * @param {string} props.label - Primary header information passed to the card interface.
- * @param {string} props.link - Navigation target location processed by Next.js routing structures.
+ * @param {string} link - Navigation route string or external URL. Internal paths use Next.js Link; external URLs render as anchor tags with safe rel attributes.
  * @param {string} [props.description] - Complementary summary string restricted via responsive layout clamps.
  * @param {string} [props.date] - Optional timeline stamp targeting the core sub-components.
  * @param {string} [props.color] - Custom theme identifier fallbacks parsed when building deep design backgrounds.
  * @param {string} [props.className] - Override styling tags combined into the parent block element.
  * @param {"grid" | "list"} [props.view="grid"] - Layout strategy altering item dividers and content placement rules.
+ * @param {"show" | "hide"} [props.meta="show"] - Grid-exclusive metadata banner toggle. Hides the metadata block banner when set to hide.
  * @param {"light" | "muted" | "none"} [props.border="light"] - Boundary outline configurations managing state changes.
  * @param {"light" | "muted" | "none"} [props.bg="light"] - Layer background theme configurations.
  * @param {"dark" | "light" | "muted"} [props.text="dark"] - Font variant system color parameters.
@@ -102,17 +119,19 @@ export default function Card({
     color,
     className,
     view,
+    meta,
     border,
     bg,
     text,
 }: CardProps) {
+    const showMeta = view === "list" || meta === "show";
     const combined = twMerge(
-        CardLayout({ view }),
+        CardLayout({ view, meta }),
         CardTheme({ border, bg, text }),
         className,
     );
-
     const canvasColor = color ? color : "var(--color-brand)";
+    const external = isExternalLink(link);
 
     const viewConfig = {
         grid: {
@@ -120,10 +139,12 @@ export default function Card({
             header: (
                 <div className="">
                     <Canvas
-                        label={date ? date : label.substring(0, 15)}
+                        label={date || label.substring(0, 15)}
                         color={canvasColor}
                     />
-                    <Divider orientation="horizontal" margin="none" />
+                    {showMeta ? (
+                        <Divider orientation="horizontal" margin="none" />
+                    ) : null}
                 </div>
             ),
             footer: null,
@@ -138,30 +159,51 @@ export default function Card({
     const active =
         viewConfig[view as keyof typeof viewConfig] || viewConfig.list;
 
+    const inner = (
+        <>
+            {active.header}
+            {showMeta ? (
+                <div className="flex flex-col w-full px-3 py-3 pt-4">
+                    {view !== "grid" && date && (
+                        <Text label={date} type="date" />
+                    )}
+                    <Text
+                        label={label}
+                        className="selection:text-crimson-creek selection:bg-wildfire"
+                        type="header"
+                        level={2}
+                        color="none"
+                    />
+                    {description && (
+                        <Text
+                            label={description}
+                            className={`${active.clamp} justify-none`}
+                            type="description"
+                            size="md"
+                        />
+                    )}
+                </div>
+            ) : null}
+            {active.footer}
+        </>
+    );
+
+    if (external) {
+        return (
+            <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={combined}
+            >
+                {inner}
+            </a>
+        );
+    }
+
     return (
         <Link href={link} className={combined}>
-            {active.header}
-
-            <div className="flex flex-col w-full px-3 py-3 pt-4">
-                {view !== "grid" && date && <Text label={date} type="date" />}
-                <Text
-                    label={label}
-                    className="selection:text-crimson-creek selection:bg-wildfire"
-                    type="header"
-                    level={2}
-                    color="none"
-                />
-                {description && (
-                    <Text
-                        label={description}
-                        className={`${active.clamp} justify-none`}
-                        type="description"
-                        size="md"
-                    />
-                )}
-            </div>
-
-            {active.footer}
+            {inner}
         </Link>
     );
 }
