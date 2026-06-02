@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Waybar from "@/modules/Bar";
+import Bar from "@/modules/Bar";
 import "@/styles/globals.css";
 
 import { Entry } from "@/components/Interfaces";
@@ -34,12 +34,13 @@ export default function RootLayout({
         { label: "HOME", link: "/" },
         { label: "PROJECT", link: "/project" },
         { label: "BLOG", link: "/blog" },
+        { label: "GALLERY", link: "/gallery" },
     ] as const satisfies Entry[];
 
     return (
         <html lang="en">
             <body className="antialiased min-h-screen bg-bg text-fg font-mono">
-                <Waybar navItems={navConfig} />
+                <Bar navItems={navConfig} />
                 {children}
             </body>
         </html>

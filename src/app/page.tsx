@@ -10,6 +10,7 @@ import { parseMarkdownFile } from "@/components/markdown/MarkdownParser";
 import { projectConfig } from "@/constants/projects";
 import { blogConfig } from "@/constants/blogs";
 import { contactConfig } from "@/constants/contacts";
+import { galleryConfig } from "@/constants/gallery";
 
 export default function Home() {
     const content = [
@@ -42,6 +43,16 @@ export default function Home() {
         />,
         <div key="BlogSeeMore" className="flex justify-center py-px">
             <Button label="See More" link="/blog" bg="muted" text="light" />
+        </div>,
+
+        <Text key="Gallery" label="Gallery" type="header" level={1} />,
+        <CardView
+            key="GalleryView"
+            cardItems={galleryConfig.slice(0, 3)}
+            view="grid"
+        />,
+        <div key="GallerySeeMore" className="flex justify-center py-px">
+            <Button label="See More" link="/gallery" bg="muted" text="light" />
         </div>,
 
         <Text key="Contact" label="Contact" type="header" level={1} />,

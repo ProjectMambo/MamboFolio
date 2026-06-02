@@ -2,6 +2,7 @@ import { twMerge } from "tailwind-merge";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import Link from "next/link";
+import Image from "next/image";
 import Text from "@/components/Text";
 import Divider from "@/components/Divider";
 import Canvas from "@/components/Canvas";
@@ -76,6 +77,7 @@ const CardTheme = cva("", {
  * @extends {VariantProps<typeof CardTheme>} Inherits aesthetic theme choices ('border', 'bg', 'text').
  * @property {string} label - The main structural headline text displayed on the component.
  * @property {string} link - Navigation route string or external URL. Internal paths use Next.js Link; external URLs render as anchor tags with safe rel attributes.
+ * @property {string} [image] - Optional path to a public folder image displayed in place of the Canvas block in grid view.
  * @property {string} [description] - Extended summary or body text snippet.
  * @property {string} [date] - Chronological context display string.
  * @property {string} [color] - Custom backing paint code provided to the internal decoration Canvas.
@@ -85,7 +87,7 @@ interface CardProps
     extends VariantProps<typeof CardLayout>, VariantProps<typeof CardTheme> {
     label: string;
     link: string;
-    canvas?: string;
+    image?: string;
     description?: string;
     date?: string;
     color?: string;
@@ -100,6 +102,7 @@ interface CardProps
  * @param {CardProps} props - Layout controls, navigational targets, and descriptive text fields for the Card element.
  * @param {string} props.label - Primary header information passed to the card interface.
  * @param {string} link - Navigation route string or external URL. Internal paths use Next.js Link; external URLs render as anchor tags with safe rel attributes.
+ * @param {string} [image] - Optional path to a public folder image displayed in place of the Canvas block in grid view.
  * @param {string} [props.description] - Complementary summary string restricted via responsive layout clamps.
  * @param {string} [props.date] - Optional timeline stamp targeting the core sub-components.
  * @param {string} [props.color] - Custom theme identifier fallbacks parsed when building deep design backgrounds.
@@ -114,6 +117,7 @@ interface CardProps
 export default function Card({
     label,
     link,
+    image,
     description,
     date,
     color,
@@ -138,10 +142,21 @@ export default function Card({
             clamp: "line-clamp-2",
             header: (
                 <div className="">
-                    <Canvas
-                        label={date || label.substring(0, 15)}
-                        color={canvasColor}
-                    />
+                    {image ? (
+                        <div className="relative w-full aspect-square">
+                            <Image
+                                src={image}
+                                alt={label}
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    ) : (
+                        <Canvas
+                            label={date || label.substring(0, 15)}
+                            color={canvasColor}
+                        />
+                    )}
                     {showMeta ? (
                         <Divider orientation="horizontal" margin="none" />
                     ) : null}

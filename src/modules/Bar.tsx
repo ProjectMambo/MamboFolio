@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, useRef, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -166,8 +166,26 @@ export default function Bar({
     hide: clockHide,
 }: BarProps) {
     const [brand, ...pages] = navItems;
-
     const isVisible = useScrollDirection(40);
+    const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [sameRow, setSameRow] = useState<boolean[]>([]);
+
+    useEffect(() => {
+        const checkRows = () => {
+            const rows = itemRefs.current.map(
+                (el) => el?.getBoundingClientRect().top ?? 0,
+            );
+            setSameRow(
+                rows.map(
+                    (top, i) => i < rows.length - 1 && top === rows[i + 1],
+                ),
+            );
+        };
+
+        checkRows();
+        window.addEventListener("resize", checkRows);
+        return () => window.removeEventListener("resize", checkRows);
+    }, [pages.length]);
 
     const barStyles = twMerge(
         BarLayout({ stack }),
@@ -176,19 +194,23 @@ export default function Bar({
 
     return (
         <header className={BarVisibility({ visible: isVisible })}>
-            <div className={barStyles}>
-                <nav className="flex flex-row items-center justify-between px-3">
+            <div className={twMerge(barStyles, "overflow-hidden")}>
+                <nav className="flex flex-row flex-wrap items-center justify-center px-3 gap-1">
                     {pages.map((item, index) => (
                         <Fragment key={`${item.label}-${item.link}`}>
-                            <Button
-                                label={item.label}
-                                link={item.link}
-                                border="muted"
-                                bg="muted"
-                            />
-                            {index < pages.length - 1 && (
-                                <Divider border="static" />
-                            )}
+                            <div
+                                ref={(el) => {
+                                    itemRefs.current[index] = el;
+                                }}
+                            >
+                                <Button
+                                    label={item.label}
+                                    link={item.link}
+                                    border="muted"
+                                    bg="muted"
+                                />
+                            </div>
+                            {sameRow[index] && <Divider border="static" />}
                         </Fragment>
                     ))}
                 </nav>

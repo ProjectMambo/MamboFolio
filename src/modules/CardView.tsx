@@ -18,9 +18,15 @@ type Blog = Entry & Required<Pick<Entry, "link" | "description" | "date">>;
 
 /**
  * Structural type enforcement ensuring contact entries provide explicit navigational
- * routing paths and canvas label.
+ * routing paths.
  */
 type Contact = Entry & Required<Pick<Entry, "link">>;
+
+/**
+ * Structural type enforcement ensuring gallery entries provide explicit navigational
+ * routing paths and a public folder image source.
+ */
+type Gallery = Entry & Required<Pick<Entry, "link" | "image">>;
 
 /**
  * Controls structural layout display configurations, shifting between vertical stacking
@@ -68,11 +74,11 @@ const CardLayout = cva("w-full", {
  * Interface representing the properties accepted by the CardView component.
  *
  * @interface CardViewProps
- * @extends {VariantProps<typeof CardLayout>} Inherits configuration variant choices ('view').
- * @property {Project[] | Blog[] | Contact[]} cardItems - Homogeneous collection of either validated project profiles, blog objects, or contact cards.
+ * @extends {VariantProps<typeof CardLayout>} Inherits configuration variant choices ('view', 'meta', 'entry').
+ * @property {Project[] | Blog[] | Contact[] | Gallery[]} cardItems - Homogeneous collection of validated entry records.
  */
 interface CardViewProps extends VariantProps<typeof CardLayout> {
-    cardItems: Project[] | Blog[] | Contact[];
+    cardItems: Project[] | Blog[] | Contact[] | Gallery[];
 }
 
 /**
@@ -82,7 +88,7 @@ interface CardViewProps extends VariantProps<typeof CardLayout> {
  *
  * @public
  * @param {CardViewProps} props - Layout arrangements and structured data records for the display viewport.
- * @param {Project[] | Blog[] | Contact[]} props.cardItems - Datasets targeted for conversion into separate content cards.
+ * @param {Project[] | Blog[] | Contact[] | Gallery[]} props.cardItems - Datasets targeted for conversion into separate content cards.
  * @param {"list" | "grid"} [props.view="list"] - Layout approach driving geometric organization rules.
  * @param {"show" | "hide"} [props.meta="show"] - Grid-exclusive metadata banner toggle. Hides the metadata block banner when set to hide.
  * @param {"normal" | "compact"} [props.entry="normal"] - Grid-exclusive density configuration controlling column counts and gap spacing. Has no effect in list view.
@@ -99,6 +105,7 @@ export default function CardView({
             {cardItems.map((item) => {
                 const itemDate = "date" in item ? item.date : undefined;
                 const itemColor = "color" in item ? item.color : undefined;
+                const itemImage = "image" in item ? item.image : undefined;
                 const itemDescription =
                     "description" in item ? item.description : undefined;
 
@@ -108,11 +115,12 @@ export default function CardView({
                         meta={meta}
                         key={`${item.label}-${item.link}`}
                         label={item.label}
-                        link={item.link}
+                        link={item.link ?? "#"}
+                        image={itemImage}
                         color={itemColor}
                         description={itemDescription}
                         date={itemDate}
-                        border={view == "list" ? "none" : undefined}
+                        border={view === "list" ? "none" : undefined}
                     />
                 );
             })}
