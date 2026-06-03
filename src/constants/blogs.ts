@@ -8,7 +8,7 @@ import { Entry } from "@/components/Interfaces";
 export const blogConfig = [
     {
         label: "The Beningging",
-        link: "/blog/the-beningging?from=home",
+        link: "/blog/the-beningging",
         description: "In the beningging... In the... In the bening... In the beningging",
         date: "01 June 2026",
     },

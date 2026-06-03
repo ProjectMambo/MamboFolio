@@ -3,6 +3,9 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { cva, type VariantProps } from "class-variance-authority";
 
+import Link from "next/link";
+import { isExternalLink } from "@/utils/linkChecker";
+
 /**
  * Manages typography layout systems, defining typographic leading scales, letter spacing,
  * structural content alignments, font family mappings, heading variations, text sizes,
@@ -11,13 +14,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 const TextLayout = cva("", {
     variants: {
         type: {
+            none: "",
             header: "leading-tight tracking-wide font-mono",
             paragraph: "leading-relaxed tracking-normal font-sans text-justify",
             description:
                 "leading-normal tracking-normal font-sans text-justify",
             date: "uppercase tabular-nums tracking-wider font-mono",
             time: "uppercase tabular-nums",
-            url: "underline underline-offset-2 tracking-normal font-mono break-all",
+            url: "underline underline-offset-2 tracking-normal font-mono break-all cursor-pointer",
         },
         level: {
             none: "",
@@ -77,7 +81,7 @@ const TextTheme = cva("c-transition", {
             secondary:
                 "text-fg-muted opacity-80 selection:text-dry-straw selection:bg-spinifex-gold",
             muted: "text-fg-muted opacity-60 selection:text-dry-moss selection:bg-pale-spinifex",
-            link: "text-brand hover:text-brand-hover selection:text-berry-bramble selection:bg-dusty-mauve",
+            link: "text-brand hover:text-brand-hover active:text-brand-hover selection:text-berry-bramble selection:bg-dusty-mauve",
         },
     },
     defaultVariants: { border: "none", bg: "none", color: "primary" },
@@ -88,6 +92,12 @@ const TextTheme = cva("c-transition", {
  * weight states, and visual contrast settings for various types of document tokens.
  */
 const typeConfig = {
+    none: {
+        tag: "span",
+        defaultSize: "none",
+        defaultFormatting: "none",
+        defaultColor: "none",
+    },
     header_1: {
         tag: "h1",
         defaultSize: "xxl",
@@ -204,6 +214,7 @@ export default function Text({
 }: TextProps) {
     const lookupKey =
         type === "header" && level !== "none" ? `${type}_${level}` : type;
+    const isExternal = isExternalLink(link ?? "");
 
     const {
         tag: Tag,
@@ -228,6 +239,14 @@ export default function Text({
         TextTheme({ border, bg, color: finalColor }),
         className,
     );
+
+    if (type === "url" && !isExternal && !as) {
+        return (
+            <Link href={link ?? "/"} className={combined}>
+                {children ?? label}
+            </Link>
+        );
+    }
 
     const anchorProps =
         FinalTag === "a"

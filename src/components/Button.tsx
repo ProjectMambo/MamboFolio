@@ -46,7 +46,7 @@ const ButtonLayout = cva(
  * and specific text contrast or branding emphasis variations across interaction cycles.
  */
 const ButtonTheme = cva(
-    "selection:text-burnt-ochre selection:bg-canyon-flash",
+    "selection:text-burnt-ochre selection:bg-canyon-flash cursor-pointer",
     {
         variants: {
             border: {

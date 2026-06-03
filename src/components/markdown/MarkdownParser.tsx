@@ -11,7 +11,7 @@ import Metadata from "@/components/markdown/Metadata";
 /**
  * Iterates through a flat array of inline markdown tokens and transforms them
  * into specialized React configuration nodes. Handles styles like emphasis,
- * bolding, and raw text layout.
+ * bolding, links, and raw text layout.
  *
  * @param {Token[]} tokens - The collection of marked inline lexer tokens to parse.
  * @param {string} parentKey - Unique identifier context inherited from the parent structural token.
@@ -25,33 +25,46 @@ function parseInlineTokens(
         .map((token, index) => {
             const key = `${parentKey}-inline-${index}`;
             switch (token.type) {
+                case "link":
+                    return (
+                        <Text key={key} type="url" link={token.href} size="md">
+                            <Text type="none" label={token.text} />
+                        </Text>
+                    );
+
                 case "strong":
                     return (
                         <Text
-                            label={token.text}
                             key={key}
                             type="paragraph"
                             formatting="bold"
                             as="strong"
-                        />
+                        >
+                            {token.tokens
+                                ? parseInlineTokens(token.tokens, key)
+                                : token.text}
+                        </Text>
                     );
                 case "em":
                     return (
                         <Text
                             key={key}
-                            label={token.text}
                             type="paragraph"
                             formatting="italics"
                             as="em"
-                        />
+                        >
+                            {token.tokens
+                                ? parseInlineTokens(token.tokens, key)
+                                : token.text}
+                        </Text>
                     );
                 case "text":
                     return (
                         <Text
                             key={key}
-                            label={token.raw}
                             type="paragraph"
                             as="span"
+                            label={token.raw}
                         />
                     );
                 default:

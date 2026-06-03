@@ -6,15 +6,7 @@ import Image from "next/image";
 import Text from "@/components/Text";
 import Divider from "@/components/Divider";
 import Canvas from "@/components/Canvas";
-
-/**
- * Resolves whether a given path string targets an external network resource
- * or an internal application routing destination.
- */
-const isExternalLink = (href: string) =>
-    href.startsWith("http://") ||
-    href.startsWith("https://") ||
-    href.startsWith("//");
+import { isExternalLink } from "@/utils/linkChecker";
 
 /**
  * Manages foundational structural dimensions, flex alignments, and distinct layout
@@ -48,7 +40,7 @@ const CardLayout = cva(
  * Handles container design system tokens, defining interactive border tracking,
  * background surfaces, and standard font color configurations during hover cycles.
  */
-const CardTheme = cva("", {
+const CardTheme = cva("cursor-pointer", {
     variants: {
         border: {
             none: "border-transparent hover:border-transparent active:border-transparent",
@@ -135,7 +127,7 @@ export default function Card({
         className,
     );
     const canvasColor = color ? color : "var(--color-brand)";
-    const external = isExternalLink(link);
+    const isExternal = isExternalLink(link);
 
     const viewConfig = {
         grid: {
@@ -203,7 +195,7 @@ export default function Card({
         </>
     );
 
-    if (external) {
+    if (isExternal) {
         return (
             <a
                 href={link}

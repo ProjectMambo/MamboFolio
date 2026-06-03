@@ -8,4 +8,4 @@ date: 01 June 2026
 
 Long Story short, that's all I have for this blog.
 
-*p.s. watch Pewdiepie's video about Odysseus, this guy is killing big Corp. in his boredom.*
+*p.s. watch Pewdiepie's video about [Odysseus](https://youtu.be/rAzT5lcezPs), this guy is killing big Corp. in his boredom.*

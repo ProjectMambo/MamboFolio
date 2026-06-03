@@ -27,7 +27,7 @@ The start of the year **2019**, was a whole new chapter to my life, I started my
 **2 December 2006**, a clinic in Johor Bahru, Malaysia, has a woman whose been carrying a baby for months, finally gave birth to her son *(thanks mom)*. The infant was given the Chinese name **柯胜钧** or **Koh Sheng Jun** in Malay and English. Yup, it's me *(obviously)*. This is the story of me, at least for now.
 
 ## Current Work
-Currently working on **Project Mambo**, a series of stuff. 
-And also **Cod**, my Orbital 26 project with my friend, Jeremy. 
+Currently working on **[Project Mambo](/project/project-mambo)**, a series of stuff. 
+And also **[Cod](/project/cod)**, my Orbital 26 project with my friend, Jeremy. 
 
-*(See more in project page)*
+*(See more in [project](/project) page)*

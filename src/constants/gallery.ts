@@ -8,17 +8,17 @@ import { Entry } from "@/components/Interfaces";
 export const galleryConfig = [
     {
         label: "KohKohNut",
-        link: "/gallery/kohkohnut?from=home",
+        link: "/gallery/kohkohnut",
         image: "/coconut.png",
     },
     {
         label: "Mambo",
-        link: "/gallery/mambo?from=home",
+        link: "/gallery/mambo",
         image: "/mambo.png",
     },
     {
         label: "Cod",
-        link: "/gallery/cod?from=home",
+        link: "/gallery/cod",
         image: "/cod.png",
     },
 ] as const satisfies Entry[];
