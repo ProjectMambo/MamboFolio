@@ -7,6 +7,7 @@ import CardView from "@/modules/CardView";
 import Banner from "@/modules/Banner";
 import { parseMarkdownFile } from "@/components/markdown/MarkdownParser";
 
+import { bannerConfig } from "@/constants/profile";
 import { projectConfig } from "@/constants/projects";
 import { blogConfig } from "@/constants/blogs";
 import { contactConfig } from "@/constants/contacts";
@@ -14,14 +15,7 @@ import { galleryConfig } from "@/constants/gallery";
 
 export default function Home() {
     const content = [
-        <Banner
-            key="Banner"
-            src="/profile-square.jpg"
-            alt="Profile Cover"
-            header="Solomon"
-            paragraph='"But how could you live and have no story to tell?"'
-            footer="- Fyodor Dostoevsky"
-        />,
+        <Banner key="Banner" {...bannerConfig} />,
 
         parseMarkdownFile(path.join(process.cwd(), "docs", "About.md")),
 

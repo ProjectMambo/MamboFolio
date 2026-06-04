@@ -195,6 +195,16 @@ export default function Bar({
     return (
         <header className={BarVisibility({ visible: isVisible })}>
             <div className={twMerge(barStyles, "overflow-hidden")}>
+                <Button
+                    label={brand.label}
+                    link={brand.link}
+                    className="uppercase"
+                    border="none"
+                    bg="none"
+                    text="brand"
+                    scale="none"
+                />
+
                 <nav className="flex flex-row flex-wrap items-center justify-center px-3 gap-1">
                     {pages.map((item, index) => (
                         <Fragment key={`${item.label}-${item.link}`}>
@@ -214,16 +224,6 @@ export default function Bar({
                         </Fragment>
                     ))}
                 </nav>
-
-                <Button
-                    label={brand.label}
-                    link={brand.link}
-                    className="uppercase"
-                    border="none"
-                    bg="none"
-                    text="brand"
-                    scale="none"
-                />
 
                 <div className={ClockVisibility({ hide: clockHide })}>
                     <Clock />

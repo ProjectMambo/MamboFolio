@@ -1,5 +1,9 @@
 import React from "react";
 
+import Footer from "@/components/page/Footer";
+import TableOfContents from "@/components/page/TableOfContents";
+import { footerConfig } from "@/constants/profile";
+
 /**
  * Interface representing the properties accepted by the Page component.
  *
@@ -22,10 +26,20 @@ interface PageProps {
  */
 export default function Page({ nodes }: PageProps) {
     return (
-        <article className="flex flex-col gap-y-5 min-h-screen max-w-5xl mx-auto p-8 md:p-16 bg-bg text-fg font-mono">
-            {nodes.map((node, index) => (
-                <React.Fragment key={index}>{node}</React.Fragment>
-            ))}
-        </article>
+        <>
+            <article
+                className="flex flex-col gap-y-5 min-h-screen max-w-5xl mx-auto p-8 md:p-16 bg-bg text-fg font-mono 
+                [&_h1]:scroll-mt-36 md:[&_h1]:scroll-mt-24 
+                [&_h2]:scroll-mt-36 md:[&_h2]:scroll-mt-24 
+                [&_h3]:scroll-mt-36 md:[&_h3]:scroll-mt-24"
+            >
+                {nodes.map((node, index) => (
+                    <React.Fragment key={index}>{node}</React.Fragment>
+                ))}
+                <Footer nodes={footerConfig} />
+            </article>
+
+            <TableOfContents />
+        </>
     );
 }

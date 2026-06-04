@@ -10,7 +10,7 @@ import Text from "@/components/Text";
  */
 const BannerLayout = cva(
     [
-        "w-full aspect-video",
+        "group w-full aspect-video",
         "flex flex-col gap-4 items-center justify-center",
         "c-transition",
     ].join(" "),

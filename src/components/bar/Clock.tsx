@@ -83,7 +83,7 @@ export default function Clock({ text, size, className }: ClockProps) {
     return (
         <div className={twMerge(ClockStyles({ text, size }), className)}>
             <Text label={dateStr} type="date" size="none" color="primary" />
-            <Divider margin="md" />
+            <Divider margin="md" border="static" />
             <Text label={timeStr} type="time" size="none" color="primary" />
         </div>
     );
