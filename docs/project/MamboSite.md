@@ -5,5 +5,6 @@ tags:
   - TailwindCSS
   - GithubPage
 date: May 2026 - Present
-url: https://github.com/ProjectMambo/MamboSite
+wikiUrl: 
+githubUrl: https://github.com/ProjectMambo/MamboSite
 ---

@@ -5,6 +5,7 @@ import Text from "@/components/Text";
 import Button from "@/components/Button";
 import CardView from "@/modules/CardView";
 import Banner from "@/modules/Banner";
+import Divider from "@/components/Divider";
 import { parseMarkdownFile } from "@/components/markdown/MarkdownParser";
 
 import { bannerConfig } from "@/constants/profile";
@@ -17,7 +18,19 @@ export default function Home() {
     const content = [
         <Banner key="Banner" {...bannerConfig} />,
 
+        <Divider
+            key="DividerBanner"
+            orientation="horizontal"
+            border="static"
+        />,
+
         parseMarkdownFile(path.join(process.cwd(), "docs", "About.md")),
+
+        <Divider
+            key="DividerAbout"
+            orientation="horizontal"
+            border="static"
+        />,
 
         <Text key="Project" label="Project" type="header" level={1} />,
         <CardView
@@ -29,6 +42,12 @@ export default function Home() {
             <Button label="See More" link="/project" bg="muted" text="light" />
         </div>,
 
+        <Divider
+            key="DividerProject"
+            orientation="horizontal"
+            border="static"
+        />,
+
         <Text key="Blog" label="Blog" type="header" level={1} />,
         <CardView
             key="BlogView"
@@ -39,6 +58,12 @@ export default function Home() {
             <Button label="See More" link="/blog" bg="muted" text="light" />
         </div>,
 
+        <Divider
+            key="DividerBlog"
+            orientation="horizontal"
+            border="static"
+        />,
+
         <Text key="Gallery" label="Gallery" type="header" level={1} />,
         <CardView
             key="GalleryView"
@@ -48,6 +73,12 @@ export default function Home() {
         <div key="GallerySeeMore" className="flex justify-center py-px">
             <Button label="See More" link="/gallery" bg="muted" text="light" />
         </div>,
+
+        <Divider
+            key="DividerGallery"
+            orientation="horizontal"
+            border="static"
+        />,
 
         <Text key="Contact" label="Contact" type="header" level={1} />,
         <CardView

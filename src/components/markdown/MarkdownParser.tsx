@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { marked, Token } from "marked";
 
 import Text from "@/components/Text";
+import Divider from "@/components/Divider";
 import Metadata from "@/components/markdown/Metadata";
 
 /**
@@ -109,6 +110,14 @@ export function parseMarkdownFile(filePath: string): React.ReactNode[] {
                                 `p-${index}`,
                             )}
                         </Text>
+                    );
+                case "hr":
+                    return (
+                        <Divider
+                            key={`div-${index}`}
+                            orientation="horizontal"
+                            border="static"
+                        />
                     );
                 default:
                     if ("text" in token) {

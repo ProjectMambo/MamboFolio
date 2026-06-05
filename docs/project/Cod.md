@@ -5,5 +5,6 @@ tags:
   - TailwindCSS
   - Monaco
 date: May 2026 - Present
-url:
+wikiUrl:
+githubUrl:
 ---

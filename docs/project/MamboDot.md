@@ -5,5 +5,6 @@ tags:
   - Hyprland
   - GNUstow
 date: May 2026 - Present
-url: https://github.com/ProjectMambo/MamboDot
+wikiUrl: 
+githubUrl: https://github.com/ProjectMambo/MamboDot
 ---

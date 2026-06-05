@@ -18,7 +18,8 @@ interface MetadataData {
     description?: string;
     tags?: string | string[];
     date?: string;
-    url?: string;
+    wikiUrl?: string;
+    githubUrl?: string;
 }
 
 /**
@@ -41,11 +42,12 @@ interface MetadataProps {
  * @returns {JSX.Element} A layout block displaying the populated document properties, appended with a structural divider.
  */
 export default function Metadata({ data }: MetadataProps) {
-    const { description, tags, date, url } = data;
+    const { description, tags, date, wikiUrl, githubUrl } = data;
     const tagsArr = Array.isArray(tags) ? tags : tags ? [tags] : [];
     const router = useRouter();
 
-    const hasMetadata = date || description || tagsArr.length > 0 || url;
+    const hasMetadata =
+        date || description || tagsArr.length > 0 || wikiUrl || githubUrl;
 
     return (
         <div className="flex flex-col gap-3 w-full">
@@ -65,7 +67,20 @@ export default function Metadata({ data }: MetadataProps) {
                     ))}
                 </div>
             )}
-            {url && <Text label={url} link={url} type="url" />}
+
+            {wikiUrl && (
+                <Text as="span">
+                    <Text label="Wiki: " type="description" as="span" />
+                    <Text label={wikiUrl} link={wikiUrl} type="url" />
+                </Text>
+            )}
+
+            {githubUrl && (
+                <Text as="span">
+                    <Text label="Github: " type="description" as="span" />
+                    <Text label={githubUrl} link={githubUrl} type="url" />
+                </Text>
+            )}
 
             {hasMetadata && (
                 <>

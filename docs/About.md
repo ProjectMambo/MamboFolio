@@ -26,6 +26,17 @@ The start of the year **2019**, was a whole new chapter to my life, I started my
 
 **2 December 2006**, a clinic in Johor Bahru, Malaysia, has a woman whose been carrying a baby for months, finally gave birth to her son *(thanks mom)*. The infant was given the Chinese name **柯胜钧** or **Koh Sheng Jun** in Malay and English. Yup, it's me *(obviously)*. This is the story of me, at least for now.
 
+---
+
+## Believing Beliving
+I believe in **trying**, not just trying hard, but *trying new stuff*. Life comes down to how much you have to tell, how many *stories*, how much *new experiences*. That's why I'm always keen to trying, learning **new technology**, acquiring **new skills**, or researching in a whole new *unfamiliar field*.
+
+I might be somewhat of a *Jack of all trades*, but I'm *not* a master of none; I am sure I'm at least a **master of trying**. I don't find knowing wide areas of knowledge is bad, as long as I've gotten *deep enough* in those areas to know how to use them.
+
+This is me: **always learning, always trying.**
+
+---
+
 ## Current Work
 Currently working on **[Project Mambo](/project/project-mambo)**, a series of stuff. 
 And also **[Cod](/project/cod)**, my Orbital 26 project with my friend, Jeremy. 
