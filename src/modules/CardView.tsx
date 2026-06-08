@@ -108,6 +108,7 @@ export default function CardView({
                 const itemImage = "image" in item ? item.image : undefined;
                 const itemDescription =
                     "description" in item ? item.description : undefined;
+                const itemSize = entry == "compact" ? "md" : "lg";
 
                 return (
                     <Card
@@ -121,6 +122,7 @@ export default function CardView({
                         description={itemDescription}
                         date={itemDate}
                         border={view === "list" ? "none" : undefined}
+                        size={itemSize}
                     />
                 );
             })}

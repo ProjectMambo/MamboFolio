@@ -84,6 +84,8 @@
     --color-charred-root: var(--charred_root);
 
     --color-border-65: color-mix(in srgb, var(--color-border) 67%, transparent);
+
+    --font-mambo: var(--font-mambo);
 }
 
 @layer base {

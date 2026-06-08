@@ -13,7 +13,7 @@ import { getContrastColor } from "@/utils/contrastColor";
 const CanvasStyles = cva(
     [
         "w-full aspect-square",
-        "font-bold font-mono uppercase",
+        "font-bold font-mambo uppercase",
         "flex items-center justify-center",
         "selection:bg-transparent",
         "c-transition",
@@ -22,21 +22,19 @@ const CanvasStyles = cva(
         variants: {
             size: {
                 sm: [
-                    "text-xs pt-1 px-2 py-0.5",
-                    "md:text-sm md:pt-1.5 md:px-3 md:py-1",
-                    "lg:text-base lg:pt-2 lg:px-4 lg:py-2",
+                    "text-base px-2.5 py-1 pt-1.5",
+                    "md:text-lg ",
+                    "lg:text-xl ",
                 ].join(" "),
-
                 md: [
-                    "text-sm pt-1.5 px-3 py-1",
-                    "md:text-base md:pt-2 md:px-4 md:py-2",
-                    "lg:text-lg lg:pt-2.5 lg:px-5 lg:py-2.5",
+                    "text-lg  px-5 py-2 pt-3.5",
+                    "md:text-xl",
+                    "lg:text-2xl",
                 ].join(" "),
-
                 lg: [
-                    "text-base pt-2 px-4 py-2",
-                    "md:text-lg md:pt-2.5 md:px-5 md:py-2.5",
-                    "lg:text-xl lg:pt-3 lg:px-6 lg:py-3",
+                    "text-xl px-6 py-3 pt-4.5",
+                    "md:text-2xl",
+                    "lg:text-3xl",
                 ].join(" "),
             },
         },

@@ -73,6 +73,7 @@ const CardTheme = cva("cursor-pointer", {
  * @property {string} [description] - Extended summary or body text snippet.
  * @property {string} [date] - Chronological context display string.
  * @property {string} [color] - Custom backing paint code provided to the internal decoration Canvas.
+ * @property {"sm" | "md" | "lg"} [size] - Layout scale indicator explicitly linked to Canvas variant options.
  * @property {string} [className] - Optional custom styles blended into the compiled Tailwind output stack.
  */
 interface CardProps
@@ -83,6 +84,8 @@ interface CardProps
     description?: string;
     date?: string;
     color?: string;
+    // 💡 FIX: Explicitly type this to match the allowed Canvas layout options
+    size?: "sm" | "md" | "lg";
     className?: string;
 }
 
@@ -98,6 +101,7 @@ interface CardProps
  * @param {string} [props.description] - Complementary summary string restricted via responsive layout clamps.
  * @param {string} [props.date] - Optional timeline stamp targeting the core sub-components.
  * @param {string} [props.color] - Custom theme identifier fallbacks parsed when building deep design backgrounds.
+ * @param {"sm" | "md" | "lg"} [props.size="lg"] - Sizing parameter controlling internal background decoration parameters with an explicit fallback logic layer.
  * @param {string} [props.className] - Override styling tags combined into the parent block element.
  * @param {"grid" | "list"} [props.view="grid"] - Layout strategy altering item dividers and content placement rules.
  * @param {"show" | "hide"} [props.meta="show"] - Grid-exclusive metadata banner toggle. Hides the metadata block banner when set to hide.
@@ -113,6 +117,7 @@ export default function Card({
     description,
     date,
     color,
+    size = "lg", // 💡 FIX: Handles the "lg" fallback default cleanly at the destructuring level
     className,
     view,
     meta,
@@ -147,6 +152,7 @@ export default function Card({
                         <Canvas
                             label={date || label.substring(0, 15)}
                             color={canvasColor}
+                            size={size}
                         />
                     )}
                     {showMeta ? (

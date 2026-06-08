@@ -198,7 +198,7 @@ export default function Bar({
                 <Button
                     label={brand.label}
                     link={brand.link}
-                    className="uppercase"
+                    className="uppercase px-4"
                     border="none"
                     bg="none"
                     text="brand"
@@ -226,7 +226,7 @@ export default function Bar({
                 </nav>
 
                 <div className={ClockVisibility({ hide: clockHide })}>
-                    <Clock />
+                    <Clock className="px-4" />
                 </div>
             </div>
         </header>

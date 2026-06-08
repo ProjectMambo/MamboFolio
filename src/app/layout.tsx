@@ -1,3 +1,5 @@
+import localFont from "next/font/local";
+
 import type { Metadata } from "next";
 import Bar from "@/modules/Bar";
 import "@/styles/globals.css";
@@ -19,6 +21,23 @@ export const metadata: Metadata = {
     },
 };
 
+const mambo = localFont({
+    src: [
+        {
+            path: "../../public/fonts/MamboFont-Regular_v0.2.2.woff2",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/MamboFont-Bold_v0.2.2.woff2",
+            weight: "700",
+            style: "normal",
+        },
+    ],
+    variable: "--font-mambo",
+    display: "swap",
+});
+
 /**
  * Root structural layout shell handling context setups, baseline theme canvases,
  * font optimization systems, and centralized layout parameters.
@@ -38,7 +57,7 @@ export default function RootLayout({
     ] as const satisfies Entry[];
 
     return (
-        <html lang="en">
+        <html lang="en" className={mambo.variable}>
             <body className="antialiased min-h-screen bg-bg text-fg font-mono">
                 <Bar navItems={navConfig} />
                 {children}

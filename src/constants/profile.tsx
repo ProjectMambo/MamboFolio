@@ -6,7 +6,7 @@ import Text from "@/components/Text";
  * header signatures, and localized literary quotes.
  */
 export const bannerConfig = {
-    src: "/profile-square.jpg",
+    src: "/profile/profile-square.jpg",
     alt: "Profile Cover",
     header: "Solomon",
     paragraph: '"But how could you live and have no story to tell?"',
@@ -21,7 +21,7 @@ export const footerConfig = [
     <Text
         key="copyright"
         type="description"
-        label="© 2026 Solomon. Built with Next.js."
+        label={`\uE00C 2026 Solomon. Built with Next.js.`}
     />,
     <Text
         key="sitePage"

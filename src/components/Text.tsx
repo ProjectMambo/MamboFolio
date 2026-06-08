@@ -11,17 +11,16 @@ import { isExternalLink } from "@/utils/linkChecker";
  * structural content alignments, font family mappings, heading variations, text sizes,
  * and standard font formatting attributes.
  */
-const TextLayout = cva("", {
+const TextLayout = cva("font-mambo", {
     variants: {
         type: {
             none: "",
-            header: "leading-tight tracking-wide font-mono",
-            paragraph: "leading-relaxed tracking-normal font-sans text-justify",
-            description:
-                "leading-normal tracking-normal font-sans text-justify",
-            date: "uppercase tabular-nums tracking-wider font-mono",
-            time: "uppercase tabular-nums",
-            url: "underline underline-offset-2 tracking-normal font-mono break-all cursor-pointer",
+            header: "leading-tight tracking-wide",
+            paragraph: "leading-relaxed tracking-normal text-justify",
+            description: "leading-normal tracking-normal text-justify",
+            date: "uppercase tracking-wider",
+            time: "uppercase",
+            url: "underline underline-offset-2 tracking-normal break-all cursor-pointer",
         },
         level: {
             none: "",
@@ -31,11 +30,11 @@ const TextLayout = cva("", {
         },
         size: {
             none: "",
-            sm: "text-xs md:text-sm",
-            md: "text-sm md:text-base",
-            lg: "text-base md:text-lg",
-            xl: "text-lg md:text-xl",
-            xxl: "text-xl md:text-2xl",
+            sm: "text-base md:text-lg",
+            md: "text-lg md:text-xl",
+            lg: "text-lg md:text-xl",
+            xl: "text-xl md:text-2xl",
+            xxl: "text-2xl md:text-3xl",
         },
         formatting: {
             none: "",
@@ -66,7 +65,7 @@ const TextTheme = cva("c-transition", {
     variants: {
         border: {
             none: "",
-            light: "border border-border",
+            light: "border border-border px-2.5 py-1 pt-1.5",
         },
         bg: {
             none: "",
