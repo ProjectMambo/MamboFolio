@@ -190,7 +190,7 @@ export default function Card({
                     {description && (
                         <Text
                             label={description}
-                            className={`${active.clamp} justify-none`}
+                            className={`${active.clamp} [hyphens:none]`}
                             type="description"
                             size="md"
                         />

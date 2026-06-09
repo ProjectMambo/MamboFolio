@@ -11,13 +11,13 @@ import { isExternalLink } from "@/utils/linkChecker";
  * structural content alignments, font family mappings, heading variations, text sizes,
  * and standard font formatting attributes.
  */
-const TextLayout = cva("font-mambo", {
+const TextLayout = cva("font-mambo text-justify text-pretty hyphens-auto lang='en'", {
     variants: {
         type: {
             none: "",
             header: "leading-tight tracking-wide",
-            paragraph: "leading-relaxed tracking-normal text-justify",
-            description: "leading-normal tracking-normal text-justify",
+            paragraph: "leading-relaxed tracking-tight",
+            description: "leading-normal tracking-tight",
             date: "uppercase tracking-wider",
             time: "uppercase",
             url: "underline underline-offset-2 tracking-normal break-all cursor-pointer",
