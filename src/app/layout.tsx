@@ -24,12 +24,12 @@ export const metadata: Metadata = {
 const mambo = localFont({
     src: [
         {
-            path: "../../public/fonts/MamboFont-Regular_v0.2.3.woff2",
+            path: "../../public/fonts/MamboFont-Regular_v0.2.4.woff2",
             weight: "400",
             style: "normal",
         },
         {
-            path: "../../public/fonts/MamboFont-Bold_v0.2.3.woff2",
+            path: "../../public/fonts/MamboFont-Bold_v0.2.4.woff2",
             weight: "700",
             style: "normal",
         },

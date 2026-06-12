@@ -169,7 +169,7 @@ const defaultConfig = {
  * @property {keyof React.JSX.IntrinsicElements} [as] - Explicit HTML element override tag used to change semantics.
  * @property {string} [className] - Optional custom CSS styles to append to the compiled layout classes.
  */
-interface TextProps
+export interface TextProps
     extends VariantProps<typeof TextLayout>, VariantProps<typeof TextTheme> {
     label?: string;
     link?: string;

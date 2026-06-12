@@ -123,26 +123,6 @@ const TocEntryIndent = cva("", {
 });
 
 /**
- * Geometric configuration modifiers determining accent line scales
- * and baseline colors across active reading tracking states.
- */
-const TocAccentBar = cva("shrink-0 h-[1.5px] c-transition", {
-    variants: {
-        level: {
-            1: "w-3",
-            2: "w-2",
-            3: "w-1.5",
-        },
-        state: {
-            active: "bg-fg",
-            ancestor: "bg-fg-muted",
-            idle: "bg-fg-muted",
-        },
-    },
-    defaultVariants: { level: 1, state: "idle" },
-});
-
-/**
  * Visual rendering weights applied across the top mini-map macro ticker items
  * to depict their relationship with the sliding viewport window.
  */
@@ -488,64 +468,54 @@ export default function TableOfContents() {
                             textFormat = "medium";
                         }
 
-                        const textProps = {
-                            type: "header" as const,
-                            level: heading.level,
-                            size: "sm" as const,
-                            as: "span" as const,
-                            color: textColor,
-                            formatting: textFormat,
-                        };
-
                         return (
-                            <button
+                            <Button
                                 key={heading.id}
                                 onClick={() => {
                                     handleClick(heading, globalIdx);
                                 }}
-                                title={heading.text}
+                                label={heading.text}
                                 className={twMerge(
                                     TocLayout({ part: "entry" }),
                                     TocEntryIndent({ level: heading.level }),
                                     TocEntryState({ state }),
-                                    "active:opacity-100 active:scale-[0.98] transition-transform duration-70",
+                                    "justify-start",
                                 )}
-                            >
-                                <span
-                                    className={TocAccentBar({
-                                        level: heading.level,
-                                        state,
-                                    })}
-                                />
-
-                                <Text
-                                    {...textProps}
-                                    className="truncate tracking-normal text-[11px] leading-snug"
-                                >
-                                    {heading.text}
-                                </Text>
-                            </button>
+                                border="none"
+                                bg="none"
+                                TextComponent={() => (
+                                    <Text
+                                        type="header"
+                                        level={heading.level}
+                                        as="span"
+                                        className="truncate leading-none"
+                                        size="sm"
+                                        color={textColor}
+                                        formatting={textFormat}
+                                    >
+                                        - {heading.text}
+                                    </Text>
+                                )}
+                            />
                         );
                     })}
 
                     {headings.length > WINDOW_SIZE && (
                         <div className={TocLayout({ part: "overflow" })}>
                             <Text
+                                label={start > 0 ? `↑ ${start} more` : ""}
                                 type="date"
-                                color="muted"
-                                className="text-[9px] opacity-40"
-                            >
-                                {start > 0 ? `↑ ${start} more` : ""}
-                            </Text>
+                                className="opacity-40"
+                            />
                             <Text
+                                label={
+                                    end < headings.length
+                                        ? `${headings.length - end} more ↓`
+                                        : ""
+                                }
                                 type="date"
-                                color="muted"
-                                className="text-[9px] opacity-40"
-                            >
-                                {end < headings.length
-                                    ? `${headings.length - end} more ↓`
-                                    : ""}
-                            </Text>
+                                className="opacity-40"
+                            />
                         </div>
                     )}
                 </nav>
