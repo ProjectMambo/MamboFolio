@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { cva } from "class-variance-authority";
 
 import Text from "@/components/Text";
+import Button from "@/components/Button";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Constants
@@ -60,11 +61,6 @@ const TocLayout = cva("", {
                 "[&::-webkit-scrollbar]:none",
                 "select-none touch-none",
             ],
-            toggle: [
-                "flex items-center gap-1.5",
-                "px-2.5 py-1.5",
-                "cursor-pointer select-none",
-            ],
             entry: [
                 "flex items-center gap-2 text-left w-full",
                 "py-[3px] cursor-pointer",
@@ -91,12 +87,6 @@ const TocTheme = cva("c-transition", {
                 "border-2 border-border",
                 "bg-bg-surface",
                 "shadow-[3px_3px_0px_0px_rgba(0,0,0,0)] shadow-border",
-            ],
-            toggle: [
-                "border-2 border-border",
-                "bg-bg-surface",
-                "text-fg-muted hover:text-fg",
-                "opacity-60 hover:opacity-100",
             ],
         },
     },
@@ -403,43 +393,17 @@ export default function TableOfContents() {
 
     return (
         <div className={TocLayout({ part: "root" })}>
-            <button
+            <Button
+                label=">TOC"
                 onClick={() => setIsExpanded((v) => !v)}
-                aria-label={
+                aria={
                     isExpanded
                         ? "Collapse table of contents"
                         : "Expand table of contents"
                 }
-                className={twMerge(
-                    TocLayout({ part: "toggle" }),
-                    TocTheme({ part: "toggle" }),
-                    "active:opacity-100 active:scale-95 transition-transform duration-70",
-                )}
-            >
-                <span className={TocLayout({ part: "icon" })}>
-                    <span
-                        className={twMerge(
-                            TocLayout({ part: "iconBar" }),
-                            "w-4",
-                        )}
-                    />
-                    <span
-                        className={twMerge(
-                            TocLayout({ part: "iconBar" }),
-                            "w-3 ml-1",
-                        )}
-                    />
-                    <span
-                        className={twMerge(
-                            TocLayout({ part: "iconBar" }),
-                            "w-2 ml-2",
-                        )}
-                    />
-                </span>
-                <Text type="date" color="none" className="text-[10px]">
-                    toc
-                </Text>
-            </button>
+                className="opacity-60 hover:opacity-100"
+                text="brand"
+            />
 
             {isExpanded && (
                 <nav

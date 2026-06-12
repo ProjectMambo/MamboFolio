@@ -2,6 +2,7 @@ import { twMerge } from "tailwind-merge";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import Link from "next/link";
+import Text from "@/components/Text";
 
 /**
  * Manages foundational dimensions, spacing configurations, responsive scaling structures,
@@ -92,6 +93,7 @@ interface ButtonProps
     onClick?: () => void;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
+    aria?: string;
 }
 
 /**
@@ -113,6 +115,7 @@ interface ButtonProps
 export default function Button({
     label,
     link,
+    aria,
     className,
     border,
     bg,
@@ -130,12 +133,12 @@ export default function Button({
 
     if (link)
         return (
-            <Link href={link} {...sharedProps}>
+            <Link href={link} aria-label={aria} {...sharedProps}>
                 {label}
             </Link>
         );
     return (
-        <button type="button" {...sharedProps}>
+        <button type="button" aria-label={aria} {...sharedProps}>
             {label}
         </button>
     );
