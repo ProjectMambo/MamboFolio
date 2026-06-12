@@ -7,6 +7,12 @@ import { Entry } from "@/components/Interfaces";
  */
 export const blogConfig = [
     {
+        label: "Start of MamboFont",
+        link: "/blog/start-of-mambofont",
+        description: "Site has migrated to MamboFont",
+        date: "10 June 2026",
+    },
+    {
         label: "The Beningging",
         link: "/blog/the-beningging",
         description: "In the beningging... In the... In the bening... In the beningging",
