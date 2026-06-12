@@ -190,7 +190,7 @@ export default function Card({
                     {description && (
                         <Text
                             label={description}
-                            className={`${active.clamp} [hyphens:none]`}
+                            className={`${active.clamp} overflow-hidden [hyphens:none]`}
                             type="description"
                             size="md"
                         />
