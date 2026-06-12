@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { cva } from "class-variance-authority";
 
 import Text from "@/components/Text";
+import Button from "@/components/Button";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Constants
@@ -60,11 +61,6 @@ const TocLayout = cva("", {
                 "[&::-webkit-scrollbar]:none",
                 "select-none touch-none",
             ],
-            toggle: [
-                "flex items-center gap-1.5",
-                "px-2.5 py-1.5",
-                "cursor-pointer select-none",
-            ],
             entry: [
                 "flex items-center gap-2 text-left w-full",
                 "py-[3px] cursor-pointer",
@@ -91,12 +87,6 @@ const TocTheme = cva("c-transition", {
                 "border-2 border-border",
                 "bg-bg-surface",
                 "shadow-[3px_3px_0px_0px_rgba(0,0,0,0)] shadow-border",
-            ],
-            toggle: [
-                "border-2 border-border",
-                "bg-bg-surface",
-                "text-fg-muted hover:text-fg",
-                "opacity-60 hover:opacity-100",
             ],
         },
     },
@@ -130,26 +120,6 @@ const TocEntryIndent = cva("", {
         },
     },
     defaultVariants: { level: 1 },
-});
-
-/**
- * Geometric configuration modifiers determining accent line scales
- * and baseline colors across active reading tracking states.
- */
-const TocAccentBar = cva("shrink-0 h-[1.5px] c-transition", {
-    variants: {
-        level: {
-            1: "w-3",
-            2: "w-2",
-            3: "w-1.5",
-        },
-        state: {
-            active: "bg-fg",
-            ancestor: "bg-fg-muted",
-            idle: "bg-fg-muted",
-        },
-    },
-    defaultVariants: { level: 1, state: "idle" },
 });
 
 /**
@@ -403,43 +373,17 @@ export default function TableOfContents() {
 
     return (
         <div className={TocLayout({ part: "root" })}>
-            <button
+            <Button
+                label=">TOC"
                 onClick={() => setIsExpanded((v) => !v)}
-                aria-label={
+                aria={
                     isExpanded
                         ? "Collapse table of contents"
                         : "Expand table of contents"
                 }
-                className={twMerge(
-                    TocLayout({ part: "toggle" }),
-                    TocTheme({ part: "toggle" }),
-                    "active:opacity-100 active:scale-95 transition-transform duration-70",
-                )}
-            >
-                <span className={TocLayout({ part: "icon" })}>
-                    <span
-                        className={twMerge(
-                            TocLayout({ part: "iconBar" }),
-                            "w-4",
-                        )}
-                    />
-                    <span
-                        className={twMerge(
-                            TocLayout({ part: "iconBar" }),
-                            "w-3 ml-1",
-                        )}
-                    />
-                    <span
-                        className={twMerge(
-                            TocLayout({ part: "iconBar" }),
-                            "w-2 ml-2",
-                        )}
-                    />
-                </span>
-                <Text type="date" color="none" className="text-[10px]">
-                    toc
-                </Text>
-            </button>
+                className="opacity-60 hover:opacity-100"
+                text="brand"
+            />
 
             {isExpanded && (
                 <nav
@@ -524,64 +468,54 @@ export default function TableOfContents() {
                             textFormat = "medium";
                         }
 
-                        const textProps = {
-                            type: "header" as const,
-                            level: heading.level,
-                            size: "sm" as const,
-                            as: "span" as const,
-                            color: textColor,
-                            formatting: textFormat,
-                        };
-
                         return (
-                            <button
+                            <Button
                                 key={heading.id}
                                 onClick={() => {
                                     handleClick(heading, globalIdx);
                                 }}
-                                title={heading.text}
+                                label={heading.text}
                                 className={twMerge(
                                     TocLayout({ part: "entry" }),
                                     TocEntryIndent({ level: heading.level }),
                                     TocEntryState({ state }),
-                                    "active:opacity-100 active:scale-[0.98] transition-transform duration-70",
+                                    "justify-start",
                                 )}
-                            >
-                                <span
-                                    className={TocAccentBar({
-                                        level: heading.level,
-                                        state,
-                                    })}
-                                />
-
-                                <Text
-                                    {...textProps}
-                                    className="truncate tracking-normal text-[11px] leading-snug"
-                                >
-                                    {heading.text}
-                                </Text>
-                            </button>
+                                border="none"
+                                bg="none"
+                                TextComponent={() => (
+                                    <Text
+                                        type="header"
+                                        level={heading.level}
+                                        as="span"
+                                        className="truncate leading-none"
+                                        size="sm"
+                                        color={textColor}
+                                        formatting={textFormat}
+                                    >
+                                        - {heading.text}
+                                    </Text>
+                                )}
+                            />
                         );
                     })}
 
                     {headings.length > WINDOW_SIZE && (
                         <div className={TocLayout({ part: "overflow" })}>
                             <Text
+                                label={start > 0 ? `↑ ${start} more` : ""}
                                 type="date"
-                                color="muted"
-                                className="text-[9px] opacity-40"
-                            >
-                                {start > 0 ? `↑ ${start} more` : ""}
-                            </Text>
+                                className="opacity-40"
+                            />
                             <Text
+                                label={
+                                    end < headings.length
+                                        ? `${headings.length - end} more ↓`
+                                        : ""
+                                }
                                 type="date"
-                                color="muted"
-                                className="text-[9px] opacity-40"
-                            >
-                                {end < headings.length
-                                    ? `${headings.length - end} more ↓`
-                                    : ""}
-                            </Text>
+                                className="opacity-40"
+                            />
                         </div>
                     )}
                 </nav>

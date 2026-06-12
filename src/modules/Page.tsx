@@ -1,7 +1,7 @@
 import React from "react";
 
 import Footer from "@/components/page/Footer";
-import TableOfContents from "@/components/page/TableOfContents";
+import TableOfContents from "@/modules/TableOfContents";
 import { footerConfig } from "@/constants/profile";
 
 /**

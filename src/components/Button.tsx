@@ -2,6 +2,7 @@ import { twMerge } from "tailwind-merge";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import Link from "next/link";
+import Text, { TextProps } from "@/components/Text";
 
 /**
  * Manages foundational dimensions, spacing configurations, responsive scaling structures,
@@ -60,6 +61,7 @@ const ButtonTheme = cva(
                 light: "bg-bg-surface hover:bg-border-65 active:bg-border-65",
             },
             text: {
+                none: "",
                 muted: "text-fg/0 hover:text-brand active:text-brand tracking-wide",
                 light: "text-fg-muted hover:text-fg active:text-fg",
                 dark: "text-fg hover:text-brand active:text-brand",
@@ -88,10 +90,12 @@ interface ButtonProps
         VariantProps<typeof ButtonTheme> {
     label: string;
     link?: string;
+    aria?: string;
     className?: string;
     onClick?: () => void;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
+    TextComponent?: (props: TextProps) => React.ReactNode;
 }
 
 /**
@@ -113,7 +117,9 @@ interface ButtonProps
 export default function Button({
     label,
     link,
+    aria,
     className,
+    TextComponent,
     border,
     bg,
     text,
@@ -128,15 +134,25 @@ export default function Button({
     );
     const sharedProps = { className: combined, ...props };
 
+    const FinalText = TextComponent ? (
+        TextComponent({})
+    ) : (
+        <Text
+            label={label}
+            type="none"
+            size={size === "lg" ? "lg" : size === "md" ? "md" : "sm"}
+        />
+    );
+
     if (link)
         return (
-            <Link href={link} {...sharedProps}>
-                {label}
+            <Link href={link} aria-label={aria ?? label} {...sharedProps}>
+                {FinalText}
             </Link>
         );
     return (
-        <button type="button" {...sharedProps}>
-            {label}
+        <button type="button" aria-label={aria ?? label} {...sharedProps}>
+            {FinalText}
         </button>
     );
 }
