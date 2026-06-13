@@ -4,6 +4,8 @@ Hi, maybe you've noticed, my name is **Solomon**, or maybe you haven't because t
 
 **Will Smith:** *"Ahh, that's hot."*
 
+*F.Y.I. You can change theme by clicking the brand text on the bar.*
+
 *(Those rolling tape scene that movies use to roll back time)*
 
 It's **May 2025**, 7 months since I graduated high school. All my friends have already gotten their admission letter for their desired university, leaving me there alone with a single rejection letter *(why NTU, why)* and hoping for an acceptance from my other applications. It was a long wait, but I finally got it. Fortunately, it was an acceptance letter from **NUS** and not a rejection letter that I planned to reject *(UNO reverse)*. That's why as of the time I'm writing this (May 2026), I'm a year 1 student waiting for year 2 to start.
