@@ -1,10 +1,11 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { getContrastColor } from "@/utils/contrastColor";
+import { useTheme } from "@/context/ThemeContext";
 
 /**
  * Manages foundational dimensions, matching aspect ratios, typography configurations,
@@ -74,13 +75,47 @@ interface CanvasProps extends VariantProps<typeof CanvasStyles> {
  */
 export default function Canvas({ label, color, className, size }: CanvasProps) {
     const ref = useRef<HTMLDivElement>(null);
+    const { theme } = useTheme();
 
     useLayoutEffect(() => {
-        if (ref.current) {
-            const contrastColor = getContrastColor(color);
+        if (!ref.current) return;
+        const el = ref.current;
 
-            ref.current.style.setProperty("color", contrastColor, "important");
-        }
+        /**
+         * Resolves the runtime values of the target color by mounting a temporary tracking node.
+         * Extracts computed RGB signatures post-theme updates to compute and re-inject an authoritative
+         * accessible contrast foreground color matching accessibility criteria.
+         */
+        const update = () => {
+            const temp = document.createElement("div");
+            temp.style.cssText = `background-color: ${color}; position: absolute; visibility: hidden;`;
+            document.documentElement.appendChild(temp);
+            void temp.offsetHeight;
+            const computed = getComputedStyle(temp).backgroundColor;
+            document.documentElement.removeChild(temp);
+
+            console.log({ color, computed });
+
+            const contrastColor = getContrastColor(computed);
+            console.log({ contrastColor });
+            el.style.setProperty("color", contrastColor, "important");
+        };
+
+        const observer = new MutationObserver(() => {
+            requestAnimationFrame(update); // yield AFTER data-theme recalc
+        });
+
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["data-theme"],
+        });
+
+        const frame = requestAnimationFrame(update);
+
+        return () => {
+            observer.disconnect();
+            cancelAnimationFrame(frame);
+        };
     }, [color]);
 
     return (

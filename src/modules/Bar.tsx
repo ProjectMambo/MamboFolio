@@ -172,6 +172,10 @@ export default function Bar({
     const { theme, toggleTheme } = useTheme();
 
     useEffect(() => {
+        /**
+         * Recalculates bounding coordinates for wrapped navigation items to evaluate line-breaks.
+         * Resolves adjacent elements sharing identical vertical top offsets to conditionally trigger inline dividers.
+         */
         const checkRows = () => {
             const rows = itemRefs.current.map(
                 (el) => el?.getBoundingClientRect().top ?? 0,

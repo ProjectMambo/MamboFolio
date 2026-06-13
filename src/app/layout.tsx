@@ -1,16 +1,15 @@
+import React from "react";
 import localFont from "next/font/local";
-
 import type { Metadata } from "next";
-import Bar from "@/modules/Bar";
-import "@/styles/globals.css";
 
+import Bar from "@/modules/Bar";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Entry } from "@/components/Interfaces";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
     title: "KohKohNut",
     description: "KohKohNut's website",
-
     icons: {
         icon: [
             { url: "/icon.svg?v=2", type: "image/svg+xml" },
@@ -52,13 +51,17 @@ const mambo = localFont({
 /**
  * Root structural layout shell handling context setups, baseline theme canvases,
  * font optimization systems, and centralized layout parameters.
+ *
+ * @public
+ * @param {Object} props - Structural nodes mapping layout contexts.
+ * @param {React.ReactNode} props.children - Renderable nodes inserted inside the viewport document flow.
+ * @returns {JSX.Element} The absolute root HTML tree lifecycle wrapper configuring runtime styles and contexts.
  */
 export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    // Array maps centralizing application directories for easy route configuration updates
     const navConfig = [
         { label: "KOHKOHNUT", link: "/" },
         { label: "HOME", link: "/" },
@@ -68,7 +71,14 @@ export default function RootLayout({
     ] as const satisfies Entry[];
 
     return (
-        <html lang="en" className={mambo.variable}>
+        <html lang="en" className={mambo.variable} suppressHydrationWarning>
+            <head>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `(function(){try{var t=localStorage.getItem('mambo-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
+                    }}
+                />
+            </head>
             <body className="antialiased min-h-screen bg-bg text-fg font-mono">
                 <ThemeProvider>
                     <Bar navItems={navConfig} />
