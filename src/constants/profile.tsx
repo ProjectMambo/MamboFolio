@@ -21,7 +21,7 @@ export const footerConfig = [
     <Text
         key="copyright"
         type="description"
-        label={`\uE00C 2026 Solomon. Built with Next.js.`}
+        label={`\uE00C 2026 ProjectMambo. Built with Next.js.`}
     />,
     <Text
         key="sitePage"

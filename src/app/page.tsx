@@ -18,6 +18,10 @@ export default function Home() {
     const content = [
         <Banner key="Banner" {...bannerConfig} />,
 
+        <Text key="Theme" label="F.Y.I. You can change theme by clicking the brand text on the bar." 
+        color="link" 
+        formatting="italics"/>,
+
         <Divider
             key="DividerBanner"
             orientation="horizontal"

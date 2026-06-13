@@ -11,17 +11,17 @@ import Text from "@/components/Text";
 const BannerLayout = cva(
     [
         "group w-full aspect-video",
-        "flex flex-col gap-4 items-center justify-center",
+        "flex flex-col gap-4 items-center justify-center mb-20",
         "c-transition",
     ].join(" "),
     {
         variants: {
             stack: {
                 always: "",
-                sm: "sm:flex-row sm:gap-8",
-                md: "md:flex-row md:gap-8",
-                lg: "lg:flex-row lg:gap-8",
-                xl: "xl:flex-row xl:gap-8",
+                sm: "sm:flex-row sm:gap-8 sm:mb-0",
+                md: "md:flex-row md:gap-8 md:mb-0",
+                lg: "lg:flex-row lg:gap-8 lg:mb-0",
+                xl: "xl:flex-row xl:gap-8 xl:mb-0",
             },
         },
         defaultVariants: { stack: "md" },
