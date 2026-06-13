@@ -1,7 +1,18 @@
 /* src/styles/globals.css */
 @import "tailwindcss";
-@import "./mamboorche.css";
-@import "./mambooutback.css";
+@import "./mamboorchelight.css";
+@import "./mambooutbacklight.css";
+@import "./mamboorchedark.css";
+@import "./mambooutbackdark.css";
+
+[data-theme="light"] {
+    @import "./mamboorchelight.css";
+    @import "./mambooutbacklight.css";
+}
+[data-theme="dark"] {
+    @import "./mamboorchedark.css";
+    @import "./mambooutbackdark.css";
+}
 
 /**
  * Entry point for global style declarations. Orchestrates systemic Tailwind v4 theme configurations, 

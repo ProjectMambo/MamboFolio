@@ -1,0 +1,15 @@
+:root {
+  --bg: #1C1111;
+  --bg_surface: #2B1D1D;
+  --border: #5C4D4A;
+  --fg: #FAF7F2;
+  --fg_muted: #F3ECE2;
+  --comment: #E1D5C3;
+  --brand: #CC523B;
+  --brand_hover: #A93622;
+  --interactive: #5C705A;
+  --interactive_hover: #3D524A;
+  --success: #5C705A;
+  --warning: #D3A774;
+  --error: #CC523B;
+}
