@@ -5,15 +5,6 @@
 @import "./mamboorchedark.css";
 @import "./mambooutbackdark.css";
 
-[data-theme="light"] {
-    @import "./mamboorchelight.css";
-    @import "./mambooutbacklight.css";
-}
-[data-theme="dark"] {
-    @import "./mamboorchedark.css";
-    @import "./mambooutbackdark.css";
-}
-
 /**
  * Entry point for global style declarations. Orchestrates systemic Tailwind v4 theme configurations, 
  * injects bespoke color palette mappings derived from active variable themes, overrides default base layer 

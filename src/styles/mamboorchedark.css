@@ -1,15 +1,15 @@
-:root {
-  --bg: #1C1111;
-  --bg_surface: #2B1D1D;
-  --border: #5C4D4A;
+[data-theme="dark"] {
+  --bg: #141816;
+  --bg_surface: #1F2522;
+  --border: #38423E;
   --fg: #FAF7F2;
-  --fg_muted: #F3ECE2;
-  --comment: #E1D5C3;
-  --brand: #CC523B;
+  --fg_muted: #D5C9B8;
+  --comment: #8A9A86;
+  --brand: #D44B36;
   --brand_hover: #A93622;
-  --interactive: #5C705A;
-  --interactive_hover: #3D524A;
+  --interactive: #6E856B;
+  --interactive_hover: #5C705A;
   --success: #5C705A;
   --warning: #D3A774;
-  --error: #CC523B;
+  --error: #D44B36;
 }

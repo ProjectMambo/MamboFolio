@@ -8,7 +8,7 @@ import Button from "@/components/Button";
 import Divider from "@/components/Divider";
 import Clock from "@/components/bar/Clock";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
-
+import { useTheme } from "@/context/ThemeContext";
 import { Entry } from "@/components/Interfaces";
 
 /**
@@ -169,6 +169,7 @@ export default function Bar({
     const isVisible = useScrollDirection(40);
     const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [sameRow, setSameRow] = useState<boolean[]>([]);
+    const { theme, toggleTheme } = useTheme();
 
     useEffect(() => {
         const checkRows = () => {
@@ -197,7 +198,7 @@ export default function Bar({
             <div className={twMerge(barStyles, "overflow-hidden")}>
                 <Button
                     label={brand.label}
-                    link={brand.link}
+                    onClick={toggleTheme}
                     className="uppercase px-4"
                     border="none"
                     bg="none"

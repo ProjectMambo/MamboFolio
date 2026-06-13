@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Bar from "@/modules/Bar";
 import "@/styles/globals.css";
 
+import { ThemeProvider } from "@/context/ThemeContext";
 import { Entry } from "@/components/Interfaces";
 
 export const metadata: Metadata = {
@@ -69,8 +70,10 @@ export default function RootLayout({
     return (
         <html lang="en" className={mambo.variable}>
             <body className="antialiased min-h-screen bg-bg text-fg font-mono">
-                <Bar navItems={navConfig} />
-                {children}
+                <ThemeProvider>
+                    <Bar navItems={navConfig} />
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     );
