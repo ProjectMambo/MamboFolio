@@ -1,15 +1,15 @@
 [data-theme="dark"] {
-  --bg: #141816;
-  --bg_surface: #1F2522;
-  --border: #38423E;
+  --bg: #181615;
+  --bg_surface: #24201E;
+  --border: #3D3633;
   --fg: #FAF7F2;
   --fg_muted: #D5C9B8;
-  --comment: #8A9A86;
+  --comment: #969085;
   --brand: #D44B36;
   --brand_hover: #A93622;
-  --interactive: #6E856B;
-  --interactive_hover: #5C705A;
-  --success: #5C705A;
+  --interactive: #7A8574;
+  --interactive_hover: #64705E;
+  --success: #64705E;
   --warning: #D3A774;
   --error: #D44B36;
 }

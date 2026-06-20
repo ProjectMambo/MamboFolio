@@ -1,6 +1,6 @@
 
 ```dataviewjs
-const BASE_PATH = "MamboFolio";
+const BASE_PATH = "Portfolio";
 
 // ╔══════════════════════════════════════════════════════════╗
 // ║  TYPE DEFINITIONS — edit here to add/change types       ║

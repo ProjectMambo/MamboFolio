@@ -21,11 +21,11 @@ export const projectConfig = [
         color: "var(--color-apricot-dust)",
     },
     {
-        label: "MamboFolio",
-        link: "/project/mambofolio",
+        label: "MamboFinance",
+        link: "/project/mambofinance",
         description:
-            "A responsive portfolio website built with Next.js and Tailwind CSS.",
-        color: "var(--color-charred-root)",
+            "A lightweight, privacy-focused financial dashboard for effortless expense tracking and budgeting.",
+        color: "var(--color-desert-sage)",
     },
     {
         label: "Cod",
@@ -40,6 +40,12 @@ export const projectConfig = [
         color: "var(--color-ember-glow)",
     },
     {
+        label: "MamboFont",
+        link: "/project/mambofont",
+        description: "A modern font designed for consistent layout.",
+        color: "var(--color-dusk-shadow)",
+    },
+    {
         label: "MamboColour",
         link: "/project/mambocolour",
         description:
@@ -47,16 +53,17 @@ export const projectConfig = [
         color: "var(--color-deep-teal)",
     },
     {
+        label: "MamboFolio",
+        link: "/project/mambofolio",
+        description:
+            "A responsive portfolio website built with Next.js and Tailwind CSS.",
+        color: "var(--color-charred-root)",
+    },
+    {
         label: "MamboSite",
         link: "/project/mambosite",
         description:
             "A responsive project wiki built with Next.js and Tailwind CSS.",
         color: "var(--color-baked-brick)",
-    },
-    {
-        label: "MamboFont",
-        link: "/project/mambofont",
-        description: "A modern font designed for consistent layout.",
-        color: "var(--color-dusk-shadow)",
     },
 ] as const satisfies Entry[];
