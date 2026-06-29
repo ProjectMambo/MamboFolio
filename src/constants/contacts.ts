@@ -24,7 +24,7 @@ export const contactConfig = [
     },
     {
         label: "Instagram",
-        link: "https://www.instagram.com/koh.koh.nut",
+        link: "https://www.instagram.com/kohkohnut1202",
         color: "var(--color-desert-sage)",
     },
     {
