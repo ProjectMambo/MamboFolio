@@ -43,7 +43,9 @@ interface MetadataProps {
  */
 export default function Metadata({ data }: MetadataProps) {
     const { description, tags, date, wikiUrl, githubUrl } = data;
-    const tagsArr = Array.isArray(tags) ? tags : tags ? [tags] : [];
+    const tagsArr = (Array.isArray(tags) ? tags : tags ? [tags] : []).map((t) =>
+        t.replace(/^web\//, ""),
+    );
     const router = useRouter();
 
     const hasMetadata =
