@@ -9,7 +9,7 @@ import { Entry } from "@/components/Interfaces";
 export const contactConfig = [
     {
         label: "Email",
-        link: "mailto:kohkohnut1202@gmail.com",
+        link: "mailto:me@kohkohnut.org",
         color: "var(--color-magma-dust)",
     },
     {

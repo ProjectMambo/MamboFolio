@@ -9,8 +9,8 @@ export const bannerConfig = {
     src: "/profile/profile-square.jpg",
     alt: "Profile Cover",
     header: "Solomon",
-    paragraph: '"But how could you live and have no story to tell?"',
-    footer: "- Fyodor Dostoevsky",
+    paragraph: '"You can\'t live without I\'ve"',
+    footer: "- 21st cent. Shakespeare",
 } as const;
 
 /**
