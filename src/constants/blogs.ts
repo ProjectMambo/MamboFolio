@@ -7,6 +7,12 @@ import { Entry } from "@/components/Interfaces";
  */
 export const blogConfig = [
     {
+        label: "My own Obsidian Vault",
+        link: "/blog/my-own-obsidian-vault",
+        description: "Finally settled on an obsidian system",
+        date: "30 July 2026",
+    },
+    {
         label: "Start of MamboFont",
         link: "/blog/start-of-mambofont",
         description: "Site has migrated to MamboFont",
@@ -15,7 +21,8 @@ export const blogConfig = [
     {
         label: "The Beningging",
         link: "/blog/the-beningging",
-        description: "In the beningging... In the... In the bening... In the beningging",
+        description:
+            "In the beningging... In the... In the bening... In the beningging",
         date: "01 June 2026",
     },
 ] as const satisfies Entry[];

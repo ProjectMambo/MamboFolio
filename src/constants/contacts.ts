@@ -24,12 +24,12 @@ export const contactConfig = [
     },
     {
         label: "Instagram",
-        link: "https://www.instagram.com/kohkohnut1202",
+        link: "https://www.instagram.com/kohkohnut67",
         color: "var(--color-desert-sage)",
     },
     {
         label: "Facebook",
-        link: "https://www.facebook.com/kohkohnut1202",
+        link: "https://www.facebook.com/profile.php?id=61592514714206",
         color: "var(--color-storm-canopy)",
     },
     {

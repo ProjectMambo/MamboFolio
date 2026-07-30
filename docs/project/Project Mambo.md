@@ -1,15 +1,13 @@
 ---
-description: A design-driven ecosystem of optimized Unix configurations, unified palettes, and automated dotfile deployment architectures.
 tags:
-  - web/ArchLinux
-  - web/Hyprland
-  - web/Wayland
-  - web/Zsh
-date: May 2026 - Present
+  - ArchLinux
+  - Hyprland
+  - Wayland
+  - Zsh
+description: A design-driven ecosystem of optimized Unix configurations, unified palettes, and automated dotfile deployment architectures.
+period: May 2026 - Present
 wikiUrl: https://projectmambo.org/
 githubUrl: https://github.com/ProjectMambo
-updated: 2026-07-12T16:11
-created: 2026-05-22T10:24
 ---
 ## In The Beginning 
 

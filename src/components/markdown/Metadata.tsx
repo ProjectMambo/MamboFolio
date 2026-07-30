@@ -9,15 +9,15 @@ import Divider from "@/components/Divider";
 /**
  * Shape of the structural raw front-matter configuration extracted from a markdown document.
  * * @interface MetadataData
- * @property {string} [description] - A brief summary or excerpt describing the document.
  * @property {string | string[]} [tag] - A single classification category label or an array of tags.
+ * @property {string} [description] - A brief summary or excerpt describing the document.
  * @property {string} [date] - Chronological timestamp text or creation date.
  * @property {string} [url] - An external reference or canonical link path.
  */
 interface MetadataData {
-    description?: string;
     tags?: string | string[];
-    date?: string;
+    description?: string;
+    period?: string;
     wikiUrl?: string;
     githubUrl?: string;
 }
@@ -42,18 +42,18 @@ interface MetadataProps {
  * @returns {JSX.Element} A layout block displaying the populated document properties, appended with a structural divider.
  */
 export default function Metadata({ data }: MetadataProps) {
-    const { description, tags, date, wikiUrl, githubUrl } = data;
+    const { tags, description, period, wikiUrl, githubUrl } = data;
     const tagsArr = (Array.isArray(tags) ? tags : tags ? [tags] : []).map((t) =>
         t.replace(/^web\//, ""),
     );
     const router = useRouter();
 
     const hasMetadata =
-        date || description || tagsArr.length > 0 || wikiUrl || githubUrl;
+        period || description || tagsArr.length > 0 || wikiUrl || githubUrl;
 
     return (
         <div className="flex flex-col gap-3 w-full">
-            {date && <Text label={date} type="date" />}
+            {period && <Text label={period} type="date" />}
             {description && <Text label={description} type="description" />}
             {tagsArr.length > 0 && (
                 <div className="flex flex-row flex-wrap gap-2">
