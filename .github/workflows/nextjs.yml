@@ -31,6 +31,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Checkout MamboSite compiler
+        uses: actions/checkout@v4
+        with:
+          repository: ProjectMambo/MamboSite
+          path: .mambosite-compiler
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -73,6 +80,8 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Compile Markdown content
+        run: cargo run --locked --quiet --manifest-path .mambosite-compiler/Cargo.toml --package mambosite-cli -- build
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
