@@ -38,7 +38,7 @@ data:
 
 ---
 
-# Project
+## Project
 
 ::children{source="/project/" view="grid" columns=3 sort="order" direction="asc" limit=3 show=["title","description"]}
 
@@ -46,7 +46,7 @@ data:
 
 ---
 
-# Blog
+## Blog
 
 ::children{source="/blog/" view="list" sort="date" direction="desc" limit=3 show=["date","title","description"]}
 
@@ -54,7 +54,7 @@ data:
 
 ---
 
-# Gallery
+## Gallery
 
 ::gallery{source="/gallery/" view="grid" columns=3 fit="cover" captions=true}
 
@@ -62,7 +62,7 @@ data:
 
 ---
 
-# Contact
+## Contact
 
 ::::columns{count=3 gap="small" collapse-at="md"}
 

@@ -1,0 +1,22 @@
+schema = 1
+content_root = "docs"
+entry = "index.md"
+typescript_out = "src/generated/mambo"
+assets_out = "public/mambo"
+
+[site]
+title = "KohKohNut"
+url = "https://kohkohnut.org"
+base_path = ""
+trailing_slash = true
+language = "en-SG"
+
+[markdown]
+raw_html = false
+strict_links = true
+max_embed_depth = 16
+
+[frontmatter]
+strict = true
+ignored_fields = []
+legacy_data_fields = []
