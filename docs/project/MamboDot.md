@@ -1,10 +1,16 @@
 ---
 tags:
-  - ArchLinux
-  - GNUstow
-  - Hyprland
+  - web/ArchLinux
+  - web/GNUstow
+  - web/Hyprland
 description: A GNU Stow-managed dotfiles repository optimised for speed and consistent styling.
-period: May 2026 - Present
-wikiUrl:
-githubUrl: https://github.com/ProjectMambo/MamboDot
+title: MamboDot
+order: 20
+data:
+  period: May 2026 - Present
+  githubUrl: https://github.com/ProjectMambo/MamboDot
 ---
+
+::page{layout="project" width="normal"}
+
+::meta{show=["period","description","tags","wikiUrl","githubUrl"] style="stack" empty="hide"}

@@ -1,9 +1,18 @@
 ---
 tags:
-  - Obsidian
+  - web/Obsidian
 description: Finally settled on an obsidian system
-period: 30 July 2026
+title: My own Obsidian Vault
+date: 2026-07-30
+order: 10
+data:
+  period: 30 July 2026
 ---
+
+::page{layout="article" width="normal"}
+
+::meta{show=["date","description","tags"] style="stack" empty="hide"}
+
 It's been roughly half a year since I started using **[Obsidian](https://obsidian.md/)**, it's a great tool, but I just felt like I wasn't utilizing it 100%. That's why a week ago, i decided to finally work on my own system, it was the right decision looking back.
 
 What inspired me was a video by **Karlos** about [Obsidian's CEO, Kepano's vault design](https://youtu.be/Dq3R3uS0sQ4?list=TLPQMjkwNzIwMjZ46vUcuqSvbw), his vault was truly mind bending and chaotic, the idea of putting *most notes at root* was weird at that time, but that idea struck me. It wasn't all that weird is it, most times things just don't belong *solely* to **one single folder**, instead of debating which folder should the note be, Kepano's philosophy being **fast and lazy** was really refreshing.

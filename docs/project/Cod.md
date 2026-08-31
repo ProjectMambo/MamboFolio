@@ -1,15 +1,23 @@
 ---
 tags:
-  - Cloudflare
-  - Monaco
-  - NextJS
-  - Supabase
-  - TailwindCSS
+  - web/Cloudflare
+  - web/Monaco
+  - web/NextJS
+  - web/Supabase
+  - web/TailwindCSS
 description: Orbital 26 project.
-period: May 2026 - Present
-wikiUrl: https://kohkoh-nut.github.io/Cod/
-githubUrl: https://github.com/KohKoh-Nut/Cod
+title: Cod
+order: 40
+data:
+  period: May 2026 - Present
+  wikiUrl: https://kohkoh-nut.github.io/Cod/
+  githubUrl: https://github.com/KohKoh-Nut/Cod
 ---
+
+::page{layout="project" width="normal"}
+
+::meta{show=["period","description","tags","wikiUrl","githubUrl"] style="stack" empty="hide"}
+
 ## What is COD?
 **COD** is a collaborative coding platform designed to help developers build, share, and learn together. The platform provides an interactive, hands-on environment that enables users to write, execute, and debug code seamlessly. By emphasizing community-driven learning, COD encourages users to share their creations and build directly on top of work done by others. This ecosystem shifts the focus away from pure competition, encouraging a supportive community where developers grow together.
 

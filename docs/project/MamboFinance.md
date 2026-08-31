@@ -1,10 +1,16 @@
 ---
 tags:
-  - Ratatui
-  - Rust
-  - SQLite
+  - web/Ratatui
+  - web/Rust
+  - web/SQLite
 description: A lightweight, privacy-focused financial dashboard for effortless expense tracking and budgeting.
-period: June 2026 - Present
-wikiUrl:
-githubUrl: https://github.com/ProjectMambo/MamboFinance
+title: MamboFinance
+order: 30
+data:
+  period: June 2026 - Present
+  githubUrl: https://github.com/ProjectMambo/MamboFinance
 ---
+
+::page{layout="project" width="normal"}
+
+::meta{show=["period","description","tags","wikiUrl","githubUrl"] style="stack" empty="hide"}

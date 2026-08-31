@@ -1,13 +1,20 @@
 ---
 tags:
-  - Inkscape
-  - SVG
-  - TTF
+  - web/Inkscape
+  - web/SVG
+  - web/TTF
 description: A modern font designed for consistent layout.
-period: May 2026 - Present
-wikiUrl:
-githubUrl: https://github.com/ProjectMambo/MamboFont
+title: MamboFont
+order: 60
+data:
+  period: May 2026 - Present
+  githubUrl: https://github.com/ProjectMambo/MamboFont
 ---
+
+::page{layout="project" width="normal"}
+
+::meta{show=["period","description","tags","wikiUrl","githubUrl"] style="stack" empty="hide"}
+
 ## In The Beginning 
 
 ### What Was Missing?

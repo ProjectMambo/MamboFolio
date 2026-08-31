@@ -1,3 +1,10 @@
+---
+title: About
+listed: false
+---
+
+::page{layout="article" width="normal"}
+
 ## Who is Solomon?
 
 Hi, maybe you've noticed, my name is **Solomon**, or maybe you haven't because the big banner at the start of the page isn't big enough for you. Nevertheless, my name is still **Solomon**. Knowing my name is not sufficient to understand me *(hopefully)*, so it's rewind time.

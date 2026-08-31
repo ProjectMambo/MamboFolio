@@ -1,7 +1,3 @@
----
-
----
-
 # MamboFolio
 <p align="left">
   <img src="https://img.shields.io/badge/GitHub_Pages-222222?style=flat-square&logo=githubpages&logoColor=white" alt="GitHub Pages" />
@@ -16,12 +12,12 @@
   <a href="LICENSE"><img src="https://img.shields.io/github/license/ProjectMambo/MamboFolio?style=flat-square&color=orange" /></a>
 </p>
 
-A responsive portfolio website built with Next.js and Tailwind CSS.
+A Markdown-first portfolio compiled by MamboSite and rendered as a static Next.js site.
 
 ## Features
-- Consistent **styling** driven by our centralized palette system.
-- Complete **responsiveness** optimized for modern browsers and mobile layouts.
-- Fast **loading** and static compilation powered by Next.js.
+- Portfolio pages, collections, metadata, and layout are authored in Markdown.
+- MamboSite validates the content graph and generates typed TypeScript modules.
+- Next.js renders the generated content as a responsive static export for GitHub Pages.
 
 ## Demo
 Live site available at: **[kohkohnut.org](https://kohkohnut.org)**
@@ -30,10 +26,10 @@ Live site available at: **[kohkohnut.org](https://kohkohnut.org)**
 
 ### Prerequisites
 Before running or building the project locally, ensure you have the following installed on your system:
- - **[Node.js](https://nodejs.org/)** - The JavaScript runtime env *(v18+ recommended)*.
- - **[npm](https://www.npmjs.com/)** or **[pnpm](https://pnpm.io/)** - The package manager to handle project dependencies.
- - **[Git](https://git-scm.com/)** - Version control system used to clone and manage this repository.
- - **[ProjectMambo/MamboColour](https://github.com/ProjectMambo/MamboColour)** - The centralized color palette layout configuration dependency.
+ - **[Node.js](https://nodejs.org/)** - The JavaScript runtime used by Next.js.
+ - **[npm](https://www.npmjs.com/)** - The package manager used by this repository.
+ - **[Rust](https://www.rust-lang.org/tools/install)** - Required to build the local MamboSite compiler.
+ - **[ProjectMambo/MamboSite](https://github.com/ProjectMambo/MamboSite)** - Install its `mambosite` command before compiling this repository.
 
 ### Quick Start
 Clone the repository
@@ -49,15 +45,26 @@ Navigate into the root directory and install the Node modules:
 npm install
 ```
 
+#### Compile the content
+
+Run MamboSite from the repository root whenever `docs/` changes:
+
+```bash
+mambosite check
+mambosite build
+```
+
 #### Running Locally
-Launch the local development server to preview your changes:
+
+Launch the local development server. The `predev` script also rebuilds the generated content:
+
 ```bash
 npm run dev
 ```
 Open **[http://localhost:3000](http://localhost:3000)** in your browser to view the site.
 
 ### Quick Build
-To compile the static production build manually:
+To compile the content and create the static production build:
 ```bash
 npm run build
 ```

@@ -1,14 +1,22 @@
 ---
 tags:
-  - ArchLinux
-  - Hyprland
-  - Wayland
-  - Zsh
+  - web/ArchLinux
+  - web/Hyprland
+  - web/Wayland
+  - web/Zsh
 description: A design-driven ecosystem of optimized Unix configurations, unified palettes, and automated dotfile deployment architectures.
-period: May 2026 - Present
-wikiUrl: https://projectmambo.org/
-githubUrl: https://github.com/ProjectMambo
+title: Project Mambo
+order: 10
+data:
+  period: May 2026 - Present
+  wikiUrl: https://projectmambo.org/
+  githubUrl: https://github.com/ProjectMambo
 ---
+
+::page{layout="project" width="normal"}
+
+::meta{show=["period","description","tags","wikiUrl","githubUrl"] style="stack" empty="hide"}
+
 ## In The Beginning 
 
 ### What Was Missing?
