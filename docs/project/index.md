@@ -1,6 +1,6 @@
 ---
-title: Project
 description: Software, design systems, and experiments I have built or contributed to.
+title: Project
 order: 10
 ---
 

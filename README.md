@@ -1,79 +1,113 @@
 # MamboFolio
+
 <p align="left">
   <img src="https://img.shields.io/badge/GitHub_Pages-222222?style=flat-square&logo=githubpages&logoColor=white" alt="GitHub Pages" />
   <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" alt="Rust" />
   <img src="https://img.shields.io/badge/Deploy-Live-brightgreen?style=flat-square" alt="Deploy Status" />
 </p>
 <p align="left">
-  <img src="https://img.shields.io/badge/Maintenance-Active-brightgreen?style=flat-square" />
-  <img src="https://img.shields.io/github/last-commit/ProjectMambo/MamboFolio?style=flat-square&color=7a5fff" />
-  <img src="https://img.shields.io/github/repo-size/ProjectMambo/MamboFolio?style=flat-square&color=yellow" />
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/ProjectMambo/MamboFolio?style=flat-square&color=orange" /></a>
+  <img src="https://img.shields.io/badge/Maintenance-Active-brightgreen?style=flat-square" alt="Maintenance status: active" />
+  <img src="https://img.shields.io/github/last-commit/ProjectMambo/MamboFolio?style=flat-square&color=7a5fff" alt="Last commit" />
+  <img src="https://img.shields.io/github/repo-size/ProjectMambo/MamboFolio?style=flat-square&color=yellow" alt="Repository size" />
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/ProjectMambo/MamboFolio?style=flat-square&color=orange" alt="License" /></a>
 </p>
 
-A Markdown-first portfolio compiled by MamboSite and rendered as a static Next.js site.
+A Markdown-first portfolio compiled and rendered by MamboSite as a static Next.js site.
 
 ## Features
-- Portfolio pages, collections, metadata, and layout are authored in Markdown.
-- MamboSite validates the content graph and generates typed TypeScript modules.
-- Next.js renders the generated content as a responsive static export for GitHub Pages.
+
+- Pages, collections, metadata, and layout are authored in Markdown.
+- MamboSite parses and validates the content graph, compiles the theme, and generates typed TypeScript modules and theme assets.
+- MamboSite supplies the modular React runtime, default components, theme, and Next.js adapter used by this repository.
+- A full MamboSite build runs the configured Next.js renderer and produces the GitHub Pages artifact in `out/`.
 
 ## Demo
-Live site available at: **[kohkohnut.org](https://kohkohnut.org)**
 
-## Getting Started
+The live site is available at **[kohkohnut.org](https://kohkohnut.org)**.
+
+## Local development
 
 ### Prerequisites
-Before running or building the project locally, ensure you have the following installed on your system:
- - **[Node.js](https://nodejs.org/)** - The JavaScript runtime used by Next.js.
- - **[npm](https://www.npmjs.com/)** - The package manager used by this repository.
- - **[Rust](https://www.rust-lang.org/tools/install)** - Required to build the local MamboSite compiler.
- - **[ProjectMambo/MamboSite](https://github.com/ProjectMambo/MamboSite)** - Install its `mambosite` command before compiling this repository.
 
-### Quick Start
-Clone the repository
-```bash
-git clone https://github.com/ProjectMambo/MamboFolio
+- [Node.js](https://nodejs.org/) 20 or later and npm.
+- [Rust](https://www.rust-lang.org/tools/install) 1.95.0 or later.
+- Python 3 only when using the optional `npm run preview` static server.
+- Git, plus the [GitHub CLI](https://cli.github.com/) when `mambosite deploy` needs to re-dispatch an existing commit.
+
+MamboFolio currently consumes the MamboSite packages through `file:../MamboSite/...` dependencies. Keep both repositories as siblings:
+
+```text
+ProjectMambo/
+├── MamboFolio/
+└── MamboSite/
 ```
 
-### Install Prerequisites
-
-#### Install project dependencies
-Navigate into the root directory and install the Node modules:
-```bash
-npm install
-```
-
-#### Compile the content
-
-Run MamboSite from the repository root whenever `docs/` changes:
+Clone and prepare that layout:
 
 ```bash
-mambosite check
-mambosite build
+mkdir ProjectMambo
+cd ProjectMambo
+git clone https://github.com/ProjectMambo/MamboSite.git
+git clone https://github.com/ProjectMambo/MamboFolio.git
+
+cd MamboSite
+npm ci
+npm run build:packages
+cargo install --locked --path crates/mambosite-cli
+
+cd ../MamboFolio
+npm ci
 ```
 
-#### Running Locally
+Reinstall the local `mambosite` binary after changing its Rust source. The MamboFolio development and render scripts rebuild the sibling TypeScript packages before using them.
 
-Launch the local development server. The `predev` script also rebuilds the generated content:
+### Preview the site
+
+From `MamboFolio/`, run:
 
 ```bash
 npm run dev
 ```
-Open **[http://localhost:3000](http://localhost:3000)** in your browser to view the site.
 
-### Quick Build
-To compile the content and create the static production build:
+The `predev` hook builds the sibling runtime packages and regenerates content and theme output before Next.js starts. Open **[http://localhost:3000](http://localhost:3000)** to view the site.
+
+### Validate and build
+
 ```bash
+mambosite check
 npm run build
 ```
 
-## Deployment
-This project is configured for automated static deployment. Any changes pushed directly to the main branch will automatically trigger GitHub Actions to build and deploy the production artifacts to **GitHub Pages**.
+`mambosite check` parses and validates the complete site without writing generated files. `npm run build` delegates to one full `mambosite build`: MamboSite generates the typed content and theme outputs, then calls the configured `mambosite:render` npm hook to produce `out/` with Next.js.
 
-## Issues & Feedback
-Since this is our personal portfolio site, we are not looking for external pull requests. However, if you spot a bug or rendering issue, feel free to open an **Issue** to let me know!
+The renderer hook is deliberately nonrecursive. It builds the shared MamboSite packages and runs `next build`; it never calls `npm run build` or `mambosite build` again.
+
+To serve the completed static export rather than the development build, run `npm run preview` after `npm run build`, then open **[http://localhost:4173](http://localhost:4173)**. The preview command binds only to the local machine.
+
+## MamboSite lifecycle commands
+
+- `mambosite init [path]` creates the default site scaffold in an empty directory. `--force` only refreshes files recorded in an existing MamboSite scaffold manifest and preserves unrelated files; it is not intended for this already-established repository.
+- `mambosite build` owns Markdown parsing, validation, theme compilation, TypeScript and asset generation, and the configured static React/Next.js render.
+- `mambosite build --content-only` stops after generated content and theme assets, which is useful before the development server starts.
+- `mambosite deploy` requires a clean deployment branch, performs a full build, and never creates a commit. It pushes when the local branch has new commits. If the same commit is already on GitHub, it re-dispatches the Pages workflow, so a new commit is not required to deploy again.
+
+## Deployment
+
+Pushes to `main` and manual workflow dispatches run the GitHub Pages workflow. CI checks out MamboFolio and MamboSite as siblings, installs both dependency trees, invokes one full MamboSite build, and uploads `MamboFolio/out`.
+
+To build and start deployment from a clean local `main` branch:
+
+```bash
+npm run deploy
+```
+
+Use `mambosite deploy --dry-run` to validate the local build and report whether deployment would push commits or dispatch the current commit without changing Git or GitHub.
+
+## Issues and feedback
+
+This is a personal portfolio, so external pull requests are not currently requested. If you find a bug or rendering issue, opening an issue is welcome.
 
 ## License
-Distributed under the MIT License. See **[LICENSE](LICENSE)** for more information.
+
+Distributed under the MIT License. See **[LICENSE](LICENSE)** for details.

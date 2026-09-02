@@ -1,6 +1,6 @@
 ---
-title: Solomon
 description: Personal portfolio for Solomon and Project Mambo.
+title: Solomon
 cover: /profile/profile-square.jpg
 data:
   navigation:
@@ -30,7 +30,7 @@ data:
 
 ::hero{image="/profile/profile-square.jpg" align="split" show-description=false}
 
-*F.Y.I. You can change theme by clicking the brand text on the bar.*
+*F.Y.I. Use the theme control in the navigation bar to switch colour schemes.*
 
 ---
 
