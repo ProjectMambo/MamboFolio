@@ -1,6 +1,7 @@
-import { PageView } from "@/components/content/PageView";
-import { entryPage } from "@/lib/content";
+import { MamboPage } from "@mambosite/react";
+
+import { runtime } from "@/mambo/runtime";
 
 export default function HomePage() {
-  return <PageView page={entryPage} />;
+  return <MamboPage page={runtime.store.entryPage} runtime={runtime} />;
 }

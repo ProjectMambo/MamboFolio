@@ -1,0 +1,268 @@
+schema = 1
+id = "mambofolio"
+extends = "default"
+default_scheme = "dark"
+
+[breakpoints]
+compact = 640
+content = 900
+wide = 1200
+
+[colors.dark]
+background = "#181615"
+surface = "#24201e"
+surface_strong = "#312b28"
+border = "#4a403b"
+text = "#faf7f2"
+text_muted = "#d5c9b8"
+text_subtle = "#969085"
+brand = "#d44b36"
+brand_hover = "#ef674f"
+on_brand = "#ffffff"
+selection = "#d44b36"
+focus = "#ffa775"
+success = "#9cbaac"
+warning = "#ffa775"
+danger = "#bf8087"
+header_background = "rgb(24 22 21 / 92%)"
+shadow = "rgb(0 0 0 / 28%)"
+accents = [
+    "#9cbaac",
+    "#ffa775",
+    "#c2cca8",
+    "#8b9cbd",
+    "#e08a4f",
+    "#bf8087",
+]
+
+[colors.light]
+background = "#faf7f2"
+surface = "#f3ece2"
+surface_strong = "#eadfce"
+border = "#c9bba7"
+text = "#1c1111"
+text_muted = "#5c4d4a"
+text_subtle = "#765d3f"
+brand = "#a93622"
+brand_hover = "#822727"
+on_brand = "#ffffff"
+selection = "#a93622"
+focus = "#de8554"
+success = "#6b8c85"
+warning = "#de8554"
+danger = "#8c5258"
+header_background = "rgb(250 247 242 / 92%)"
+shadow = "rgb(49 35 31 / 14%)"
+accents = [
+    "#6b8c85",
+    "#de8554",
+    "#8fa382",
+    "#4e687d",
+    "#b86935",
+    "#8c5258",
+]
+
+[fonts]
+body = "\"MamboFont\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+heading = "\"MamboFont\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+mono = "\"MamboFont\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+
+[[fonts.faces]]
+family = "MamboFont"
+source = "../fonts/MamboFont-Regular_v0.0.0.woff2"
+weight = 400
+style = "normal"
+format = "woff2"
+display = "swap"
+
+[[fonts.faces]]
+family = "MamboFont"
+source = "../fonts/MamboFont-Medium_v0.0.0.woff2"
+weight = 500
+style = "normal"
+format = "woff2"
+display = "swap"
+
+[[fonts.faces]]
+family = "MamboFont"
+source = "../fonts/MamboFont-SemiBold_v0.0.0.woff2"
+weight = 600
+style = "normal"
+format = "woff2"
+display = "swap"
+
+[[fonts.faces]]
+family = "MamboFont"
+source = "../fonts/MamboFont-Bold_v0.0.0.woff2"
+weight = 700
+style = "normal"
+format = "woff2"
+display = "swap"
+
+[typography.body]
+size = "1rem"
+line_height = "1.78"
+weight = 400
+letter_spacing = "normal"
+
+[typography.small]
+size = "0.8rem"
+line_height = "1.5"
+weight = 400
+letter_spacing = "normal"
+
+[typography.label]
+size = "0.75rem"
+line_height = "1.35"
+weight = 700
+letter_spacing = "0.08em"
+
+[typography.navigation]
+line_height = "1.2"
+weight = 700
+letter_spacing = "0.08em"
+
+[typography.navigation.size]
+base = "0.72rem"
+compact = "0.85rem"
+
+[typography.heading_1]
+size = "clamp(2.5rem, 7vw, 5.5rem)"
+line_height = "1.1"
+weight = 700
+letter_spacing = "-0.055em"
+
+[typography.heading_2]
+size = "clamp(1.75rem, 4vw, 2.7rem)"
+line_height = "1.1"
+weight = 700
+letter_spacing = "-0.035em"
+
+[typography.heading_3]
+size = "1.45rem"
+line_height = "1.2"
+weight = 700
+letter_spacing = "normal"
+
+[typography.hero_lead]
+size = "1.15rem"
+line_height = "1.6"
+weight = 400
+letter_spacing = "normal"
+
+[typography.card_title]
+size = "1.25rem"
+line_height = "1.3"
+weight = 700
+letter_spacing = "normal"
+
+[spacing]
+xxs = "0.25rem"
+xs = "0.5rem"
+sm = "0.75rem"
+md = "1rem"
+lg = "1.5rem"
+xl = "2.5rem"
+xxl = "4rem"
+section = "4rem"
+
+[widths]
+reading = "48rem"
+normal = "74rem"
+wide = "88rem"
+full = "none"
+shell = "90rem"
+sidebar = "15rem"
+card_min = "14rem"
+hero_image_min = "14rem"
+
+[dimensions]
+header_blur = "16px"
+toc_offset = "6.5rem"
+hero_min_height = "18rem"
+control_min_height = "5rem"
+
+[dimensions.main_top_padding]
+base = "6rem"
+compact = "7.5rem"
+
+[dimensions.header_height]
+base = "4rem"
+compact = "4.5rem"
+
+[layout.page_with_sidebar_columns]
+base = "minmax(0, 1fr)"
+content = "minmax(0, 1fr) var(--mambo-width-sidebar)"
+
+[layout.hero_split_columns]
+base = "minmax(0, 1fr)"
+content = "minmax(var(--mambo-width-hero-image-min), 0.75fr) minmax(0, 1.25fr)"
+
+[layout.list_card_columns]
+base = "minmax(0, 1fr)"
+compact = "minmax(8rem, 0.3fr) minmax(0, 1fr)"
+
+[layout.metadata_columns]
+base = "minmax(0, 1fr)"
+compact = "minmax(7rem, 0.25fr) minmax(0, 1fr)"
+
+[layout.footer_direction]
+base = "column"
+compact = "row"
+
+[layout.header_inline_padding]
+base = "1rem"
+compact = "1.5rem"
+
+[layout.page_inline_padding]
+base = "1rem"
+compact = "1.5rem"
+
+[layout.footer_inline_padding]
+base = "1rem"
+compact = "1.5rem"
+
+[borders]
+thin = "1px"
+strong = "2px"
+accent = "0.4rem"
+style = "solid"
+
+[radii]
+small = "0"
+medium = "0"
+large = "0"
+pill = "9999px"
+
+[shadows]
+small = "0 1px 2px var(--mambo-color-shadow)"
+medium = "0 0.5rem 1.5rem var(--mambo-color-shadow)"
+large = "0 1rem 3rem var(--mambo-color-shadow)"
+
+[motion]
+fast = "160ms"
+normal = "180ms"
+slow = "300ms"
+easing = "ease"
+
+[components.collection.max_columns]
+base = 1
+compact = 2
+content = 2
+wide = 6
+
+[components.sidebar.mode]
+base = "hidden"
+content = "sticky"
+
+[components.header]
+hide_on_scroll = true
+hide_after = 80
+
+[components.header.mode]
+base = "compact"
+content = "full"
+
+[components.header.clock]
+base = "hidden"
+content = "visible"

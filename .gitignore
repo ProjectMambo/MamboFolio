@@ -54,4 +54,5 @@ Thumbs.db
 
 # generated content
 /src/generated/mambo/
+/public/mambo/
 /.mambosite-compiler/

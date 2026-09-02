@@ -20,3 +20,15 @@ max_embed_depth = 16
 strict = true
 ignored_fields = []
 legacy_data_fields = []
+
+[renderer]
+enabled = true
+kind = "next"
+package_manager = "npm"
+build_script = "mambosite:render"
+output_dir = "out"
+
+[deploy]
+remote = "origin"
+branch = "main"
+workflow = ".github/workflows/nextjs.yml"

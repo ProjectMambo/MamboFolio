@@ -1,13 +1,13 @@
+import { MamboPage } from "@mambosite/react";
+import {
+  metadataForPage,
+  pageFromSegments,
+  staticPageParams,
+} from "@mambosite/next";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { PageView } from "@/components/content/PageView";
-import {
-  getPageByRoute,
-  pages,
-  routeFromSegments,
-  segmentsFromRoute,
-} from "@/lib/content";
+import { runtime } from "@/mambo/runtime";
 
 interface ContentPageProps {
   readonly params: Promise<{ slug: string[] }>;
@@ -16,24 +16,17 @@ interface ContentPageProps {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return pages
-    .filter((page) => page.route !== "/")
-    .map((page) => ({ slug: segmentsFromRoute(page.route) }));
+  return staticPageParams(runtime);
 }
 
 export async function generateMetadata({ params }: ContentPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = getPageByRoute(routeFromSegments(slug));
-  if (!page) return {};
-  return {
-    title: page.title,
-    description: page.description,
-  };
+  return metadataForPage(pageFromSegments(runtime, slug));
 }
 
 export default async function ContentPage({ params }: ContentPageProps) {
   const { slug } = await params;
-  const page = getPageByRoute(routeFromSegments(slug));
+  const page = pageFromSegments(runtime, slug);
   if (!page) notFound();
-  return <PageView page={page} />;
+  return <MamboPage page={page} runtime={runtime} />;
 }
