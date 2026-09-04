@@ -1,7 +1,7 @@
 ---
 description: Personal portfolio for Solomon and Project Mambo.
 title: Solomon
-cover: /profile/profile-square.jpg
+cover: assets/profile/profile-square.jpg
 data:
   navigation:
     - label: KOHKOHNUT
@@ -28,9 +28,7 @@ data:
 
 ::page{layout="home" width="wide"}
 
-::hero{image="/profile/profile-square.jpg" align="split" show-description=false}
-
-*F.Y.I. Use the theme control in the navigation bar to switch colour schemes.*
+::hero{image="assets/profile/profile-square.jpg" align="split" show-description=false}
 
 ---
 
@@ -68,41 +66,37 @@ data:
 
 :::column
 
-::button{label="Email" href="mailto:me@kohkohnut.org" variant="secondary" external=true}
+::button{label="Email" href="mailto:me@kohkohnut.org" variant="card" external=true}
 
 :::
 
 :::column
 
-::button{label="GitHub" href="https://github.com/KohKoh-Nut" variant="secondary" external=true}
+::button{label="GitHub" href="https://github.com/KohKoh-Nut" variant="card" external=true}
 
 :::
 
 :::column
 
-::button{label="LinkedIn" href="https://www.linkedin.com/in/sheng-jun-koh" variant="secondary" external=true}
-
-:::
-
-::::
-
-::::columns{count=3 gap="small" collapse-at="md"}
-
-:::column
-
-::button{label="Instagram" href="https://www.instagram.com/kohkohnut67" variant="secondary" external=true}
+::button{label="LinkedIn" href="https://www.linkedin.com/in/sheng-jun-koh" variant="card" external=true}
 
 :::
 
 :::column
 
-::button{label="Facebook" href="https://www.facebook.com/profile.php?id=61592514714206" variant="secondary" external=true}
+::button{label="Instagram" href="https://www.instagram.com/kohkohnut67" variant="card" external=true}
 
 :::
 
 :::column
 
-::button{label="Steam" href="https://steamcommunity.com/id/KohKohNut/" variant="secondary" external=true}
+::button{label="Facebook" href="https://www.facebook.com/profile.php?id=61592514714206" variant="card" external=true}
+
+:::
+
+:::column
+
+::button{label="Steam" href="https://steamcommunity.com/id/KohKohNut/" variant="card" external=true}
 
 :::
 

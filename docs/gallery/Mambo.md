@@ -8,13 +8,13 @@ description: Icon for ProjectMambo and MamboSite
 title: Mambo
 date: 2026-06-02
 order: 20
-cover: /mambo.png
+cover: assets/mambo.png
 data:
   period: 02 June 2026
 ---
 
 ::page{layout="gallery" width="wide"}
 
-::hero{image="/mambo.png" align="center" show-description=true show-meta=false}
+::hero{image="assets/mambo.png" align="center" show-description=true show-meta=false}
 
 ::meta{show=["date","tags"] style="inline" empty="hide"}
