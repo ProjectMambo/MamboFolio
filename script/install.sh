@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-if ! command -v mambosite &> /dev/null; then
+if ! command -v mbsite &> /dev/null; then
     echo -e "${RED}[!] Install the MamboSite command before setting up MamboFolio.${NC}" >&2
     exit 1
 fi
@@ -27,7 +27,7 @@ fi
 
 (
     cd "$PROJECT_DIR"
-    mambosite build
+    mbsite build
 )
 
 echo -e "${BLUE}------------------------------------------${NC}"
