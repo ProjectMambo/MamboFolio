@@ -16,10 +16,11 @@ border = "#4a403b"
 text = "#faf7f2"
 text_muted = "#d5c9b8"
 text_subtle = "#969085"
-brand = "#d44b36"
-brand_hover = "#ef674f"
-on_brand = "#ffffff"
-selection = "#d44b36"
+brand = "#e05a45"
+brand_hover = "#f08068"
+brand_active = "#d96752"
+on_brand = "#181615"
+selection = "#e05a45"
 focus = "#ffa775"
 success = "#9cbaac"
 warning = "#ffa775"
@@ -45,9 +46,10 @@ text_muted = "#5c4d4a"
 text_subtle = "#765d3f"
 brand = "#a93622"
 brand_hover = "#822727"
+brand_active = "#641b1b"
 on_brand = "#ffffff"
 selection = "#a93622"
-focus = "#de8554"
+focus = "#822727"
 success = "#6b8c85"
 warning = "#de8554"
 danger = "#8c5258"
@@ -100,19 +102,19 @@ format = "woff2"
 display = "swap"
 
 [typography.body]
-size = "1rem"
-line_height = "1.78"
+size = "1.125rem"
+line_height = "1.72"
 weight = 400
 letter_spacing = "normal"
 
 [typography.small]
-size = "0.8rem"
+size = "0.95rem"
 line_height = "1.5"
 weight = 400
 letter_spacing = "normal"
 
 [typography.label]
-size = "0.75rem"
+size = "0.875rem"
 line_height = "1.35"
 weight = 700
 letter_spacing = "0.08em"
@@ -123,8 +125,8 @@ weight = 700
 letter_spacing = "0.08em"
 
 [typography.navigation.size]
-base = "0.72rem"
-compact = "0.85rem"
+base = "1.2rem"
+compact = "1.25rem"
 
 [typography.heading_1]
 size = "clamp(2.5rem, 7vw, 5.5rem)"
@@ -175,12 +177,13 @@ shell = "90rem"
 sidebar = "15rem"
 card_min = "14rem"
 hero_image_min = "14rem"
+gallery_image_max = "24rem"
 
 [dimensions]
 header_blur = "16px"
 toc_offset = "6.5rem"
 hero_min_height = "18rem"
-control_min_height = "5rem"
+control_min_height = "2.75rem"
 
 [dimensions.main_top_padding]
 base = "6rem"
@@ -232,7 +235,7 @@ style = "solid"
 small = "0"
 medium = "0"
 large = "0"
-pill = "9999px"
+pill = "0"
 
 [shadows]
 small = "0 1px 2px var(--mambo-color-shadow)"
@@ -243,7 +246,7 @@ large = "0 1rem 3rem var(--mambo-color-shadow)"
 fast = "160ms"
 normal = "180ms"
 slow = "300ms"
-easing = "ease"
+easing = "cubic-bezier(0.2, 0.8, 0.2, 1)"
 
 [components.collection.max_columns]
 base = 1
@@ -252,7 +255,7 @@ content = 2
 wide = 6
 
 [components.sidebar.mode]
-base = "hidden"
+base = "inline"
 content = "sticky"
 
 [components.header]
