@@ -8,6 +8,7 @@ title: MamboSite
 order: 30
 data:
   period: August 2026 - Present
+  wikiUrl: https://projectmambo.org/mambosite/
   githubUrl: https://github.com/ProjectMambo/MamboSite
 ---
 

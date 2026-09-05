@@ -19,6 +19,7 @@ MamboFolio is Solomon Koh's live, Markdown-first portfolio. Repository-local Mar
 
 | Goal | Link |
 |---|---|
+| Read the canonical Wiki documentation | [projectmambo.org/mambofolio/](https://projectmambo.org/mambofolio/) |
 | Visit the portfolio | [kohkohnut.org](https://kohkohnut.org) |
 | Browse the published content snapshot | [docs/index.md](index.md) |
 | Inspect site configuration | [mambo.toml](../mambo.toml) |
@@ -107,6 +108,19 @@ Pushing `main` starts the GitHub Pages workflow. CI checks out MamboFolio and th
 
 ```bash
 npm run deploy -- --dry-run
+```
+
+## Validation
+
+Before committing or deploying, run the complete local gate:
+
+```bash
+npm run content:check
+npm run lint
+npm run typecheck
+SOURCE_DATE_EPOCH=0 npm run build
+git diff --check
+git status --short
 ```
 
 ## Issues and feedback

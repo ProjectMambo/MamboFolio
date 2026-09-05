@@ -8,6 +8,7 @@ title: MamboDot
 order: 20
 data:
   period: May 2026 - Present
+  wikiUrl: https://projectmambo.org/mambodot/
   githubUrl: https://github.com/ProjectMambo/MamboDot
 ---
 

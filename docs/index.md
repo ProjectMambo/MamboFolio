@@ -18,6 +18,8 @@ data:
       href: /blog/
     - label: GALLERY
       href: /gallery/
+    - label: WIKI
+      href: https://projectmambo.org/
   hero:
     quote: You can't live without I've
     attribution: 21st cent. Shakespeare

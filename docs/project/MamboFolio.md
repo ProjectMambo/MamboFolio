@@ -1,13 +1,15 @@
 ---
 tags:
   - web/GithubPage
+  - web/Markdown
+  - web/MamboSite
   - web/NextJs
-  - web/TailwindCSS
-description: A responsive portfolio website built with Next.js and Tailwind CSS.
+description: A Markdown-first portfolio compiled by MamboSite and exported with Next.js.
 title: MamboFolio
 order: 50
 data:
   period: May 2026 - Present
+  wikiUrl: https://projectmambo.org/mambofolio/
   githubUrl: https://github.com/ProjectMambo/MamboFolio
 ---
 

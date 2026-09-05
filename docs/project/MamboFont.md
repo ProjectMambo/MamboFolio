@@ -3,11 +3,12 @@ tags:
   - web/Inkscape
   - web/SVG
   - web/TTF
-description: A modern font designed for consistent layout.
+description: Project Mambo's custom monospace font and icon-glyph build pipeline.
 title: MamboFont
 order: 80
 data:
   period: May 2026 - Present
+  wikiUrl: https://projectmambo.org/mambofont/
   githubUrl: https://github.com/ProjectMambo/MamboFont
 ---
 

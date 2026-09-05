@@ -1,13 +1,15 @@
 ---
 tags:
   - web/GithubPage
+  - web/Markdown
+  - web/MamboSite
   - web/NextJs
-  - web/TailwindCSS
-description: A responsive project wiki built with Next.js and Tailwind CSS.
+description: Project Mambo's canonical documentation site, compiled by MamboSite and exported with Next.js.
 title: MamboWiki
 order: 60
 data:
   period: May 2026 - Present
+  wikiUrl: https://projectmambo.org/mambowiki/
   githubUrl: https://github.com/ProjectMambo/MamboWiki
 ---
 
