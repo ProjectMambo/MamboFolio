@@ -9,7 +9,7 @@ description: Orbital 26 project.
 title: Cod
 order: 90
 data:
-  period: May 2026 - Present
+  period: May 2026 - Aug 2026
   wikiUrl: https://kohkoh-nut.github.io/Cod/
   githubUrl: https://github.com/KohKoh-Nut/Cod
 ---

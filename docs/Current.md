@@ -30,8 +30,8 @@ My current semester spans computer organisation, software engineering, AI and ma
 
 ## CCAs
 
+- **NUS Toastmaster Club** — practising public speaking, structured communication, and confidence in front of an audience.
 - **Jump Rope** — training, learning new skills, and staying active with the university community.
-- **Toastmaster NUS Club** — practising public speaking, structured communication, and confidence in front of an audience.
 
 ## EXCO
 
