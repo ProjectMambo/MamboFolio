@@ -1,5 +1,9 @@
 import { MamboSiteFrame } from "@mambosite/react";
-import { siteMetadata, themeBootstrapScript } from "@mambosite/next";
+import {
+  prefixBasePath,
+  siteMetadata,
+  themeBootstrapScript,
+} from "@mambosite/next";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
@@ -7,15 +11,34 @@ import { runtime, theme, themeStylesheetHref } from "@/mambo/runtime";
 import "@/app/globals.css";
 
 const basePath = runtime.store.manifest.site.basePath;
+const title = runtime.store.manifest.site.title;
+const description = runtime.store.entryPage.description ?? "";
+const siteUrl = new URL(runtime.store.manifest.site.url!);
+const assetRoot = prefixBasePath("/mambo/assets", basePath);
+const socialImage = new URL(`${assetRoot}/og.png`, siteUrl).toString();
 
 export const metadata: Metadata = {
   ...siteMetadata(runtime),
   icons: {
     icon: [
-      { url: `${basePath}/icon.svg`, type: "image/svg+xml" },
-      { url: `${basePath}/icon.png`, type: "image/png", sizes: "512x512" },
+      { url: `${assetRoot}/icon.svg`, type: "image/svg+xml" },
+      { url: `${assetRoot}/icon.png`, type: "image/png", sizes: "512x512" },
     ],
-    apple: `${basePath}/apple-icon.png`,
+    apple: `${assetRoot}/apple-icon.png`,
+  },
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: title,
+    images: [{ url: socialImage, width: 1200, height: 630, alt: title }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [socialImage],
   },
 };
 

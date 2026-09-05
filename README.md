@@ -46,7 +46,7 @@ canonical vault content
     -> GitHub Pages
 ```
 
-MamboFolio owns its content snapshot, `mambo.toml`, `mambo.theme.toml`, public branding files, and the thin files under `src/app/`. MamboSite owns Markdown parsing, validation, generated data, rendering components, and the Next.js adapter. Generated `src/generated/mambo/` and `public/mambo/` trees are rebuilt locally and in CI rather than committed.
+MamboFolio owns its content snapshot, `mambo.toml`, `mambo.theme.toml`, synchronized branding sources under `docs/_assets/`, and the thin files under `src/app/`. MamboSite owns Markdown parsing, validation, generated data, rendering components, and the Next.js adapter. Generated `src/generated/mambo/` and `public/mambo/` trees are rebuilt locally and in CI rather than committed.
 
 ## Local setup
 
