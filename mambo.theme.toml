@@ -8,11 +8,13 @@ compact = 640
 content = 900
 wide = 1200
 
+# MamboOrche supplies the general dark UI; interactive shades are contrast-adjusted.
+# MamboOutback supplies card accents.
 [colors.dark]
 background = "#181615"
 surface = "#24201e"
-surface_strong = "#312b28"
-border = "#4a403b"
+surface_strong = "#3d3633"
+border = "#3d3633"
 text = "#faf7f2"
 text_muted = "#d5c9b8"
 text_subtle = "#969085"
@@ -20,47 +22,61 @@ brand = "#e05a45"
 brand_hover = "#f08068"
 brand_active = "#d96752"
 on_brand = "#181615"
-selection = "#e05a45"
-focus = "#ffa775"
-success = "#9cbaac"
-warning = "#ffa775"
-danger = "#bf8087"
+selection = "#d44b36"
+focus = "#d3a774"
+success = "#64705e"
+warning = "#d3a774"
+danger = "#d44b36"
 header_background = "rgb(24 22 21 / 92%)"
 shadow = "rgb(0 0 0 / 28%)"
 accents = [
-    "#9cbaac",
+    "#ff6b57",
+    "#d98c84",
     "#ffa775",
+    "#ffd794",
     "#c2cca8",
+    "#839979",
+    "#9cbaac",
+    "#538271",
     "#8b9cbd",
-    "#e08a4f",
+    "#a5b5ed",
+    "#9e5b68",
     "#bf8087",
 ]
 
+# MamboOrche supplies the general light UI; interactive shades are contrast-adjusted.
+# MamboOutback supplies card accents.
 [colors.light]
 background = "#faf7f2"
 surface = "#f3ece2"
-surface_strong = "#eadfce"
-border = "#c9bba7"
+surface_strong = "#e1d5c3"
+border = "#e1d5c3"
 text = "#1c1111"
 text_muted = "#5c4d4a"
 text_subtle = "#765d3f"
 brand = "#a93622"
 brand_hover = "#822727"
 brand_active = "#641b1b"
-on_brand = "#ffffff"
+on_brand = "#faf7f2"
 selection = "#a93622"
 focus = "#822727"
-success = "#6b8c85"
-warning = "#de8554"
-danger = "#8c5258"
+success = "#5c705a"
+warning = "#d3a774"
+danger = "#a93622"
 header_background = "rgb(250 247 242 / 92%)"
-shadow = "rgb(49 35 31 / 14%)"
+shadow = "rgb(28 17 17 / 14%)"
 accents = [
-    "#6b8c85",
+    "#b84233",
+    "#a65b53",
     "#de8554",
+    "#dfb16c",
     "#8fa382",
+    "#4a6353",
+    "#6b8c85",
+    "#2d524b",
     "#4e687d",
-    "#b86935",
+    "#6b8496",
+    "#6e3b45",
     "#8c5258",
 ]
 
