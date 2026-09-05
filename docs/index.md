@@ -34,6 +34,12 @@ data:
 
 ::page{layout="home" width="wide"}
 
+:::footer
+
+::timestamp{timezone="Asia/Singapore" label="Last built"}
+
+:::
+
 ::hero{image="assets/profile/profile-square.jpg" align="split" show-description=false}
 
 ---

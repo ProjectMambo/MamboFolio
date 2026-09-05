@@ -123,6 +123,8 @@ git diff --check
 git status --short
 ```
 
+`SOURCE_DATE_EPOCH` fixes both the visible footer build timestamp and shuffled collection accents for reproducible validation. Production deploys omit it so the footer records the actual CI build time in `Asia/Singapore`.
+
 ## Issues and feedback
 
 This is a personal portfolio, so external pull requests are not currently requested. If you find a bug or rendering issue, opening an issue is welcome.
