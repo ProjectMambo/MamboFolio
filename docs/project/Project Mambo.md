@@ -2,6 +2,7 @@
 tags:
   - web/ArchLinux
   - web/Hyprland
+  - web/Rust
   - web/Wayland
   - web/Zsh
 description: A design-driven ecosystem of optimized Unix configurations, unified palettes, and automated dotfile deployment architectures.
