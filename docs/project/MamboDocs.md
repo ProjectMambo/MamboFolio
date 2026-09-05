@@ -4,7 +4,7 @@ tags:
   - web/Markdown
 description: Shared repository, interface, dependency, and delivery standards for Project Mambo.
 title: MamboDocs
-order: 25
+order: 30
 data:
   period: September 2026 - Present
   wikiUrl: https://projectmambo.org/mambodocs/

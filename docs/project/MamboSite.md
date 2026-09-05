@@ -5,7 +5,7 @@ tags:
   - web/SSG
 description: A Markdown-first static site compiler for Project Mambo websites.
 title: MamboSite
-order: 30
+order: 25
 data:
   period: August 2026 - Present
   wikiUrl: https://projectmambo.org/mambosite/
