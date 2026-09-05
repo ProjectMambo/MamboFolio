@@ -19,12 +19,6 @@ fi
 
 npm --prefix "$PROJECT_DIR" install
 
-if command -v mbfont &> /dev/null; then
-    FONT_DIR="$PROJECT_DIR/public/fonts"
-    mkdir -p "$FONT_DIR"
-    mbfont compile 0.0.0 -o "$FONT_DIR" -t woff2
-fi
-
 (
     cd "$PROJECT_DIR"
     mbsite build

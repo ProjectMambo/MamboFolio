@@ -85,38 +85,6 @@ body = "\"MamboFont\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, mo
 heading = "\"MamboFont\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
 mono = "\"MamboFont\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
 
-[[fonts.faces]]
-family = "MamboFont"
-source = "../fonts/MamboFont-Regular_v0.0.0.woff2"
-weight = 400
-style = "normal"
-format = "woff2"
-display = "swap"
-
-[[fonts.faces]]
-family = "MamboFont"
-source = "../fonts/MamboFont-Medium_v0.0.0.woff2"
-weight = 500
-style = "normal"
-format = "woff2"
-display = "swap"
-
-[[fonts.faces]]
-family = "MamboFont"
-source = "../fonts/MamboFont-SemiBold_v0.0.0.woff2"
-weight = 600
-style = "normal"
-format = "woff2"
-display = "swap"
-
-[[fonts.faces]]
-family = "MamboFont"
-source = "../fonts/MamboFont-Bold_v0.0.0.woff2"
-weight = 700
-style = "normal"
-format = "woff2"
-display = "swap"
-
 [typography.body]
 size = "1.125rem"
 line_height = "1.72"
