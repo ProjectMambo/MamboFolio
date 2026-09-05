@@ -1,5 +1,5 @@
 ---
-description: Icons and visual work from Mambo projects.
+description: A collection of visual work, from project graphics to personal experiments.
 title: Gallery
 order: 30
 ---
@@ -8,6 +8,6 @@ order: 30
 
 # Gallery
 
-Icons and visual work from Mambo projects.
+A collection of visual work, from Project Mambo graphics to illustrations, photographs, and personal experiments beyond the projects.
 
 ::gallery{source="children" view="grid" columns=3 fit="cover" captions=true}

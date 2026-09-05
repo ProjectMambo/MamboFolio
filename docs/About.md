@@ -1,9 +1,23 @@
 ---
-title: About
-listed: false
+description: A longer introduction to my background, studies, interests, and the ideas that shape my work.
+title: About Me
+order: 60
+cover: assets/profile/profile-portrait.jpg
 ---
 
 ::page{layout="article" width="normal"}
+
+# About Me
+
+## At a Glance
+
+| Entry | Value |
+|---|---|
+| **Name** | Solomon Koh (Koh Sheng Jun / 柯胜钧) |
+| **From** | Malaysia; born in Johor Bahru, with family roots in Alor Setar |
+| **Study** | Year 2 at the National University of Singapore |
+| **Academic path** | Major in Artificial Intelligence, second major in Statistics, minor in Japanese Language Studies |
+| **Interests** | Reading, jogging, vibe coding, and cue sports |
 
 ## Who is Solomon?
 
@@ -13,7 +27,7 @@ Hi, maybe you've noticed, my name is **Solomon**, or maybe you haven't because t
 
 *(Those rolling tape scene that movies use to roll back time)*
 
-It's **May 2025**, 7 months since I graduated high school. All my friends have already gotten their admission letter for their desired university, leaving me there alone with a single rejection letter *(why NTU, why)* and hoping for an acceptance from my other applications. It was a long wait, but I finally got it. Fortunately, it was an acceptance letter from **NUS** and not a rejection letter that I planned to reject *(UNO reverse)*. That's why as of the time I'm writing this (May 2026), I'm a year 1 student waiting for year 2 to start.
+It's **May 2025**, 7 months since I graduated high school. All my friends have already gotten their admission letter for their desired university, leaving me there alone with a single rejection letter *(why NTU, why)* and hoping for an acceptance from my other applications. It was a long wait, but I finally got it. Fortunately, it was an acceptance letter from **NUS** and not a rejection letter that I planned to reject *(UNO reverse)*. I am now a Year 2 student majoring in **Artificial Intelligence**, with a second major in **Statistics** and a minor in **Japanese Language Studies**.
 
 *(Rolling back again)*
 
@@ -36,6 +50,7 @@ The start of the year **2019**, was a whole new chapter to my life, I started my
 ---
 
 ## Believing Beliving
+
 I believe in **trying**, not just trying hard, but *trying new stuff*. Life comes down to how much you have to tell, how many *stories*, how much *new experiences*. That's why I'm always keen to trying, learning **new technology**, acquiring **new skills**, or researching in a whole new *unfamiliar field*.
 
 I might be somewhat of a *Jack of all trades*, but I'm *not* a master of none; I am sure I'm at least a **master of trying**. I don't find knowing wide areas of knowledge is bad, as long as I've gotten *deep enough* in those areas to know how to use them.
@@ -44,8 +59,9 @@ This is me: **always learning, always trying.**
 
 ---
 
-## Current Work
-Currently working on **[Project Mambo](/project/project-mambo)**, a series of stuff. 
-And also **[Cod](/project/cod)**, my Orbital 26 project with my friend, Jeremy. 
+## Hobbies
 
-*(See more in [project](/project) page)*
+- **Reading** — mostly nonfiction across history, culture, science, biography, philosophy, and self-development, with the occasional novel.
+- **Jogging** — time away from screens to reset, think, and keep moving.
+- **Vibe coding** — experimenting quickly with ideas, tools, and small software projects, then refining the useful ones.
+- **Cue sports** — a mix of precision, patience, and the satisfying sound of a clean shot.

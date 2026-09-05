@@ -6,8 +6,12 @@ data:
   navigation:
     - label: KOHKOHNUT
       href: /
-    - label: HOME
-      href: /
+    - label: ABOUT
+      href: /about/
+    - label: CURRENT
+      href: /current/
+    - label: UNI
+      href: /uni/
     - label: PROJECT
       href: /project/
     - label: BLOG
@@ -32,7 +36,11 @@ data:
 
 ---
 
-::include{source="[[About]]" mode="inline" headings="shift" show-title=false show-source=false}
+## About Me
+
+I'm Solomon, a Malaysian Year 2 NUS student studying Artificial Intelligence, Statistics, and Japanese. I like building things, reading widely, jogging, and spending an unreasonable amount of time around code and cue sports.
+
+::button{label="More About Me" href="/about/" variant="secondary"}
 
 ---
 
@@ -66,7 +74,13 @@ data:
 
 :::column
 
-::button{label="Email" href="mailto:me@kohkohnut.org" variant="card" external=true}
+::button{label="General · me@kohkohnut.org" href="mailto:me@kohkohnut.org" variant="card" external=true}
+
+:::
+
+:::column
+
+::button{label="Uni · solomonkoh@u.nus.edu" href="mailto:solomonkoh@u.nus.edu" variant="card" external=true}
 
 :::
 
@@ -84,7 +98,19 @@ data:
 
 :::column
 
+::button{label="Telegram" href="https://t.me/kohkohnut1202" variant="card" external=true}
+
+:::
+
+:::column
+
 ::button{label="Instagram" href="https://www.instagram.com/kohkohnut67" variant="card" external=true}
+
+:::
+
+:::column
+
+::button{label="WhatsApp" href="https://wa.me/60127607128" variant="card" external=true}
 
 :::
 
