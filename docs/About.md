@@ -63,5 +63,6 @@ This is me: **always learning, always trying.**
 
 - **Reading** — mostly nonfiction across history, culture, science, biography, philosophy, and self-development, with the occasional novel.
 - **Jogging** — time away from screens to reset, think, and keep moving.
+- **Singing** — express emotions, relieve stress through sound.
 - **Vibe coding** — experimenting quickly with ideas, tools, and small software projects, then refining the useful ones.
 - **Cue sports** — a mix of precision, patience, and the satisfying sound of a clean shot.

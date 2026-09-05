@@ -40,7 +40,7 @@ data:
 
 ## About Me
 
-I'm Solomon, a Malaysian Year 2 NUS student studying Artificial Intelligence, Statistics, and Japanese. I like building things, reading widely, jogging, and spending an unreasonable amount of time around code and cue sports.
+I'm Solomon, a Malaysian Year 2 NUS student studying Artificial Intelligence, Statistics, and Japanese. I like building things, reading widely, jogging, singing, and spending an unreasonable amount of time around code and cue sports.
 
 ::button{label="More About Me" href="/about/" variant="secondary"}
 
