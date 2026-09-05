@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Maintenance-Active-brightgreen?style=flat-square" alt="Maintenance status: active" />
   <img src="https://img.shields.io/github/last-commit/ProjectMambo/MamboFolio?style=flat-square&color=7a5fff" alt="Last commit" />
   <img src="https://img.shields.io/github/repo-size/ProjectMambo/MamboFolio?style=flat-square&color=yellow" alt="Repository size" />
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/ProjectMambo/MamboFolio?style=flat-square&color=orange" alt="License" /></a>
+  <a href="../LICENSE"><img src="https://img.shields.io/github/license/ProjectMambo/MamboFolio?style=flat-square&color=orange" alt="License" /></a>
 </p>
 
 MamboFolio is Solomon Koh's live, Markdown-first portfolio. Repository-local Markdown is compiled by MamboSite, rendered through its shared React and Next.js runtime, and exported as a static GitHub Pages site.
@@ -21,9 +21,9 @@ MamboFolio is Solomon Koh's live, Markdown-first portfolio. Repository-local Mar
 |---|---|
 | Visit the portfolio | [kohkohnut.org](https://kohkohnut.org) |
 | Browse the published content snapshot | [docs/index.md](index.md) |
-| Inspect site configuration | [mambo.toml](mambo.toml) |
-| Inspect design tokens | [mambo.theme.toml](mambo.theme.toml) |
-| Review the deployment pipeline | [.github/workflows/nextjs.yml](.github/workflows/nextjs.yml) |
+| Inspect site configuration | [mambo.toml](../mambo.toml) |
+| Inspect design tokens | [mambo.theme.toml](../mambo.theme.toml) |
+| Review the deployment pipeline | [.github/workflows/nextjs.yml](../.github/workflows/nextjs.yml) |
 | Understand the platform | [ProjectMambo/MamboSite](https://github.com/ProjectMambo/MamboSite) |
 
 ## Current status
@@ -115,4 +115,4 @@ This is a personal portfolio, so external pull requests are not currently reques
 
 ## License
 
-Distributed under the MIT License. See **[LICENSE](LICENSE)** for details.
+Distributed under the MIT License. See **[LICENSE](../LICENSE)** for details.
