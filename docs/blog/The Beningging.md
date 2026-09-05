@@ -2,8 +2,8 @@
 tags:
   - web/Milestone
 description: In the beningging... In the... In the bening... In the beningging
-title: The Beningging
 date: 2026-06-01
+title: The Beningging
 order: 30
 data:
   period: 01 June 2026
