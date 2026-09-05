@@ -1,6 +1,6 @@
 ---
-title: Gallery
 description: Icons and visual work from Mambo projects.
+title: Gallery
 order: 30
 ---
 

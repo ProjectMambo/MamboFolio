@@ -4,8 +4,8 @@ tags:
   - web/Milestone
   - web/Update
 description: Site has migrated to MamboFont
-title: Start of MamboFont
 date: 2026-06-10
+title: Start of MamboFont
 order: 20
 data:
   period: 10 June 2026

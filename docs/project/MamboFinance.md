@@ -5,7 +5,7 @@ tags:
   - web/SQLite
 description: A lightweight, privacy-focused financial dashboard for effortless expense tracking and budgeting.
 title: MamboFinance
-order: 30
+order: 40
 data:
   period: June 2026 - Present
   githubUrl: https://github.com/ProjectMambo/MamboFinance

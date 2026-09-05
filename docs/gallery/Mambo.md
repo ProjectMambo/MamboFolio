@@ -5,8 +5,8 @@ tags:
   - web/Mamba
   - web/Mambo
 description: Icon for ProjectMambo and MamboSite
-title: Mambo
 date: 2026-06-02
+title: Mambo
 order: 20
 cover: assets/mambo.png
 data:

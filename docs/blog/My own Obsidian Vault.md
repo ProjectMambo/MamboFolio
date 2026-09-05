@@ -2,8 +2,8 @@
 tags:
   - web/Obsidian
 description: Finally settled on an obsidian system
-title: My own Obsidian Vault
 date: 2026-07-30
+title: My own Obsidian Vault
 order: 10
 data:
   period: 30 July 2026

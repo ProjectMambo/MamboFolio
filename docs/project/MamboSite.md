@@ -1,11 +1,11 @@
 ---
 tags:
-  - web/GithubPage
-  - web/NextJs
-  - web/TailwindCSS
+  - web/Comrak
+  - web/Rust
+  - web/SSG
 description: A Markdown-first static site compiler for Project Mambo websites.
 title: MamboSite
-order: 90
+order: 30
 data:
   period: August 2026 - Present
   githubUrl: https://github.com/ProjectMambo/MamboSite

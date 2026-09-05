@@ -2,8 +2,8 @@
 tags:
   - web/Coconut
 description: Icon for MamboFolio
-title: KohKohNut
 date: 2026-06-02
+title: KohKohNut
 order: 10
 cover: assets/coconut.png
 data:

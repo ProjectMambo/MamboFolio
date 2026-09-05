@@ -4,8 +4,8 @@ tags:
   - web/Fish
   - web/Keyboard
 description: Icon for Cod, Orbital 26 project
-title: Cod
 date: 2026-05-16
+title: Cod
 order: 30
 cover: assets/cod.png
 data:

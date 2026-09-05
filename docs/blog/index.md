@@ -1,6 +1,6 @@
 ---
-title: Blog
 description: Notes, milestones, and thoughts from my work.
+title: Blog
 order: 20
 ---
 

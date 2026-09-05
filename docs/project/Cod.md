@@ -7,7 +7,7 @@ tags:
   - web/TailwindCSS
 description: Orbital 26 project.
 title: Cod
-order: 40
+order: 90
 data:
   period: May 2026 - Present
   wikiUrl: https://kohkoh-nut.github.io/Cod/

@@ -5,7 +5,7 @@ tags:
   - web/TTF
 description: A modern font designed for consistent layout.
 title: MamboFont
-order: 60
+order: 80
 data:
   period: May 2026 - Present
   githubUrl: https://github.com/ProjectMambo/MamboFont

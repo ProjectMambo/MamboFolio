@@ -3,12 +3,12 @@ tags:
   - web/GithubPage
   - web/NextJs
   - web/TailwindCSS
-description: A responsive portfolio website built with Next.js and Tailwind CSS.
-title: MamboFolio
-order: 50
+description: A responsive project wiki built with Next.js and Tailwind CSS.
+title: MamboWiki
+order: 60
 data:
   period: May 2026 - Present
-  githubUrl: https://github.com/ProjectMambo/MamboFolio
+  githubUrl: https://github.com/ProjectMambo/MamboWiki
 ---
 
 ::page{layout="project" width="normal"}
