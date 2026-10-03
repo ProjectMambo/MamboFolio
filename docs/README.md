@@ -15,7 +15,11 @@
 
 MamboFolio is Solomon Koh's live, Markdown-first portfolio. Repository-local Markdown is compiled by MamboSite, rendered through its shared React and Next.js runtime, and exported as a static GitHub Pages site.
 
-## Start here
+## Motivation
+
+MamboFolio keeps a personal portfolio reviewable as Markdown while publishing the same content through Project Mambo's shared, statically exported web platform. The repository stays focused on Solomon's content and configuration instead of duplicating compiler, component, or deployment logic.
+
+### Start here
 
 | Goal | Link |
 |---|---|
@@ -27,13 +31,19 @@ MamboFolio is Solomon Koh's live, Markdown-first portfolio. Repository-local Mar
 | Review the deployment pipeline | [.github/workflows/nextjs.yml](../.github/workflows/nextjs.yml) |
 | Understand the platform | [ProjectMambo/MamboSite](https://github.com/ProjectMambo/MamboSite) |
 
-## Current status
+## Status
 
 The MamboSite migration is complete and the former handwritten portfolio implementation has been removed. The current repository keeps a thin Next.js shell around MamboSite's compiler, runtime, default components, and theme contract. The live site includes profile, current-work, university, project, blog, and gallery pages sourced from Markdown.
 
 MamboFolio currently consumes the four MamboSite web packages from a sibling `MamboSite` checkout. Its production workflow pins the matching MamboSite compiler commit, Rust 1.95.0, Node.js 20, and both npm lockfiles.
 
-## Architecture
+### Pinned sibling-package exception
+
+The four `file:../MamboSite/packages/...` dependencies are a temporary, explicit exception to the released-dependency standard because compatible packages have not yet been published. CI and local release validation use MamboSite commit `43f861f6f4a0f1504753faf4b6113e2e75636f59`; using a different sibling checkout risks compiler/runtime drift even when `npm ci` succeeds.
+
+The exact checkout pin, both lockfiles, and the complete `npm run check` gate mitigate that risk. Review and remove the exception when compatible releases of `@mambosite/runtime`, `@mambosite/react`, `@mambosite/theme-default`, and `@mambosite/next` are all available, or whenever the MamboSite pin is intentionally upgraded.
+
+### Architecture
 
 ```text
 canonical vault content
@@ -48,20 +58,29 @@ canonical vault content
 
 MamboFolio owns its content snapshot, `mambo.toml`, `mambo.theme.toml`, synchronized branding sources under `docs/_assets/`, and the thin files under `src/app/`. MamboSite owns Markdown parsing, validation, generated data, rendering components, and the Next.js adapter. Generated `src/generated/mambo/` and `public/mambo/` trees are rebuilt locally and in CI rather than committed.
 
-## Local setup
+## User stories
+
+- As a visitor, I can navigate Solomon's current work, studies, projects, writing, and gallery from a fast static site.
+- As the author, I can update portfolio content in the canonical vault and review one synchronized Markdown snapshot.
+- As a maintainer, I can validate the content, runtime, accessibility baseline, and production artifact through one command.
+
+## Getting started
 
 ### Prerequisites
 
 - Node.js 20 or later and npm.
 - Rust 1.95.0 or later.
-- Git and a sibling checkout of MamboSite.
+- Git and sibling checkouts of MamboSite and MamboDocs at the pinned revisions below.
 - Python 3 only for the optional static preview command.
 
-Clone both repositories beside each other, build MamboSite, install its `mbsite` command, then install MamboFolio:
+Clone the repositories beside each other, select the validated provider revisions, build MamboSite, install its `mbsite` command, then install MamboFolio:
 
 ```bash
 git clone https://github.com/ProjectMambo/MamboSite.git
 git clone https://github.com/ProjectMambo/MamboFolio.git
+git clone https://github.com/ProjectMambo/MamboDocs.git
+git -C MamboSite checkout 43f861f6f4a0f1504753faf4b6113e2e75636f59
+git -C MamboDocs checkout 95e29a7bd5f64fd7b4b1416774157318490c6013
 cd MamboSite
 npm ci
 npm run build:packages
@@ -74,13 +93,14 @@ npm run dev
 
 `npm run dev` rebuilds the sibling MamboSite packages and the generated content before starting Next.js.
 
-## Commands
+## Usage
 
 | Command | Purpose |
 |---|---|
 | `npm run runtime:build` | Build the sibling MamboSite web packages. |
 | `npm run content:check` | Validate the complete Markdown site without writing generated output. |
 | `npm run content:build` | Regenerate compiled content, theme data, and managed assets without running Next.js. |
+| `npm run check` | Run the complete content, documentation, source, and reproducible-build gate. |
 | `npm run dev` | Regenerate content and start the local Next.js development server. |
 | `npm run build` | Run the complete MamboSite and Next.js static build into `out/`. |
 | `npm run preview` | Serve the completed `out/` directory at `http://127.0.0.1:4173`. |
@@ -88,7 +108,7 @@ npm run dev
 | `npm run typecheck` | Run TypeScript without emitting files. |
 | `npm run deploy` | Build, push committed work when needed, and trigger GitHub Pages. |
 
-## Canonical content and synchronization
+## Documentation
 
 Project Mambo authors documentation centrally in its Obsidian vault. The project README and mounted wiki page live under `Docs/Projects/MamboFolio/`; portfolio-owned pages and media live under `Docs/Projects/_sites/MamboFolio/`.
 
@@ -100,9 +120,39 @@ node Scripts/sync_docs.js --sync MamboFolio
 
 The sync replaces MamboFolio's complete repository `docs/` snapshot and root `README.md`. It does not change the application shell, configuration, workflow, or other source files. Edit the canonical vault copies rather than synchronized repository docs, then inspect the diff and run the content and build checks before committing.
 
-## Deployment
+The public project guide is mounted at [projectmambo.org/mambofolio/](https://projectmambo.org/mambofolio/). MamboSite's [authoring](https://projectmambo.org/mambosite/authoring-guide/) and [build](https://projectmambo.org/mambosite/build-and-deployment/) guides define the shared content and deployment behavior.
 
-Pushing `main` starts the GitHub Pages workflow. CI checks out MamboFolio and the pinned MamboSite revision, installs both dependency trees, runs one complete MamboSite build, uploads `MamboFolio/out`, and deploys it to [kohkohnut.org](https://kohkohnut.org).
+## Project structure
+
+```text
+docs/                 synchronized portfolio content and media
+src/app/              thin Next.js static route shell
+mambo.toml            content, URL, renderer, and deploy configuration
+mambo.theme.toml      site-specific semantic theme values
+.github/workflows/    pinned validation and GitHub Pages pipeline
+out/                  ignored static export produced by a build
+```
+
+## Validation
+
+Run the single local gate before committing or deploying:
+
+```bash
+npm run check
+git status --short
+```
+
+The check validates content and the strict MamboDocs repository contract, runs ESLint and TypeScript, performs a reproducible static build with `SOURCE_DATE_EPOCH=0`, confirms `out/index.html`, and checks the diff for whitespace errors. It requires the pinned sibling MamboSite and MamboDocs checkouts from Getting started.
+
+Before release, serve `out/` and inspect the home page, a representative project and article, media, deep links, and the not-found page at narrow and wide viewports. Review keyboard-only navigation, visible focus, heading order, contrast, and reduced-motion behavior. The current static site has no analytics, forms, cookies, or user-data collection; document and review the privacy boundary before adding any of them.
+
+## Development
+
+Keep portfolio content in the canonical vault and presentation behavior in MamboSite unless it is genuinely site-specific. Next.js 16 does not run linting as part of `next build`, so do not remove the explicit lint or type-check stages from `npm run check`.
+
+### Deployment
+
+Pushing `main` starts the GitHub Pages workflow. CI checks out MamboFolio, the pinned MamboSite revision, and the pinned MamboDocs checker; installs both npm dependency trees; runs `npm run check`; rebuilds once without the fixed validation epoch; uploads `MamboFolio/out`; and deploys it to [kohkohnut.org](https://kohkohnut.org).
 
 `npm run deploy` requires a clean deployment branch and never creates a commit. It pushes committed work when the branch is ahead; when the current commit is already remote, it dispatches the configured Pages workflow again. Preview that decision without pushing or dispatching with:
 
@@ -110,20 +160,11 @@ Pushing `main` starts the GitHub Pages workflow. CI checks out MamboFolio and th
 npm run deploy -- --dry-run
 ```
 
-## Validation
+### Post-deploy verification and rollback
 
-Before committing or deploying, run the complete local gate:
+After the Actions and Pages jobs succeed, open [kohkohnut.org](https://kohkohnut.org) in a fresh browser session and verify the home page, a nested content route, media, navigation, and the not-found page. Confirm the footer reports the expected deployment time and repeat the keyboard and responsive smoke checks on the live artifact.
 
-```bash
-npm run content:check
-npm run lint
-npm run typecheck
-SOURCE_DATE_EPOCH=0 npm run build
-git diff --check
-git status --short
-```
-
-`SOURCE_DATE_EPOCH` fixes both the visible footer build timestamp and shuffled collection accents for reproducible validation. Production deploys omit it so the footer records the actual CI build time in `Asia/Singapore`.
+If the release is faulty, create a normal `git revert <bad-commit>` on `main`, run `npm run check`, and deploy that revert. Revert the consumer commit that changed a bad MamboSite pin or lockfile rather than moving the pinned provider revision in place; do not rewrite published branch history.
 
 ## Issues and feedback
 
