@@ -142,7 +142,7 @@ npm run check
 git status --short
 ```
 
-The check validates content and the strict MamboDocs repository contract, runs ESLint and TypeScript, performs a reproducible static build with `SOURCE_DATE_EPOCH=0`, confirms `out/index.html`, and checks the diff for whitespace errors. It requires the pinned sibling MamboSite and MamboDocs checkouts from Getting started.
+The check validates content and the strict MamboDocs repository contract, builds the sibling web packages and generated content needed by a clean clone, runs ESLint and TypeScript, performs a reproducible static build with `SOURCE_DATE_EPOCH=0`, confirms `out/index.html`, and checks the diff for whitespace errors. It requires the pinned sibling MamboSite and MamboDocs checkouts from Getting started.
 
 Before release, serve `out/` and inspect the home page, a representative project and article, media, deep links, and the not-found page at narrow and wide viewports. Review keyboard-only navigation, visible focus, heading order, contrast, and reduced-motion behavior. The current static site has no analytics, forms, cookies, or user-data collection; document and review the privacy boundary before adding any of them.
 
