@@ -11,13 +11,13 @@ cover: assets/profile/profile-portrait.jpg
 
 ## At a Glance
 
-| Entry | Value |
-|---|---|
-| **Name** | Solomon Koh (Koh Sheng Jun / 柯胜钧) |
-| **From** | Malaysia; born in Johor Bahru, with family roots in Alor Setar |
-| **Study** | Year 2 at the National University of Singapore |
-| **Academic path** | Major in Artificial Intelligence, second major in Statistics, minor in Japanese Language Studies |
-| **Interests** | Reading, jogging, vibe coding, and cue sports |
+| Entry         | Value                                                                    |
+| ------------- | ------------------------------------------------------------------------ |
+| **Name**      | Solomon Koh (Koh Sheng Jun / 柯胜钧)                                        |
+| **From**      | Malaysia; born in Johor Bahru, with family roots in Alor Setar           |
+| **Study**     | Year 2 at the National University of Singapore (NUS)                     |
+| **Academic**  | Major in AI, 2nd major in Statistics, minor in Japanese Language Studies |
+| **Interests** | Reading, jogging, vibe coding, and cue sports                            |
 
 ## Who is Solomon?
 
@@ -61,8 +61,47 @@ This is me: **always learning, always trying.**
 
 ## Hobbies
 
-- **Reading** — mostly nonfiction across history, culture, science, biography, philosophy, and self-development, with the occasional novel.
-- **Jogging** — time away from screens to reset, think, and keep moving.
-- **Singing** — express emotions, relieve stress through sound.
-- **Vibe coding** — experimenting quickly with ideas, tools, and small software projects, then refining the useful ones.
-- **Cue sports** — a mix of precision, patience, and the satisfying sound of a clean shot.
+### Reading
+I mainly read Chinese web novel and nonfiction across history, culture, science, biography, philosophy, and self-development, with the occasional literary fiction. Here are some books I recommend:
+
+1. **The Let Them Theory** by Mel Robbins. *(self help)*
+
+The book introduces two catchy and easy phrases, "**Let Them**" & "**Let Me**" which are two effective ways of analyzing and solving all of our problems. It opens up a clear view to difficult situations where *we're controlled by our emotions and lose control over our reactions*. I'd say the underlying philosophy aligns with the book "**The Courage of being Disliked**" *(which is also in this list)* being they both highlights the idea where we have no control over others, and have ignored the always existing controls of ourselves. Definitely worth reading.
+
+2. **The Courage of being Disliked** by Ichiro Kishimi & Fumitake Koga. *(philosophy, self help, psychology)*
+
+This book introduces a core philosophy of *Alfred Adler* to help us navigate social life better. It proposes the idea from Adler, "*All problems are interpersonal relationship problems*," which is quite true in my opinion. What I learnt from this book is to never expect from others as **expectations equals disappointment**, we don't hold true control over others. Furthermore, we should keep a suitable distance from others, meaning not intervening others' stuff, as that's where a lot of our issues come, you bothering me, me bothering you, people being too controlling, etc. This doesn't mean being indifferent, it's just **we should give space for others**, while being at a distance where **we can offer help if they need to**.
+
+3. **The Art of Happiness** by Dalai Lama. *(philosophy, self help, psychology)*
+
+This is the first book that opened my mind to the **true meaning of happiness**. I find the philosophies of Buddhism, Stoicism, and Alfred Adler have quite similar ideas in some areas. This book like "**The Let Them Theory**" and "**The Courage of being Disliked**" also mentions the **letting go of our tight grip over our lives**, just from a Buddhism sliced view. It is just like its name, a general all in one guide to happiness. Although knowing the theory doesn't equal living it, it provides a lot of examples for the readers to connect and resonate with.
+
+4. **The Book of Joy** by Dalai Lama & Desmond Tutu. *(philosophy, self help, spirituality)*
+
+Again, another book about happiness, the general idea is quite similar with "**The Art of Happiness**" just that it comes from not only *Dalai Lama*, the spiritual leader of Tibetan Buddhism, but also *Desmond Tutu*, a South African Anglican bishop. Despite coming from different backgrounds and religions, they are great friends and share a lot in common in the idea of happiness. What caught me most about this book is actually the meeting video that it is based on, which shows how two highly spiritual leaders both possess the **pureness of a child**. And that state is what I see as the **final state of happiness**, entering a child-like state, filled with innocence and joy.
+
+5. **Guns, Germs, and Steel** by Jared Diamond. *(popular science, world history)*
+
+This is definitely a **must read** for the human history lovers, it might not be the most accurate, but the perspective it exposes is quite interesting. From how geographic differences result in the habits of civilizations, to how these habits structure the modern world.
+
+6. **The Setting Sun** by Osamu Dazai. *(literary fiction, historical fiction,  Japanese literature)*
+
+The first Japanese literature work I've read. Honestly speaking, I don't really understand the whole thing, though a creeping sense gone throughout the whole read through. The story was interesting but too deep for me. You can't expect a man born in peacetime to fully understand a story set in post war times.
+
+7. **More Frustrating More Brave: Kazuo Inamori Autobiography** by Kazuo Inamori. *(autobiography)*
+
+This is a book about the life of *Kazuo Inamori*, how he built *KDDI* from scratch and saved *Japan Airlines* from bankruptcy. His philosophy of customers should be the orients of companies made reading this book worthwhile. A great book to learn about him and more importantly learn about his business philosophy.
+
+### Singing
+
+I love singing, it is a way for me to express emotions and relieve stress. I mainly sing songs in Cantonese, Hokkien, English, and Mandarin, with occasional Japanese songs.
+
+### Vibe Coding
+
+Duh. **Codex** the best. Drastically boost my productivity by leveraging the speed and ability of AI. Though code quality is a worrying issue.
+
+### Cue Sports
+
+I love to play pool, mainly **8 ball** and **9 ball**. The main attraction of pool is the requirements of me controlling the cue ball carefully just to play it how I intended. I may not be that good of a player, I still enjoy and try my best to improving. I love the feel of pool strokes and the sound of balls colliding.
+
+Currently using **D1 The One APEX billiard chalk** by **D1 & Taom**. Aim to get my own playing cue one day.
