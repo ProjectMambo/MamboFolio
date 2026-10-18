@@ -39,7 +39,7 @@ MamboFolio currently consumes the four MamboSite web packages from a sibling `Ma
 
 ### Pinned sibling-package exception
 
-The four `file:../MamboSite/packages/...` dependencies are a temporary, explicit exception to the released-dependency standard because compatible packages have not yet been published. CI and local release validation use MamboSite commit `43f861f6f4a0f1504753faf4b6113e2e75636f59`; using a different sibling checkout risks compiler/runtime drift even when `npm ci` succeeds.
+The four `file:../MamboSite/packages/...` dependencies are a temporary, explicit exception to the released-dependency standard because compatible packages have not yet been published. CI and local release validation use MamboSite commit `a35d97cc7dd63b6d1c35c18d0b48c18291210a6f`; using a different sibling checkout risks compiler/runtime drift even when `npm ci` succeeds.
 
 The exact checkout pin, both lockfiles, and the complete `npm run check` gate mitigate that risk. Review and remove the exception when compatible releases of `@mambosite/runtime`, `@mambosite/react`, `@mambosite/theme-default`, and `@mambosite/next` are all available, or whenever the MamboSite pin is intentionally upgraded.
 
@@ -79,7 +79,7 @@ Clone the repositories beside each other, select the validated provider revision
 git clone https://github.com/ProjectMambo/MamboSite.git
 git clone https://github.com/ProjectMambo/MamboFolio.git
 git clone https://github.com/ProjectMambo/MamboDocs.git
-git -C MamboSite checkout 43f861f6f4a0f1504753faf4b6113e2e75636f59
+git -C MamboSite checkout a35d97cc7dd63b6d1c35c18d0b48c18291210a6f
 git -C MamboDocs checkout 95e29a78e7e77e3dae6a6c8c410020351c4e0b6c
 cd MamboSite
 npm ci
