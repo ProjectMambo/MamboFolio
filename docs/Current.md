@@ -12,17 +12,13 @@ This is the fast-changing part of the portfolio: a snapshot of what I am buildin
 
 ## Current Projects
 
+### [MamboDot](/project/mambodot/)
+
+Refining my GNU Stow-managed Arch Linux and Hyprland environment for speed, consistency, and a personal workflow.
+
 ### [MamboSite](/project/mambosite/)
 
 Building the Markdown-first compiler and reusable web runtime that powers Project Mambo sites.
-
-### [MamboFolio](/project/mambofolio/)
-
-Developing this portfolio as a home for my projects, writing, visual work, and personal story.
-
-### [MamboWiki](/project/mambowiki/)
-
-Developing a clearer documentation home for Project Mambo and its growing collection of tools.
 
 ## Current Courses
 
