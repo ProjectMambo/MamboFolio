@@ -26,9 +26,18 @@ My current semester spans computer organisation, software engineering, AI and ma
 
 ## CCAs
 
-- **NUS Toastmaster Club** — practising public speaking, structured communication, and confidence in front of an audience.
-- **Jump Rope** — training, learning new skills, and staying active with the university community.
+### NUS Toastmaster Club
 
-## EXCO
+Finished **L1P2**. Plan to join the **Motivational Strategies** path.
 
-I serve as **PNP** in the **Foon Yew Alumni Youth Wing (Singapore)**, helping the alumni community stay connected and supporting its youth activities.
+A fun club with **friendly members and great opportunities**. There's *table topics* sessions which are great for improving impromptu speech and *prepared speech* projects which are great for general speech improvements.
+
+### NUS Jump Rope
+
+I'm not really good at jump rope, joined to **try new things**. The sessions are quite relax, and members are open and proactive in giving guidance on jump rope. Though still struggling to get *long consecutive single bounces*, I'm trying to make my *double unders* consistent.
+
+## Committee
+
+I serve as **PNP** in the **Foon Yew High School Alumni (Singapore) Youth Association**, helping the alumni community stay connected and supporting its youth activities.
+
+I'm also a **member** of **Vice President of Education Subcommittee** in **NUS Toastmaster Club**, developing and maintaining an inner club site & managing program matters.

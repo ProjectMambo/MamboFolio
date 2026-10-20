@@ -116,22 +116,4 @@ I'm Solomon, a Malaysian Year 2 NUS student studying Artificial Intelligence, St
 
 :::
 
-:::column
-
-::button{label="WhatsApp" href="https://wa.me/60127607128" variant="card" external=true}
-
-:::
-
-:::column
-
-::button{label="Facebook" href="https://www.facebook.com/profile.php?id=61592514714206" variant="card" external=true}
-
-:::
-
-:::column
-
-::button{label="Steam" href="https://steamcommunity.com/id/KohKohNut/" variant="card" external=true}
-
-:::
-
 ::::

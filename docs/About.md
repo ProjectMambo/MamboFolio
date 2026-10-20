@@ -62,6 +62,7 @@ This is me: **always learning, always trying.**
 ## Hobbies
 
 ### Reading
+
 I mainly read Chinese web novel and nonfiction across history, culture, science, biography, philosophy, and self-development, with the occasional literary fiction. Here are some books I recommend:
 
 1. **The Let Them Theory** by Mel Robbins. *(self help)*
@@ -86,7 +87,7 @@ This is definitely a **must read** for the human history lovers, it might not be
 
 6. **The Setting Sun** by Osamu Dazai. *(literary fiction, historical fiction,  Japanese literature)*
 
-The first Japanese literature work I've read. Honestly speaking, I don't really understand the whole thing, though a creeping sense gone throughout the whole read through. The story was interesting but too deep for me. You can't expect a man born in peacetime to fully understand a story set in post war times.
+The first Japanese literature work I've read. Honestly speaking, *I don't really understand* the whole thing, though a creeping sense gone throughout the whole read through. The story was interesting but too deep for me. You can't expect a man born in peacetime to fully understand a story set in post war times.
 
 7. **More Frustrating More Brave: Kazuo Inamori Autobiography** by Kazuo Inamori. *(autobiography)*
 
@@ -102,6 +103,6 @@ Duh. **Codex** the best. Drastically boost my productivity by leveraging the spe
 
 ### Cue Sports
 
-I love to play pool, mainly **8 ball** and **9 ball**. The main attraction of pool is the requirements of me controlling the cue ball carefully just to play it how I intended. I may not be that good of a player, I still enjoy and try my best to improving. I love the feel of pool strokes and the sound of balls colliding.
+I love to play pool, mainly **8 ball** and **9 ball**. The main attraction of pool is the requirements of me *controlling the cue ball* carefully just to play it how I intended. I may not be that good of a player, I still enjoy and try my best to improving. I love the *feel of pool strokes* and the *sound of balls colliding*.
 
-Currently using **D1 The One APEX billiard chalk** by **D1 & Taom**. Aim to get my own playing cue one day.
+Currently using **D1THEONE APEX billiard chalk** by **D1 & Taom** and **Taom V10 chalk** by **Taom**. Aim to get my own playing cue one day.
