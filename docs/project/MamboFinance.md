@@ -3,7 +3,7 @@ tags:
   - web/Ratatui
   - web/Rust
   - web/SQLite
-description: A local-first finance tracker being rebuilt around reviewable AI-assisted imports, a MamboUI terminal app, and CLI tools.
+description: A local-first finance tracker being rebuilt around reviewable AI-assisted imports, a MamboUI terminal app, and MCP tools.
 title: MamboFinance
 order: 40
 data:
