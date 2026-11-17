@@ -3,7 +3,7 @@ tags:
   - web/Ratatui
   - web/Rust
   - web/SQLite
-description: A Rust ledger library with SQLite persistence and a demo-backed Ratatui interface under active development.
+description: A local-first finance tracker being rebuilt around reviewable AI-assisted imports, a MamboUI terminal app, and CLI tools.
 title: MamboFinance
 order: 40
 data:
