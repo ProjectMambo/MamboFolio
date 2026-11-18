@@ -2,6 +2,9 @@
 description: Personal portfolio for Solomon and Project Mambo.
 title: Solomon
 cover: assets/profile/profile-square.jpg
+mounts:
+  - path: /mambofolio
+    source: "_mounts/mambofolio/index.md"
 data:
   navigation:
     - label: KOHKOHNUT

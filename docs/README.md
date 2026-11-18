@@ -24,6 +24,7 @@ MamboFolio keeps a personal portfolio reviewable as Markdown while publishing th
 | Goal | Link |
 |---|---|
 | Read the canonical Wiki documentation | [projectmambo.org/mambofolio/](https://projectmambo.org/mambofolio/) |
+| Follow content-led maintenance and deployment stages | [Development plan](_mounts/mambofolio/Development%20Plan.md) |
 | Visit the portfolio | [kohkohnut.org](https://kohkohnut.org) |
 | Browse the published content snapshot | [docs/index.md](index.md) |
 | Inspect site configuration | [mambo.toml](../mambo.toml) |
