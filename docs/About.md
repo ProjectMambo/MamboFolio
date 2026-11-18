@@ -105,4 +105,10 @@ Duh. **Codex** the best. Drastically boost my productivity by leveraging the spe
 
 I love to play pool, mainly **8 ball** and **9 ball**. The main attraction of pool is the requirements of me *controlling the cue ball* carefully just to play it how I intended. I may not be that good of a player, I still enjoy and try my best to improving. I love the *feel of pool strokes* and the *sound of balls colliding*.
 
-Currently using **D1THEONE APEX billiard chalk** by **D1 & Taom** and **Taom V10 chalk** by **Taom**. Aim to get my own playing cue one day.
+Currently using:
+
+1. **Rhino Nebula 2 Playing Cue (Blush Pink)** by **Rhino**
+2. **Little Monster Carbon Fiber Break Jump Cue (Black-Yellow)** by **LTOMSTRE**
+3. **D1THEONE APEX billiard chalk** by **D1 & Taom**
+4. **Taom V10 chalk** by **Taom**
+5. **(Knock-off) Predator Urbain 2x4 case**
